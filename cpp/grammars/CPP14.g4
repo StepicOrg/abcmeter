@@ -57,15 +57,6 @@ translationunit
 ;
 
 /*Expressions*/
-primaryexpression
-:
-	literal
-	| This
-	| '(' expression ')'
-	| idexpression
-	| '[' lambdacapture? ']' lambdadeclarator? compoundstatement
-;
-
 lambdacapture
 :
 	capturedefault
@@ -134,7 +125,11 @@ lambdadeclarator
 
 postfixexpression
 :
-	primaryexpression
+	literal
+    | This
+    | '(' expression ')'
+    | idexpression
+    | '[' lambdacapture? ']' lambdadeclarator? compoundstatement
 	| postfixexpression '[' expression ']'
 	| postfixexpression '[' bracedinitlist ']'
 	| postfixexpression '(' expressionlist? ')'
@@ -183,6 +178,7 @@ unaryexpression
 	| deleteexpression
 ;
 
+// used in ASSIGNMENTS
 unaryincdecexpression
 :
     '++' castexpression
@@ -200,6 +196,7 @@ unaryoperator
 	| '-'
 ;
 
+// used in BRANCHES
 newexpression
 :
 	'::'? New newplacement? typespecifierseq newdeclarator? newinitializer?
@@ -229,6 +226,7 @@ newinitializer
 	| bracedinitlist
 ;
 
+// used in BRANCHES
 deleteexpression
 :
 	'::'? Delete castexpression
@@ -270,6 +268,7 @@ shiftexpression
 	| shiftexpression rightShift additiveexpression
 ;
 
+// used in CONDITIONALS
 relationalexpression
 :
 	shiftexpression
@@ -279,6 +278,7 @@ relationalexpression
 	| relationalexpression '>=' shiftexpression
 ;
 
+// used in CONDITIONALS
 equalityexpression
 :
 	relationalexpression
@@ -323,11 +323,13 @@ conditionalexpression
 	| unaryconditionalexpression
 ;
 
+// used in CONDITIONALS
 ternaryconditionalexpression
 :
     logicalorexpression '?' expression ':' assignmentexpression
 ;
 
+// used in CONDITIONALS
 unaryconditionalexpression
 :
     logicalorexpression '?' ':' assignmentexpression
@@ -340,6 +342,7 @@ assignmentexpression
 	| throwexpression
 ;
 
+// used in ASSIGNMENTS
 assignmentoperator
 :
 	'='
@@ -380,11 +383,13 @@ statement
 	| attributespecifierseq? tryblock
 ;
 
+// used in CONDITIONALS
 casestatement
 :
     Case constantexpression ':' statement
 ;
 
+// used in CONDITIONALS
 defaultstatement
 :
     Default ':' statement
@@ -413,6 +418,7 @@ selectionstatement
 	| Switch '(' condition ')' statement
 ;
 
+// used in CONDITIONALS
 elsestatement
 :
     Else statement
@@ -459,6 +465,7 @@ jumpstatement
 	| gotostatement
 ;
 
+// used in BRANCHES
 gotostatement
 :
     Goto Identifier ';'
@@ -914,6 +921,7 @@ functionbody
 	| '=' Delete ';'
 ;
 
+// used in ASSIGNMENTS
 initializer
 :
 	braceorequalinitializer
@@ -1191,6 +1199,7 @@ explicitspecialization
 ;
 
 /*Exception handling*/
+// used in CONDITIONALS
 tryblock
 :
 	Try compoundstatement handlerseq
@@ -1206,6 +1215,7 @@ handlerseq
 	handler handlerseq?
 ;
 
+// used in CONDITIONALS
 handler
 :
 	Catch '(' exceptiondeclaration ')' compoundstatement
