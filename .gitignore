@@ -106,4 +106,6 @@ venv.bak/
 .mypy_cache/
 
 # idea
-.idea/workspace.xml
+.idea/*
+~.idea/modules.xml
+~.idea/vcs.xml
