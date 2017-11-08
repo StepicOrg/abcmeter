@@ -1,6 +1,4 @@
-from contextlib import contextmanager
-
-from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
+from antlr4 import CommonTokenStream, ParseTreeWalker
 
 CPP = 'c++'
 JAVA = 'java8'
@@ -21,28 +19,17 @@ def get_lexer_parser_listener(language):
         return Java8Lexer, Java8Parser, Listener, Java8Parser.compilationUnit
 
 
-@contextmanager
-def nope_printer(*args, **kwargs):
-    yield
-
-
-def calculate_abc_score(start_time, file_name, language, printer=nope_printer):
+def calculate_abc_score(input, language):
     Lexer, Parser, Listener, start_token = get_lexer_parser_listener(language)
 
-    with printer(start_time, f'input from {file_name}'):
-        input = FileStream(file_name, encoding='utf8')
+    lexer = Lexer(input)
+    stream = CommonTokenStream(lexer)
 
-    with printer(start_time, 'analysis'):
-        lexer = Lexer(input)
-        stream = CommonTokenStream(lexer)
+    parser = Parser(stream)
+    tree = start_token(parser)
 
-    with printer(start_time, 'parsing'):
-        parser = Parser(stream)
-        tree = start_token(parser)
-
-    with printer(start_time, 'calculate score'):
-        listener = Listener()
-        walker = ParseTreeWalker()
-        walker.walk(listener, tree)
+    listener = Listener()
+    walker = ParseTreeWalker()
+    walker.walk(listener, tree)
 
     return listener
