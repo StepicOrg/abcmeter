@@ -2,7 +2,6 @@ from contextlib import contextmanager
 
 from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
 
-
 CPP = 'c++'
 JAVA = 'java8'
 PYTHON = 'python3'

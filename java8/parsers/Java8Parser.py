@@ -2136,9 +2136,9 @@ class Java8Parser(Parser):
             self.state = 474
             _la = self._input.LA(1)
             if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                                (1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                            1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                    1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral))) != 0)):
+                                        (1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                                            1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                                    1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2358,8 +2358,8 @@ class Java8Parser(Parser):
             self.state = 500
             _la = self._input.LA(1)
             if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                            (1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.INT) | (
-                    1 << Java8Parser.LONG) | (1 << Java8Parser.SHORT))) != 0)):
+                                    (1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.INT) | (
+                                    1 << Java8Parser.LONG) | (1 << Java8Parser.SHORT))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3967,10 +3967,10 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.CLASS) | (
-                1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (1 << Java8Parser.INTERFACE) | (
-                1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (
-                1 << Java8Parser.SEMI))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (1 << Java8Parser.INTERFACE) | (
+                        1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (
+                        1 << Java8Parser.SEMI))) != 0) or _la == Java8Parser.AT:
                 self.state = 728
                 self.typeDeclaration()
                 self.state = 733
@@ -4488,8 +4488,8 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
                 self.state = 787
                 self.classModifier()
                 self.state = 792
@@ -4866,16 +4866,16 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.BOOLEAN) | (
-                1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
-                1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
-                1 << Java8Parser.LONG) | (1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (
-                1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SYNCHRONIZED) | (
-                1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOID) | (1 << Java8Parser.VOLATILE) | (
-                1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and (
-                (1 << (_la - 68)) & ((1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
-                1 << (Java8Parser.AT - 68)))) != 0):
+                        1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
+                        1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
+                        1 << Java8Parser.LONG) | (1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (
+                        1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SYNCHRONIZED) | (
+                        1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOID) | (1 << Java8Parser.VOLATILE) | (
+                        1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and (
+                        (1 << (_la - 68)) & ((1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
+                                1 << (Java8Parser.AT - 68)))) != 0):
                 self.state = 843
                 self.classBodyDeclaration()
                 self.state = 848
@@ -5078,8 +5078,8 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.FINAL) | (1 << Java8Parser.PRIVATE) | (
-                1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (
-                1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOLATILE))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOLATILE))) != 0) or _la == Java8Parser.AT:
                 self.state = 864
                 self.fieldModifier()
                 self.state = 869
@@ -6092,9 +6092,9 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
-                1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (
-                1 << Java8Parser.SYNCHRONIZED))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
+                        1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (
+                        1 << Java8Parser.SYNCHRONIZED))) != 0) or _la == Java8Parser.AT:
                 self.state = 981
                 self.methodModifier()
                 self.state = 986
@@ -6390,9 +6390,9 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
-                1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
+                        1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
                 self.state = 1027
                 self.formalParameterList()
 
@@ -7125,7 +7125,7 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
-                1 << Java8Parser.PUBLIC))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.PUBLIC))) != 0) or _la == Java8Parser.AT:
                 self.state = 1128
                 self.constructorModifier()
                 self.state = 1133
@@ -7258,9 +7258,9 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
-                1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
+                        1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
                 self.state = 1151
                 self.formalParameterList()
 
@@ -7353,22 +7353,23 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.ASSERT) | (
-                1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (1 << Java8Parser.CONTINUE) | (
-                1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
-                1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.FOR) | (1 << Java8Parser.IF) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
-                1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.SWITCH) | (
-                1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (1 << Java8Parser.THROW) | (
-                1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (1 << Java8Parser.WHILE) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
-                1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and (
-                (1 << (_la - 79)) & ((1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (1 << Java8Parser.BYTE) | (
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (1 << Java8Parser.CONTINUE) | (
+                        1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
+                        1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.FOR) | (
+                1 << Java8Parser.IF) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                        1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
+                        1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.SWITCH) | (
+                        1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (1 << Java8Parser.THROW) | (
+                        1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (1 << Java8Parser.WHILE) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
+                        1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and (
+                        (1 << (_la - 79)) & ((1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1162
                 self.blockStatements()
 
@@ -7437,18 +7438,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 1172
                     self.argumentList()
 
@@ -7475,18 +7479,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 1182
                     self.argumentList()
 
@@ -7517,18 +7524,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 1194
                     self.argumentList()
 
@@ -7559,18 +7569,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 1207
                     self.argumentList()
 
@@ -7632,8 +7645,8 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
                 self.state = 1215
                 self.classModifier()
                 self.state = 1220
@@ -7837,18 +7850,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 1256
                     self.argumentList()
 
@@ -7943,16 +7959,16 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.BOOLEAN) | (
-                1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
-                1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
-                1 << Java8Parser.LONG) | (1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (
-                1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SYNCHRONIZED) | (
-                1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOID) | (1 << Java8Parser.VOLATILE) | (
-                1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and (
-                (1 << (_la - 68)) & ((1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
-                1 << (Java8Parser.AT - 68)))) != 0):
+                        1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
+                        1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
+                        1 << Java8Parser.LONG) | (1 << Java8Parser.NATIVE) | (1 << Java8Parser.PRIVATE) | (
+                        1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SYNCHRONIZED) | (
+                        1 << Java8Parser.TRANSIENT) | (1 << Java8Parser.VOID) | (1 << Java8Parser.VOLATILE) | (
+                        1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and (
+                        (1 << (_la - 68)) & ((1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
+                                1 << (Java8Parser.AT - 68)))) != 0):
                 self.state = 1268
                 self.classBodyDeclaration()
                 self.state = 1273
@@ -8065,8 +8081,8 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.PRIVATE) | (
-                1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (
-                1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
                 self.state = 1278
                 self.interfaceModifier()
                 self.state = 1283
@@ -8249,15 +8265,15 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.BOOLEAN) | (
-                1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
-                1 << Java8Parser.DEFAULT) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
-                1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (
-                1 << Java8Parser.INTERFACE) | (1 << Java8Parser.LONG) | (1 << Java8Parser.PRIVATE) | (
-                1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & (
-                    (1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
-                1 << (Java8Parser.AT - 68)))) != 0):
+                        1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
+                        1 << Java8Parser.DEFAULT) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
+                        1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (
+                        1 << Java8Parser.INTERFACE) | (1 << Java8Parser.LONG) | (1 << Java8Parser.PRIVATE) | (
+                        1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.SEMI))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & (
+                            (1 << (Java8Parser.LT - 68)) | (1 << (Java8Parser.Identifier - 68)) | (
+                                1 << (Java8Parser.AT - 68)))) != 0):
                 self.state = 1307
                 self.interfaceMemberDeclaration()
                 self.state = 1312
@@ -8390,7 +8406,7 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.FINAL) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.STATIC))) != 0) or _la == Java8Parser.AT:
+                        1 << Java8Parser.STATIC))) != 0) or _la == Java8Parser.AT:
                 self.state = 1322
                 self.constantModifier()
                 self.state = 1327
@@ -8510,8 +8526,10 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                            (1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.DEFAULT) | (1 << Java8Parser.PUBLIC) | (
-                    1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
+                                    (1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.DEFAULT) | (
+                                1 << Java8Parser.PUBLIC) | (
+                                    1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.STRICTFP))) != 0) or _la == Java8Parser.AT:
                 self.state = 1338
                 self.interfaceMethodModifier()
                 self.state = 1343
@@ -8697,13 +8715,13 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.BOOLEAN) | (
-                1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
-                1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
-                1 << Java8Parser.LONG) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
-                1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
-                1 << Java8Parser.STRICTFP) | (
-                1 << Java8Parser.SEMI))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
+                        1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
+                        1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.INTERFACE) | (
+                        1 << Java8Parser.LONG) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
+                        1 << Java8Parser.PUBLIC) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.STRICTFP) | (
+                        1 << Java8Parser.SEMI))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
                 self.state = 1367
                 self.annotationTypeMemberDeclaration()
                 self.state = 1372
@@ -9275,17 +9293,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
-                1 << Java8Parser.LBRACE))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
+                        1 << Java8Parser.LBRACE))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 1439
                 self.elementValueList()
 
@@ -9476,17 +9495,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
-                1 << Java8Parser.LBRACE))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
+                        1 << Java8Parser.LBRACE))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 1465
                 self.variableInitializerList()
 
@@ -9592,22 +9612,23 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (1 << Java8Parser.ASSERT) | (
-                1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (1 << Java8Parser.CONTINUE) | (
-                1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
-                1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.FOR) | (1 << Java8Parser.IF) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
-                1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
-                1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.SWITCH) | (
-                1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (1 << Java8Parser.THROW) | (
-                1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (1 << Java8Parser.WHILE) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
-                1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and (
-                (1 << (_la - 79)) & ((1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (1 << Java8Parser.BYTE) | (
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (1 << Java8Parser.CONTINUE) | (
+                        1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.ENUM) | (
+                        1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (1 << Java8Parser.FOR) | (
+                1 << Java8Parser.IF) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                        1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (1 << Java8Parser.PUBLIC) | (
+                        1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (1 << Java8Parser.STATIC) | (
+                        1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.SWITCH) | (
+                        1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (1 << Java8Parser.THROW) | (
+                        1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (1 << Java8Parser.WHILE) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (
+                        1 << Java8Parser.LBRACE) | (1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and (
+                        (1 << (_la - 79)) & ((1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1482
                 self.blockStatements()
 
@@ -9661,23 +9682,24 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.ABSTRACT) | (
-                    1 << Java8Parser.ASSERT) | (1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (
-                    1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
-                    1 << Java8Parser.CONTINUE) | (1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (
-                    1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.FOR) | (1 << Java8Parser.IF) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
-                    1 << Java8Parser.NEW) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
-                    1 << Java8Parser.PUBLIC) | (1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (
-                    1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (
-                    1 << Java8Parser.SWITCH) | (1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.THROW) | (1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (
-                    1 << Java8Parser.WHILE) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (1 << Java8Parser.LBRACE) | (
-                    1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
-                            (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                        1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0)):
+                            1 << Java8Parser.ASSERT) | (1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BREAK) | (
+                            1 << Java8Parser.BYTE) | (1 << Java8Parser.CHAR) | (1 << Java8Parser.CLASS) | (
+                            1 << Java8Parser.CONTINUE) | (1 << Java8Parser.DO) | (1 << Java8Parser.DOUBLE) | (
+                            1 << Java8Parser.ENUM) | (1 << Java8Parser.FINAL) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.FOR) | (1 << Java8Parser.IF) | (1 << Java8Parser.INT) | (
+                    1 << Java8Parser.LONG) | (
+                            1 << Java8Parser.NEW) | (1 << Java8Parser.PRIVATE) | (1 << Java8Parser.PROTECTED) | (
+                            1 << Java8Parser.PUBLIC) | (1 << Java8Parser.RETURN) | (1 << Java8Parser.SHORT) | (
+                            1 << Java8Parser.STATIC) | (1 << Java8Parser.STRICTFP) | (1 << Java8Parser.SUPER) | (
+                            1 << Java8Parser.SWITCH) | (1 << Java8Parser.SYNCHRONIZED) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.THROW) | (1 << Java8Parser.TRY) | (1 << Java8Parser.VOID) | (
+                            1 << Java8Parser.WHILE) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN) | (1 << Java8Parser.LBRACE) | (
+                            1 << Java8Parser.SEMI))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
+                                    (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                        1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0)):
                     break
 
         except RecognitionException as re:
@@ -11226,15 +11248,17 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
-                        (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
+                1 << Java8Parser.NEW) | (
+                        1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                        1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
+                                (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1669
                 self.forInit()
 
@@ -11244,17 +11268,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 1673
                 self.expression()
 
@@ -11264,15 +11289,16 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
-                        (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
+                                (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1677
                 self.forUpdate()
 
@@ -11332,15 +11358,17 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
-                1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
-                        (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
+                        1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
+                1 << Java8Parser.NEW) | (
+                        1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                        1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
+                                (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1685
                 self.forInit()
 
@@ -11350,17 +11378,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 1689
                 self.expression()
 
@@ -11370,15 +11399,16 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
-                        (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
-                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & (
+                                (1 << (Java8Parser.INC - 79)) | (1 << (Java8Parser.DEC - 79)) | (
+                                    1 << (Java8Parser.Identifier - 79)) | (1 << (Java8Parser.AT - 79)))) != 0):
                 self.state = 1693
                 self.forUpdate()
 
@@ -11811,17 +11841,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 1756
                 self.expression()
 
@@ -13554,18 +13585,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2054
                     self.argumentList()
 
@@ -13620,18 +13654,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2078
                     self.argumentList()
 
@@ -13686,18 +13723,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2102
                     self.argumentList()
 
@@ -13802,17 +13842,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 2127
                 self.argumentList()
 
@@ -13945,18 +13986,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2162
                     self.argumentList()
 
@@ -14010,18 +14054,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2186
                     self.argumentList()
 
@@ -14592,18 +14639,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2290
                     self.argumentList()
 
@@ -14632,18 +14682,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2302
                     self.argumentList()
 
@@ -14672,18 +14725,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2314
                     self.argumentList()
 
@@ -14712,18 +14768,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2326
                     self.argumentList()
 
@@ -14752,18 +14811,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2338
                     self.argumentList()
 
@@ -14796,18 +14858,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2351
                     self.argumentList()
 
@@ -14874,17 +14939,18 @@ class Java8Parser(Parser):
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (1 << Java8Parser.SHORT) | (
-                1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
-                1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
-                1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
-                1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
-                1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                        (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                        1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                        1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                1 << Java8Parser.SHORT) | (
+                        1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (1 << Java8Parser.VOID) | (
+                        1 << Java8Parser.IntegerLiteral) | (1 << Java8Parser.FloatingPointLiteral) | (
+                        1 << Java8Parser.BooleanLiteral) | (1 << Java8Parser.CharacterLiteral) | (
+                        1 << Java8Parser.StringLiteral) | (1 << Java8Parser.NullLiteral) | (
+                        1 << Java8Parser.LPAREN))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
+                                                    1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
+                                            1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                    1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
                 self.state = 2364
                 self.argumentList()
 
@@ -14952,18 +15018,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2371
                     self.argumentList()
 
@@ -14992,18 +15061,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2383
                     self.argumentList()
 
@@ -15032,18 +15104,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2395
                     self.argumentList()
 
@@ -15072,18 +15147,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2407
                     self.argumentList()
 
@@ -15116,18 +15194,21 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
-                    1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
-                    1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
-                    1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
-                    1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
-                    1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
-                    1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
-                        (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
-                                            (1 << (Java8Parser.BANG - 69)) | (1 << (Java8Parser.TILDE - 69)) | (
-                                        1 << (Java8Parser.INC - 69)) | (1 << (Java8Parser.DEC - 69)) | (
-                                1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
-                        1 << (Java8Parser.Identifier - 69)) | (1 << (Java8Parser.AT - 69)))) != 0):
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FLOAT) | (
+                            1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (1 << Java8Parser.NEW) | (
+                            1 << Java8Parser.SHORT) | (1 << Java8Parser.SUPER) | (1 << Java8Parser.THIS) | (
+                            1 << Java8Parser.VOID) | (1 << Java8Parser.IntegerLiteral) | (
+                            1 << Java8Parser.FloatingPointLiteral) | (1 << Java8Parser.BooleanLiteral) | (
+                            1 << Java8Parser.CharacterLiteral) | (1 << Java8Parser.StringLiteral) | (
+                            1 << Java8Parser.NullLiteral) | (1 << Java8Parser.LPAREN))) != 0) or (
+                                (((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & (
+                                                            (1 << (Java8Parser.BANG - 69)) | (
+                                                            1 << (Java8Parser.TILDE - 69)) | (
+                                                                1 << (Java8Parser.INC - 69)) | (
+                                                    1 << (Java8Parser.DEC - 69)) | (
+                                                        1 << (Java8Parser.ADD - 69)) | (1 << (Java8Parser.SUB - 69)) | (
+                                                1 << (Java8Parser.Identifier - 69)) | (
+                                    1 << (Java8Parser.AT - 69)))) != 0):
                     self.state = 2420
                     self.argumentList()
 
@@ -15969,9 +16050,9 @@ class Java8Parser(Parser):
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << Java8Parser.BOOLEAN) | (1 << Java8Parser.BYTE) | (
-                    1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
-                    1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
-                    1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
+                            1 << Java8Parser.CHAR) | (1 << Java8Parser.DOUBLE) | (1 << Java8Parser.FINAL) | (
+                            1 << Java8Parser.FLOAT) | (1 << Java8Parser.INT) | (1 << Java8Parser.LONG) | (
+                            1 << Java8Parser.SHORT))) != 0) or _la == Java8Parser.Identifier or _la == Java8Parser.AT:
                     self.state = 2585
                     self.formalParameterList()
 
@@ -16294,12 +16375,12 @@ class Java8Parser(Parser):
             self.state = 2620
             _la = self._input.LA(1)
             if not (((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (Java8Parser.ASSIGN - 66)) | (
-                1 << (Java8Parser.ADD_ASSIGN - 66)) | (1 << (Java8Parser.SUB_ASSIGN - 66)) | (
-                1 << (Java8Parser.MUL_ASSIGN - 66)) | (1 << (Java8Parser.DIV_ASSIGN - 66)) | (
-                1 << (Java8Parser.AND_ASSIGN - 66)) | (1 << (Java8Parser.OR_ASSIGN - 66)) | (
-                1 << (Java8Parser.XOR_ASSIGN - 66)) | (1 << (Java8Parser.MOD_ASSIGN - 66)) | (
-                1 << (Java8Parser.LSHIFT_ASSIGN - 66)) | (1 << (Java8Parser.RSHIFT_ASSIGN - 66)) | (
-                1 << (Java8Parser.URSHIFT_ASSIGN - 66)))) != 0)):
+                        1 << (Java8Parser.ADD_ASSIGN - 66)) | (1 << (Java8Parser.SUB_ASSIGN - 66)) | (
+                        1 << (Java8Parser.MUL_ASSIGN - 66)) | (1 << (Java8Parser.DIV_ASSIGN - 66)) | (
+                        1 << (Java8Parser.AND_ASSIGN - 66)) | (1 << (Java8Parser.OR_ASSIGN - 66)) | (
+                        1 << (Java8Parser.XOR_ASSIGN - 66)) | (1 << (Java8Parser.MOD_ASSIGN - 66)) | (
+                        1 << (Java8Parser.LSHIFT_ASSIGN - 66)) | (1 << (Java8Parser.RSHIFT_ASSIGN - 66)) | (
+                        1 << (Java8Parser.URSHIFT_ASSIGN - 66)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

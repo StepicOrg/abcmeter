@@ -1,11 +1,11 @@
 # Generated from /home/meanmail/MyProjects/antlr/cpp/grammars/CPP14.g4 by ANTLR 4.7
 # encoding: utf-8
-from antlr4 import *
+import sys
 from io import StringIO
 
-from antlr4.error.Errors import InputMismatchException
+from antlr4 import *
 from typing.io import TextIO
-import sys
+
 
 def serializedATN():
     with StringIO() as buf:
@@ -1334,72 +1334,71 @@ def serializedATN():
         return buf.getvalue()
 
 
-class CPP14Parser ( Parser ):
-
+class CPP14Parser(Parser):
     grammarFileName = "CPP14.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "'alignas'", 
-                     "'alignof'", "'asm'", "'auto'", "'bool'", "'break'", 
-                     "'case'", "'catch'", "'char'", "'char16_t'", "'char32_t'", 
-                     "'class'", "'const'", "'constexpr'", "'const_cast'", 
-                     "'continue'", "'decltype'", "'default'", "'delete'", 
-                     "'do'", "'double'", "'dynamic_cast'", "'else'", "'enum'", 
-                     "'explicit'", "'export'", "'extern'", "'false'", "'final'", 
-                     "'float'", "'for'", "'friend'", "'goto'", "'if'", "'inline'", 
-                     "'int'", "'long'", "'mutable'", "'namespace'", "'new'", 
-                     "'noexcept'", "'nullptr'", "'operator'", "'override'", 
-                     "'private'", "'protected'", "'public'", "'register'", 
-                     "'reinterpret_cast'", "'return'", "'short'", "'signed'", 
-                     "'sizeof'", "'static'", "'static_assert'", "'static_cast'", 
-                     "'struct'", "'switch'", "'template'", "'this'", "'thread_local'", 
-                     "'throw'", "'true'", "'try'", "'typedef'", "'typeid'", 
-                     "'typename'", "'union'", "'unsigned'", "'using'", "'virtual'", 
-                     "'void'", "'volatile'", "'wchar_t'", "'while'", "'('", 
-                     "')'", "'['", "']'", "'{'", "'}'", "'+'", "'-'", "'*'", 
-                     "'/'", "'%'", "'^'", "'&'", "'|'", "'~'", "'!'", "'='", 
-                     "'<'", "'>'", "'+='", "'-='", "'*='", "'/='", "'%='", 
-                     "'^='", "'&='", "'|='", "'<<'", "'<<='", "'=='", "'!='", 
-                     "'<='", "'>='", "'&&'", "'||'", "'++'", "'--'", "','", 
-                     "'->*'", "'->'", "'?'", "':'", "'::'", "';'", "'.'", 
-                     "'.*'", "'...'" ]
+    literalNames = ["<INVALID>", "<INVALID>", "<INVALID>", "'alignas'",
+                    "'alignof'", "'asm'", "'auto'", "'bool'", "'break'",
+                    "'case'", "'catch'", "'char'", "'char16_t'", "'char32_t'",
+                    "'class'", "'const'", "'constexpr'", "'const_cast'",
+                    "'continue'", "'decltype'", "'default'", "'delete'",
+                    "'do'", "'double'", "'dynamic_cast'", "'else'", "'enum'",
+                    "'explicit'", "'export'", "'extern'", "'false'", "'final'",
+                    "'float'", "'for'", "'friend'", "'goto'", "'if'", "'inline'",
+                    "'int'", "'long'", "'mutable'", "'namespace'", "'new'",
+                    "'noexcept'", "'nullptr'", "'operator'", "'override'",
+                    "'private'", "'protected'", "'public'", "'register'",
+                    "'reinterpret_cast'", "'return'", "'short'", "'signed'",
+                    "'sizeof'", "'static'", "'static_assert'", "'static_cast'",
+                    "'struct'", "'switch'", "'template'", "'this'", "'thread_local'",
+                    "'throw'", "'true'", "'try'", "'typedef'", "'typeid'",
+                    "'typename'", "'union'", "'unsigned'", "'using'", "'virtual'",
+                    "'void'", "'volatile'", "'wchar_t'", "'while'", "'('",
+                    "')'", "'['", "']'", "'{'", "'}'", "'+'", "'-'", "'*'",
+                    "'/'", "'%'", "'^'", "'&'", "'|'", "'~'", "'!'", "'='",
+                    "'<'", "'>'", "'+='", "'-='", "'*='", "'/='", "'%='",
+                    "'^='", "'&='", "'|='", "'<<'", "'<<='", "'=='", "'!='",
+                    "'<='", "'>='", "'&&'", "'||'", "'++'", "'--'", "','",
+                    "'->*'", "'->'", "'?'", "':'", "'::'", "';'", "'.'",
+                    "'.*'", "'...'"]
 
-    symbolicNames = [ "<INVALID>", "MultiLineMacro", "Directive", "Alignas", 
-                      "Alignof", "Asm", "Auto", "Bool", "Break", "Case", 
-                      "Catch", "Char", "Char16", "Char32", "Class", "Const", 
-                      "Constexpr", "Const_cast", "Continue", "Decltype", 
-                      "Default", "Delete", "Do", "Double", "Dynamic_cast", 
-                      "Else", "Enum", "Explicit", "Export", "Extern", "FalseToken", 
-                      "Final", "Float", "For", "Friend", "Goto", "If", "Inline", 
-                      "Int", "Long", "Mutable", "Namespace", "New", "Noexcept", 
-                      "Nullptr", "Operator", "Override", "Private", "Protected", 
-                      "Public", "Register", "Reinterpret_cast", "Return", 
-                      "Short", "Signed", "Sizeof", "Static", "Static_assert", 
-                      "Static_cast", "Struct", "Switch", "Template", "This", 
-                      "Thread_local", "Throw", "TrueToken", "Try", "Typedef", 
-                      "Typeid", "Typename", "Union", "Unsigned", "Using", 
-                      "Virtual", "Void", "Volatile", "Wchar", "While", "LeftParen", 
-                      "RightParen", "LeftBracket", "RightBracket", "LeftBrace", 
-                      "RightBrace", "Plus", "Minus", "Star", "Div", "Mod", 
-                      "Caret", "And", "Or", "Tilde", "Not", "Assign", "Less", 
-                      "Greater", "PlusAssign", "MinusAssign", "StarAssign", 
-                      "DivAssign", "ModAssign", "XorAssign", "AndAssign", 
-                      "OrAssign", "LeftShift", "LeftShiftAssign", "Equal", 
-                      "NotEqual", "LessEqual", "GreaterEqual", "AndAnd", 
-                      "OrOr", "PlusPlus", "MinusMinus", "Comma", "ArrowStar", 
-                      "Arrow", "Question", "Colon", "Doublecolon", "Semi", 
-                      "Dot", "DotStar", "Ellipsis", "Identifier", "Integerliteral", 
-                      "Decimalliteral", "Octalliteral", "Hexadecimalliteral", 
-                      "Binaryliteral", "Integersuffix", "Characterliteral", 
-                      "Floatingliteral", "Stringliteral", "Userdefinedintegerliteral", 
-                      "Userdefinedfloatingliteral", "Userdefinedstringliteral", 
-                      "Userdefinedcharacterliteral", "Whitespace", "Newline", 
-                      "BlockComment", "LineComment" ]
+    symbolicNames = ["<INVALID>", "MultiLineMacro", "Directive", "Alignas",
+                     "Alignof", "Asm", "Auto", "Bool", "Break", "Case",
+                     "Catch", "Char", "Char16", "Char32", "Class", "Const",
+                     "Constexpr", "Const_cast", "Continue", "Decltype",
+                     "Default", "Delete", "Do", "Double", "Dynamic_cast",
+                     "Else", "Enum", "Explicit", "Export", "Extern", "FalseToken",
+                     "Final", "Float", "For", "Friend", "Goto", "If", "Inline",
+                     "Int", "Long", "Mutable", "Namespace", "New", "Noexcept",
+                     "Nullptr", "Operator", "Override", "Private", "Protected",
+                     "Public", "Register", "Reinterpret_cast", "Return",
+                     "Short", "Signed", "Sizeof", "Static", "Static_assert",
+                     "Static_cast", "Struct", "Switch", "Template", "This",
+                     "Thread_local", "Throw", "TrueToken", "Try", "Typedef",
+                     "Typeid", "Typename", "Union", "Unsigned", "Using",
+                     "Virtual", "Void", "Volatile", "Wchar", "While", "LeftParen",
+                     "RightParen", "LeftBracket", "RightBracket", "LeftBrace",
+                     "RightBrace", "Plus", "Minus", "Star", "Div", "Mod",
+                     "Caret", "And", "Or", "Tilde", "Not", "Assign", "Less",
+                     "Greater", "PlusAssign", "MinusAssign", "StarAssign",
+                     "DivAssign", "ModAssign", "XorAssign", "AndAssign",
+                     "OrAssign", "LeftShift", "LeftShiftAssign", "Equal",
+                     "NotEqual", "LessEqual", "GreaterEqual", "AndAnd",
+                     "OrOr", "PlusPlus", "MinusMinus", "Comma", "ArrowStar",
+                     "Arrow", "Question", "Colon", "Doublecolon", "Semi",
+                     "Dot", "DotStar", "Ellipsis", "Identifier", "Integerliteral",
+                     "Decimalliteral", "Octalliteral", "Hexadecimalliteral",
+                     "Binaryliteral", "Integersuffix", "Characterliteral",
+                     "Floatingliteral", "Stringliteral", "Userdefinedintegerliteral",
+                     "Userdefinedfloatingliteral", "Userdefinedstringliteral",
+                     "Userdefinedcharacterliteral", "Whitespace", "Newline",
+                     "BlockComment", "LineComment"]
 
     RULE_translationunit = 0
     RULE_primaryexpression = 1
@@ -1587,220 +1586,218 @@ class CPP14Parser ( Parser ):
     RULE_pointerliteral = 183
     RULE_userdefinedliteral = 184
 
-    ruleNames =  [ "translationunit", "primaryexpression", "lambdacapture", 
-                   "idexpression", "unqualifiedid", "qualifiedid", "nestednamespecifier", 
-                   "capturedefault", "capturelist", "capture", "lambdadeclarator", 
-                   "postfixexpression", "expressionlist", "pseudodestructorname", 
-                   "unaryexpression", "unaryincdecexpression", "unaryoperator", 
-                   "newexpression", "newplacement", "newdeclarator", "noptrnewdeclarator", 
-                   "newinitializer", "deleteexpression", "castexpression", 
-                   "pmexpression", "multiplicativeexpression", "additiveexpression", 
-                   "shiftexpression", "relationalexpression", "equalityexpression", 
-                   "andexpression", "exclusiveorexpression", "inclusiveorexpression", 
-                   "logicalandexpression", "logicalorexpression", "conditionalexpression", 
-                   "ternaryconditionalexpression", "unaryconditionalexpression", 
-                   "assignmentexpression", "assignmentoperator", "expression", 
-                   "constantexpression", "statement", "casestatement", "defaultstatement", 
-                   "expressionstatement", "compoundstatement", "statementseq", 
-                   "selectionstatement", "elsestatement", "condition", "iterationstatement", 
-                   "forinitstatement", "forrangedeclaration", "forrangeinitializer", 
-                   "jumpstatement", "gotostatement", "declarationseq", "declaration", 
-                   "blockdeclaration", "aliasdeclaration", "simpledeclaration", 
-                   "static_assertdeclaration", "emptydeclaration", "declspecifier", 
-                   "declspecifierseq", "typespecifier", "trailingtypespecifier", 
-                   "typespecifierseq", "trailingtypespecifierseq", "simpletypespecifier", 
-                   "thetypename", "decltypespecifier", "enumhead", "enumkey", 
-                   "enumbase", "enumeratorlist", "enumeratordefinition", 
-                   "enumerator", "namespacename", "originalnamespacename", 
-                   "namespacedefinition", "namednamespacedefinition", "namespacebody", 
-                   "namespacealias", "qualifiednamespacespecifier", "usingdeclaration", 
-                   "usingdirective", "asmdefinition", "linkagespecification", 
-                   "attributespecifierseq", "attributespecifier", "alignmentspecifier", 
-                   "attributelist", "attribute", "attributetoken", "attributescopedtoken", 
-                   "attributenamespace", "attributeargumentclause", "balancedtokenseq", 
-                   "balancedtoken", "initdeclaratorlist", "initdeclarator", 
-                   "declarator", "ptrdeclarator", "noptrdeclarator", "parametersandqualifiers", 
-                   "trailingreturntype", "ptroperator", "cvqualifierseq", 
-                   "cvqualifier", "refqualifier", "declaratorid", "thetypeid", 
-                   "abstractdeclarator", "ptrabstractdeclarator", "noptrabstractdeclarator", 
-                   "abstractpackdeclarator", "noptrabstractpackdeclarator", 
-                   "parameterdeclarationclause", "parameterdeclarationlist", 
-                   "parameterdeclaration", "functiondefinition", "functionbody", 
-                   "initializer", "braceorequalinitializer", "initializerclause", 
-                   "initializerlist", "bracedinitlist", "classname", "classspecifier", 
-                   "classhead", "classheadname", "classvirtspecifier", "classkey", 
-                   "memberspecification", "memberdeclaration", "memberdeclaratorlist", 
-                   "memberdeclarator", "virtspecifierseq", "virtspecifier", 
-                   "purespecifier", "baseclause", "basespecifierlist", "basespecifier", 
-                   "classordecltype", "basetypespecifier", "accessspecifier", 
-                   "conversionfunctionid", "conversiontypeid", "conversiondeclarator", 
-                   "ctorinitializer", "meminitializerlist", "meminitializer", 
-                   "meminitializerid", "operatorfunctionid", "literaloperatorid", 
-                   "templatedeclaration", "templateparameterlist", "templateparameter", 
-                   "simpletemplateid", "templateid", "templatename", "templateargumentlist", 
-                   "templateargument", "typenamespecifier", "explicitinstantiation", 
-                   "explicitspecialization", "tryblock", "functiontryblock", 
-                   "handlerseq", "handler", "exceptiondeclaration", "throwexpression", 
-                   "exceptionspecification", "dynamicexceptionspecification", 
-                   "typeidlist", "noexceptspecification", "rightShift", 
-                   "rightShiftAssign", "theoperator", "literal", "booleanliteral", 
-                   "pointerliteral", "userdefinedliteral" ]
+    ruleNames = ["translationunit", "primaryexpression", "lambdacapture",
+                 "idexpression", "unqualifiedid", "qualifiedid", "nestednamespecifier",
+                 "capturedefault", "capturelist", "capture", "lambdadeclarator",
+                 "postfixexpression", "expressionlist", "pseudodestructorname",
+                 "unaryexpression", "unaryincdecexpression", "unaryoperator",
+                 "newexpression", "newplacement", "newdeclarator", "noptrnewdeclarator",
+                 "newinitializer", "deleteexpression", "castexpression",
+                 "pmexpression", "multiplicativeexpression", "additiveexpression",
+                 "shiftexpression", "relationalexpression", "equalityexpression",
+                 "andexpression", "exclusiveorexpression", "inclusiveorexpression",
+                 "logicalandexpression", "logicalorexpression", "conditionalexpression",
+                 "ternaryconditionalexpression", "unaryconditionalexpression",
+                 "assignmentexpression", "assignmentoperator", "expression",
+                 "constantexpression", "statement", "casestatement", "defaultstatement",
+                 "expressionstatement", "compoundstatement", "statementseq",
+                 "selectionstatement", "elsestatement", "condition", "iterationstatement",
+                 "forinitstatement", "forrangedeclaration", "forrangeinitializer",
+                 "jumpstatement", "gotostatement", "declarationseq", "declaration",
+                 "blockdeclaration", "aliasdeclaration", "simpledeclaration",
+                 "static_assertdeclaration", "emptydeclaration", "declspecifier",
+                 "declspecifierseq", "typespecifier", "trailingtypespecifier",
+                 "typespecifierseq", "trailingtypespecifierseq", "simpletypespecifier",
+                 "thetypename", "decltypespecifier", "enumhead", "enumkey",
+                 "enumbase", "enumeratorlist", "enumeratordefinition",
+                 "enumerator", "namespacename", "originalnamespacename",
+                 "namespacedefinition", "namednamespacedefinition", "namespacebody",
+                 "namespacealias", "qualifiednamespacespecifier", "usingdeclaration",
+                 "usingdirective", "asmdefinition", "linkagespecification",
+                 "attributespecifierseq", "attributespecifier", "alignmentspecifier",
+                 "attributelist", "attribute", "attributetoken", "attributescopedtoken",
+                 "attributenamespace", "attributeargumentclause", "balancedtokenseq",
+                 "balancedtoken", "initdeclaratorlist", "initdeclarator",
+                 "declarator", "ptrdeclarator", "noptrdeclarator", "parametersandqualifiers",
+                 "trailingreturntype", "ptroperator", "cvqualifierseq",
+                 "cvqualifier", "refqualifier", "declaratorid", "thetypeid",
+                 "abstractdeclarator", "ptrabstractdeclarator", "noptrabstractdeclarator",
+                 "abstractpackdeclarator", "noptrabstractpackdeclarator",
+                 "parameterdeclarationclause", "parameterdeclarationlist",
+                 "parameterdeclaration", "functiondefinition", "functionbody",
+                 "initializer", "braceorequalinitializer", "initializerclause",
+                 "initializerlist", "bracedinitlist", "classname", "classspecifier",
+                 "classhead", "classheadname", "classvirtspecifier", "classkey",
+                 "memberspecification", "memberdeclaration", "memberdeclaratorlist",
+                 "memberdeclarator", "virtspecifierseq", "virtspecifier",
+                 "purespecifier", "baseclause", "basespecifierlist", "basespecifier",
+                 "classordecltype", "basetypespecifier", "accessspecifier",
+                 "conversionfunctionid", "conversiontypeid", "conversiondeclarator",
+                 "ctorinitializer", "meminitializerlist", "meminitializer",
+                 "meminitializerid", "operatorfunctionid", "literaloperatorid",
+                 "templatedeclaration", "templateparameterlist", "templateparameter",
+                 "simpletemplateid", "templateid", "templatename", "templateargumentlist",
+                 "templateargument", "typenamespecifier", "explicitinstantiation",
+                 "explicitspecialization", "tryblock", "functiontryblock",
+                 "handlerseq", "handler", "exceptiondeclaration", "throwexpression",
+                 "exceptionspecification", "dynamicexceptionspecification",
+                 "typeidlist", "noexceptspecification", "rightShift",
+                 "rightShiftAssign", "theoperator", "literal", "booleanliteral",
+                 "pointerliteral", "userdefinedliteral"]
 
     EOF = Token.EOF
-    MultiLineMacro=1
-    Directive=2
-    Alignas=3
-    Alignof=4
-    Asm=5
-    Auto=6
-    Bool=7
-    Break=8
-    Case=9
-    Catch=10
-    Char=11
-    Char16=12
-    Char32=13
-    Class=14
-    Const=15
-    Constexpr=16
-    Const_cast=17
-    Continue=18
-    Decltype=19
-    Default=20
-    Delete=21
-    Do=22
-    Double=23
-    Dynamic_cast=24
-    Else=25
-    Enum=26
-    Explicit=27
-    Export=28
-    Extern=29
-    FalseToken=30
-    Final=31
-    Float=32
-    For=33
-    Friend=34
-    Goto=35
-    If=36
-    Inline=37
-    Int=38
-    Long=39
-    Mutable=40
-    Namespace=41
-    New=42
-    Noexcept=43
-    Nullptr=44
-    Operator=45
-    Override=46
-    Private=47
-    Protected=48
-    Public=49
-    Register=50
-    Reinterpret_cast=51
-    Return=52
-    Short=53
-    Signed=54
-    Sizeof=55
-    Static=56
-    Static_assert=57
-    Static_cast=58
-    Struct=59
-    Switch=60
-    Template=61
-    This=62
-    Thread_local=63
-    Throw=64
-    TrueToken=65
-    Try=66
-    Typedef=67
-    Typeid=68
-    Typename=69
-    Union=70
-    Unsigned=71
-    Using=72
-    Virtual=73
-    Void=74
-    Volatile=75
-    Wchar=76
-    While=77
-    LeftParen=78
-    RightParen=79
-    LeftBracket=80
-    RightBracket=81
-    LeftBrace=82
-    RightBrace=83
-    Plus=84
-    Minus=85
-    Star=86
-    Div=87
-    Mod=88
-    Caret=89
-    And=90
-    Or=91
-    Tilde=92
-    Not=93
-    Assign=94
-    Less=95
-    Greater=96
-    PlusAssign=97
-    MinusAssign=98
-    StarAssign=99
-    DivAssign=100
-    ModAssign=101
-    XorAssign=102
-    AndAssign=103
-    OrAssign=104
-    LeftShift=105
-    LeftShiftAssign=106
-    Equal=107
-    NotEqual=108
-    LessEqual=109
-    GreaterEqual=110
-    AndAnd=111
-    OrOr=112
-    PlusPlus=113
-    MinusMinus=114
-    Comma=115
-    ArrowStar=116
-    Arrow=117
-    Question=118
-    Colon=119
-    Doublecolon=120
-    Semi=121
-    Dot=122
-    DotStar=123
-    Ellipsis=124
-    Identifier=125
-    Integerliteral=126
-    Decimalliteral=127
-    Octalliteral=128
-    Hexadecimalliteral=129
-    Binaryliteral=130
-    Integersuffix=131
-    Characterliteral=132
-    Floatingliteral=133
-    Stringliteral=134
-    Userdefinedintegerliteral=135
-    Userdefinedfloatingliteral=136
-    Userdefinedstringliteral=137
-    Userdefinedcharacterliteral=138
-    Whitespace=139
-    Newline=140
-    BlockComment=141
-    LineComment=142
+    MultiLineMacro = 1
+    Directive = 2
+    Alignas = 3
+    Alignof = 4
+    Asm = 5
+    Auto = 6
+    Bool = 7
+    Break = 8
+    Case = 9
+    Catch = 10
+    Char = 11
+    Char16 = 12
+    Char32 = 13
+    Class = 14
+    Const = 15
+    Constexpr = 16
+    Const_cast = 17
+    Continue = 18
+    Decltype = 19
+    Default = 20
+    Delete = 21
+    Do = 22
+    Double = 23
+    Dynamic_cast = 24
+    Else = 25
+    Enum = 26
+    Explicit = 27
+    Export = 28
+    Extern = 29
+    FalseToken = 30
+    Final = 31
+    Float = 32
+    For = 33
+    Friend = 34
+    Goto = 35
+    If = 36
+    Inline = 37
+    Int = 38
+    Long = 39
+    Mutable = 40
+    Namespace = 41
+    New = 42
+    Noexcept = 43
+    Nullptr = 44
+    Operator = 45
+    Override = 46
+    Private = 47
+    Protected = 48
+    Public = 49
+    Register = 50
+    Reinterpret_cast = 51
+    Return = 52
+    Short = 53
+    Signed = 54
+    Sizeof = 55
+    Static = 56
+    Static_assert = 57
+    Static_cast = 58
+    Struct = 59
+    Switch = 60
+    Template = 61
+    This = 62
+    Thread_local = 63
+    Throw = 64
+    TrueToken = 65
+    Try = 66
+    Typedef = 67
+    Typeid = 68
+    Typename = 69
+    Union = 70
+    Unsigned = 71
+    Using = 72
+    Virtual = 73
+    Void = 74
+    Volatile = 75
+    Wchar = 76
+    While = 77
+    LeftParen = 78
+    RightParen = 79
+    LeftBracket = 80
+    RightBracket = 81
+    LeftBrace = 82
+    RightBrace = 83
+    Plus = 84
+    Minus = 85
+    Star = 86
+    Div = 87
+    Mod = 88
+    Caret = 89
+    And = 90
+    Or = 91
+    Tilde = 92
+    Not = 93
+    Assign = 94
+    Less = 95
+    Greater = 96
+    PlusAssign = 97
+    MinusAssign = 98
+    StarAssign = 99
+    DivAssign = 100
+    ModAssign = 101
+    XorAssign = 102
+    AndAssign = 103
+    OrAssign = 104
+    LeftShift = 105
+    LeftShiftAssign = 106
+    Equal = 107
+    NotEqual = 108
+    LessEqual = 109
+    GreaterEqual = 110
+    AndAnd = 111
+    OrOr = 112
+    PlusPlus = 113
+    MinusMinus = 114
+    Comma = 115
+    ArrowStar = 116
+    Arrow = 117
+    Question = 118
+    Colon = 119
+    Doublecolon = 120
+    Semi = 121
+    Dot = 122
+    DotStar = 123
+    Ellipsis = 124
+    Identifier = 125
+    Integerliteral = 126
+    Decimalliteral = 127
+    Octalliteral = 128
+    Hexadecimalliteral = 129
+    Binaryliteral = 130
+    Integersuffix = 131
+    Characterliteral = 132
+    Floatingliteral = 133
+    Stringliteral = 134
+    Userdefinedintegerliteral = 135
+    Userdefinedfloatingliteral = 136
+    Userdefinedstringliteral = 137
+    Userdefinedcharacterliteral = 138
+    Whitespace = 139
+    Newline = 140
+    BlockComment = 141
+    LineComment = 142
 
-    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.7")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
-
-
     class TranslationunitContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1808,37 +1805,52 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.EOF, 0)
 
         def declarationseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_translationunit
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTranslationunit" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTranslationunit"):
                 listener.enterTranslationunit(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTranslationunit" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTranslationunit"):
                 listener.exitTranslationunit(self)
-
-
-
 
     def translationunit(self):
 
         localctx = CPP14Parser.TranslationunitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_translationunit)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 371
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (
+                1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (
+                1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (
+                1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (
+                1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (
+                1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (
+                1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (
+                1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (
+                1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or (
+                    (((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (
+                1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (
+                1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (
+                1 << (CPP14Parser.Identifier - 67)))) != 0):
                 self.state = 370
                 self.declarationseq(0)
-
 
             self.state = 373
             self.match(CPP14Parser.EOF)
@@ -1852,61 +1864,55 @@ class CPP14Parser ( Parser ):
 
     class PrimaryexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def literal(self):
-            return self.getTypedRuleContext(CPP14Parser.LiteralContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LiteralContext, 0)
 
         def This(self):
             return self.getToken(CPP14Parser.This, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def idexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext, 0)
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def lambdacapture(self):
-            return self.getTypedRuleContext(CPP14Parser.LambdacaptureContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LambdacaptureContext, 0)
 
         def lambdadeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.LambdadeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LambdadeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_primaryexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPrimaryexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPrimaryexpression"):
                 listener.enterPrimaryexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPrimaryexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPrimaryexpression"):
                 listener.exitPrimaryexpression(self)
-
-
-
 
     def primaryexpression(self):
 
         localctx = CPP14Parser.PrimaryexpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_primaryexpression)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 391
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.FalseToken, CPP14Parser.Nullptr, CPP14Parser.TrueToken, CPP14Parser.Integerliteral, CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral, CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral, CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
+            if token in [CPP14Parser.FalseToken, CPP14Parser.Nullptr, CPP14Parser.TrueToken, CPP14Parser.Integerliteral,
+                         CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral,
+                         CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral,
+                         CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 375
                 self.literal()
@@ -1925,7 +1931,8 @@ class CPP14Parser ( Parser ):
                 self.state = 379
                 self.match(CPP14Parser.RightParen)
                 pass
-            elif token in [CPP14Parser.Decltype, CPP14Parser.Operator, CPP14Parser.Tilde, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
+            elif token in [CPP14Parser.Decltype, CPP14Parser.Operator, CPP14Parser.Tilde, CPP14Parser.Doublecolon,
+                           CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 381
                 self.idexpression()
@@ -1937,20 +1944,20 @@ class CPP14Parser ( Parser ):
                 self.state = 384
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if ((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & ((1 << (CPP14Parser.This - 62)) | (1 << (CPP14Parser.And - 62)) | (1 << (CPP14Parser.Assign - 62)) | (1 << (CPP14Parser.Identifier - 62)))) != 0):
+                if ((((_la - 62)) & ~0x3f) == 0 and ((1 << (_la - 62)) & (
+                            (1 << (CPP14Parser.This - 62)) | (1 << (CPP14Parser.And - 62)) | (
+                        1 << (CPP14Parser.Assign - 62)) | (1 << (CPP14Parser.Identifier - 62)))) != 0):
                     self.state = 383
                     self.lambdacapture()
-
 
                 self.state = 386
                 self.match(CPP14Parser.RightBracket)
                 self.state = 388
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.LeftParen:
+                if _la == CPP14Parser.LeftParen:
                     self.state = 387
                     self.lambdadeclarator()
-
 
                 self.state = 390
                 self.compoundstatement()
@@ -1968,31 +1975,26 @@ class CPP14Parser ( Parser ):
 
     class LambdacaptureContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def capturedefault(self):
-            return self.getTypedRuleContext(CPP14Parser.CapturedefaultContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CapturedefaultContext, 0)
 
         def capturelist(self):
-            return self.getTypedRuleContext(CPP14Parser.CapturelistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CapturelistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_lambdacapture
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLambdacapture" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLambdacapture"):
                 listener.enterLambdacapture(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLambdacapture" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLambdacapture"):
                 listener.exitLambdacapture(self)
-
-
-
 
     def lambdacapture(self):
 
@@ -2001,7 +2003,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 399
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 4, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 393
@@ -2035,31 +2037,26 @@ class CPP14Parser ( Parser ):
 
     class IdexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def unqualifiedid(self):
-            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext, 0)
 
         def qualifiedid(self):
-            return self.getTypedRuleContext(CPP14Parser.QualifiedidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.QualifiedidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_idexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIdexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterIdexpression"):
                 listener.enterIdexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIdexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitIdexpression"):
                 listener.exitIdexpression(self)
-
-
-
 
     def idexpression(self):
 
@@ -2068,7 +2065,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 403
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 5, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 401
@@ -2092,7 +2089,7 @@ class CPP14Parser ( Parser ):
 
     class UnqualifiedidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2100,42 +2097,33 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def operatorfunctionid(self):
-            return self.getTypedRuleContext(CPP14Parser.OperatorfunctionidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.OperatorfunctionidContext, 0)
 
         def conversionfunctionid(self):
-            return self.getTypedRuleContext(CPP14Parser.ConversionfunctionidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConversionfunctionidContext, 0)
 
         def literaloperatorid(self):
-            return self.getTypedRuleContext(CPP14Parser.LiteraloperatoridContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LiteraloperatoridContext, 0)
 
         def classname(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassnameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassnameContext, 0)
 
         def decltypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext, 0)
 
         def templateid(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_unqualifiedid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnqualifiedid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUnqualifiedid"):
                 listener.enterUnqualifiedid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnqualifiedid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUnqualifiedid"):
                 listener.exitUnqualifiedid(self)
-
-
-
 
     def unqualifiedid(self):
 
@@ -2144,7 +2132,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 414
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 6, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 405
@@ -2202,17 +2190,15 @@ class CPP14Parser ( Parser ):
 
     class QualifiedidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def unqualifiedid(self):
-            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
@@ -2220,22 +2206,19 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_qualifiedid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterQualifiedid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterQualifiedid"):
                 listener.enterQualifiedid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitQualifiedid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitQualifiedid"):
                 listener.exitQualifiedid(self)
-
-
-
 
     def qualifiedid(self):
 
         localctx = CPP14Parser.QualifiedidContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_qualifiedid)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 416
@@ -2243,10 +2226,9 @@ class CPP14Parser ( Parser ):
             self.state = 418
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Template:
+            if _la == CPP14Parser.Template:
                 self.state = 417
                 self.match(CPP14Parser.Template)
-
 
             self.state = 420
             self.unqualifiedid()
@@ -2260,32 +2242,27 @@ class CPP14Parser ( Parser ):
 
     class NestednamespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def thetypename(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypenameContext, 0)
 
         def namespacename(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext, 0)
 
         def decltypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
@@ -2293,29 +2270,27 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_nestednamespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNestednamespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNestednamespecifier"):
                 listener.enterNestednamespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNestednamespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNestednamespecifier"):
                 listener.exitNestednamespecifier(self)
 
-
-
-    def nestednamespecifier(self, _p:int=0):
+    def nestednamespecifier(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.NestednamespecifierContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 12
         self.enterRecursionRule(localctx, 12, self.RULE_nestednamespecifier, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 433
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 8, self._ctx)
             if la_ == 1:
                 self.state = 423
                 self.match(CPP14Parser.Doublecolon)
@@ -2342,19 +2317,18 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Doublecolon)
                 pass
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 447
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 11, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 445
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 10, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.NestednamespecifierContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_nestednamespecifier)
@@ -2378,10 +2352,9 @@ class CPP14Parser ( Parser ):
                         self.state = 440
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if _la==CPP14Parser.Template:
+                        if _la == CPP14Parser.Template:
                             self.state = 439
                             self.match(CPP14Parser.Template)
-
 
                         self.state = 442
                         self.simpletemplateid()
@@ -2389,10 +2362,9 @@ class CPP14Parser ( Parser ):
                         self.match(CPP14Parser.Doublecolon)
                         pass
 
-             
                 self.state = 449
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 11, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2404,35 +2376,31 @@ class CPP14Parser ( Parser ):
 
     class CapturedefaultContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_capturedefault
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCapturedefault" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCapturedefault"):
                 listener.enterCapturedefault(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCapturedefault" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCapturedefault"):
                 listener.exitCapturedefault(self)
-
-
-
 
     def capturedefault(self):
 
         localctx = CPP14Parser.CapturedefaultContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_capturedefault)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 450
             _la = self._input.LA(1)
-            if not(_la==CPP14Parser.And or _la==CPP14Parser.Assign):
+            if not (_la == CPP14Parser.And or _la == CPP14Parser.Assign):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2447,32 +2415,28 @@ class CPP14Parser ( Parser ):
 
     class CapturelistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def capture(self):
-            return self.getTypedRuleContext(CPP14Parser.CaptureContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CaptureContext, 0)
 
         def capturelist(self):
-            return self.getTypedRuleContext(CPP14Parser.CapturelistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CapturelistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_capturelist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCapturelist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCapturelist"):
                 listener.enterCapturelist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCapturelist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCapturelist"):
                 listener.exitCapturelist(self)
 
-
-
-    def capturelist(self, _p:int=0):
+    def capturelist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.CapturelistContext(self, self._ctx, _parentState)
@@ -2485,18 +2449,17 @@ class CPP14Parser ( Parser ):
             self.capture()
             self.state = 455
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 12, self._ctx)
             if la_ == 1:
                 self.state = 454
                 self.match(CPP14Parser.Ellipsis)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 465
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 14, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -2512,15 +2475,14 @@ class CPP14Parser ( Parser ):
                     self.capture()
                     self.state = 461
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 13, self._ctx)
                     if la_ == 1:
                         self.state = 460
                         self.match(CPP14Parser.Ellipsis)
 
-             
                 self.state = 467
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 14, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2532,7 +2494,7 @@ class CPP14Parser ( Parser ):
 
     class CaptureContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2543,22 +2505,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.This, 0)
 
         def initializer(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_capture
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCapture" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCapture"):
                 listener.enterCapture(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCapture" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCapture"):
                 listener.exitCapture(self)
-
-
-
 
     def capture(self):
 
@@ -2567,7 +2525,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 477
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 15, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 468
@@ -2617,48 +2575,41 @@ class CPP14Parser ( Parser ):
 
     class LambdadeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def parameterdeclarationclause(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationclauseContext, 0)
 
         def Mutable(self):
             return self.getToken(CPP14Parser.Mutable, 0)
 
         def exceptionspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.ExceptionspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExceptionspecificationContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def trailingreturntype(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_lambdadeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLambdadeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLambdadeclarator"):
                 listener.enterLambdadeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLambdadeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLambdadeclarator"):
                 listener.exitLambdadeclarator(self)
-
-
-
 
     def lambdadeclarator(self):
 
         localctx = CPP14Parser.LambdadeclaratorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_lambdadeclarator)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 479
@@ -2670,31 +2621,28 @@ class CPP14Parser ( Parser ):
             self.state = 483
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Mutable:
+            if _la == CPP14Parser.Mutable:
                 self.state = 482
                 self.match(CPP14Parser.Mutable)
-
 
             self.state = 486
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Noexcept or _la==CPP14Parser.Throw:
+            if _la == CPP14Parser.Noexcept or _la == CPP14Parser.Throw:
                 self.state = 485
                 self.exceptionspecification()
-
 
             self.state = 489
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+            if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                 self.state = 488
                 self.attributespecifierseq(0)
-
 
             self.state = 492
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Arrow:
+            if _la == CPP14Parser.Arrow:
                 self.state = 491
                 self.trailingreturntype()
 
@@ -2709,40 +2657,33 @@ class CPP14Parser ( Parser ):
 
     class PostfixexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def primaryexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.PrimaryexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PrimaryexpressionContext, 0)
 
         def simpletypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletypespecifierContext, 0)
 
         def expressionlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext, 0)
 
         def typenamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TypenamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypenamespecifierContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def Dynamic_cast(self):
             return self.getToken(CPP14Parser.Dynamic_cast, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def Static_cast(self):
             return self.getToken(CPP14Parser.Static_cast, 0)
@@ -2757,46 +2698,41 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Typeid, 0)
 
         def postfixexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.PostfixexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PostfixexpressionContext, 0)
 
         def idexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
 
         def pseudodestructorname(self):
-            return self.getTypedRuleContext(CPP14Parser.PseudodestructornameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PseudodestructornameContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_postfixexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPostfixexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPostfixexpression"):
                 listener.enterPostfixexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPostfixexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPostfixexpression"):
                 listener.exitPostfixexpression(self)
 
-
-
-    def postfixexpression(self, _p:int=0):
+    def postfixexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.PostfixexpressionContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 22
         self.enterRecursionRule(localctx, 22, self.RULE_postfixexpression, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 558
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,22,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 22, self._ctx)
             if la_ == 1:
                 self.state = 495
                 self.primaryexpression()
@@ -2810,10 +2746,34 @@ class CPP14Parser ( Parser ):
                 self.state = 499
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (
+                    1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (
+                    1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (
+                    1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (
+                    1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (
+                    1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 498
                     self.expressionlist()
-
 
                 self.state = 501
                 self.match(CPP14Parser.RightParen)
@@ -2827,10 +2787,34 @@ class CPP14Parser ( Parser ):
                 self.state = 506
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (
+                    1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (
+                    1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (
+                    1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (
+                    1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (
+                    1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 505
                     self.expressionlist()
-
 
                 self.state = 508
                 self.match(CPP14Parser.RightParen)
@@ -2940,19 +2924,18 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.RightParen)
                 pass
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 600
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 27, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 598
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 26, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.PostfixexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_postfixexpression)
@@ -2995,10 +2978,38 @@ class CPP14Parser ( Parser ):
                         self.state = 573
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (
+                            1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                            1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (
+                            1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (
+                            1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (
+                            1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                            1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (
+                            1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                            1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                            1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                                (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (
+                            CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (
+                            1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (
+                            1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (
+                            1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (
+                            1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (
+                            1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (
+                            1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (
+                            1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                            1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                            1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                            1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                                (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                                (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                                1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                            1 << (CPP14Parser.Stringliteral - 132)) | (
+                                        1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                             self.state = 572
                             self.expressionlist()
-
 
                         self.state = 575
                         self.match(CPP14Parser.RightParen)
@@ -3016,10 +3027,9 @@ class CPP14Parser ( Parser ):
                         self.state = 579
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if _la==CPP14Parser.Template:
+                        if _la == CPP14Parser.Template:
                             self.state = 578
                             self.match(CPP14Parser.Template)
-
 
                         self.state = 581
                         self.idexpression()
@@ -3037,10 +3047,9 @@ class CPP14Parser ( Parser ):
                         self.state = 585
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if _la==CPP14Parser.Template:
+                        if _la == CPP14Parser.Template:
                             self.state = 584
                             self.match(CPP14Parser.Template)
-
 
                         self.state = 587
                         self.idexpression()
@@ -3094,10 +3103,9 @@ class CPP14Parser ( Parser ):
                         self.match(CPP14Parser.MinusMinus)
                         pass
 
-             
                 self.state = 602
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,27,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 27, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3109,27 +3117,23 @@ class CPP14Parser ( Parser ):
 
     class ExpressionlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def initializerlist(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_expressionlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpressionlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExpressionlist"):
                 listener.enterExpressionlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpressionlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExpressionlist"):
                 listener.exitExpressionlist(self)
-
-
-
 
     def expressionlist(self):
 
@@ -3149,64 +3153,56 @@ class CPP14Parser ( Parser ):
 
     class PseudodestructornameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def thetypename(self, i:int=None):
+        def thetypename(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(CPP14Parser.ThetypenameContext)
             else:
-                return self.getTypedRuleContext(CPP14Parser.ThetypenameContext,i)
-
+                return self.getTypedRuleContext(CPP14Parser.ThetypenameContext, i)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def decltypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_pseudodestructorname
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPseudodestructorname" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPseudodestructorname"):
                 listener.enterPseudodestructorname(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPseudodestructorname" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPseudodestructorname"):
                 listener.exitPseudodestructorname(self)
-
-
-
 
     def pseudodestructorname(self):
 
         localctx = CPP14Parser.PseudodestructornameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_pseudodestructorname)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 627
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,30,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 30, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 606
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 28, self._ctx)
                 if la_ == 1:
                     self.state = 605
                     self.nestednamespecifier(0)
-
 
                 self.state = 608
                 self.thetypename()
@@ -3239,10 +3235,9 @@ class CPP14Parser ( Parser ):
                 self.state = 621
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Decltype or _la==CPP14Parser.Doublecolon or _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Decltype or _la == CPP14Parser.Doublecolon or _la == CPP14Parser.Identifier:
                     self.state = 620
                     self.nestednamespecifier(0)
-
 
                 self.state = 623
                 self.match(CPP14Parser.Tilde)
@@ -3269,36 +3264,30 @@ class CPP14Parser ( Parser ):
 
     class UnaryexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def postfixexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.PostfixexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PostfixexpressionContext, 0)
 
         def unaryincdecexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.UnaryincdecexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnaryincdecexpressionContext, 0)
 
         def unaryoperator(self):
-            return self.getTypedRuleContext(CPP14Parser.UnaryoperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnaryoperatorContext, 0)
 
         def castexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext, 0)
 
         def Sizeof(self):
             return self.getToken(CPP14Parser.Sizeof, 0)
 
         def unaryexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.UnaryexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnaryexpressionContext, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
@@ -3310,30 +3299,24 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Noexcept, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def newexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.NewexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NewexpressionContext, 0)
 
         def deleteexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.DeleteexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeleteexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_unaryexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnaryexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUnaryexpression"):
                 listener.enterUnaryexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnaryexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUnaryexpression"):
                 listener.exitUnaryexpression(self)
-
-
-
 
     def unaryexpression(self):
 
@@ -3342,7 +3325,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 658
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,31,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 31, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 629
@@ -3444,27 +3427,23 @@ class CPP14Parser ( Parser ):
 
     class UnaryincdecexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def castexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_unaryincdecexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnaryincdecexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUnaryincdecexpression"):
                 listener.enterUnaryincdecexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnaryincdecexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUnaryincdecexpression"):
                 listener.exitUnaryincdecexpression(self)
-
-
-
 
     def unaryincdecexpression(self):
 
@@ -3501,35 +3480,35 @@ class CPP14Parser ( Parser ):
 
     class UnaryoperatorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_unaryoperator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnaryoperator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUnaryoperator"):
                 listener.enterUnaryoperator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnaryoperator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUnaryoperator"):
                 listener.exitUnaryoperator(self)
-
-
-
 
     def unaryoperator(self):
 
         localctx = CPP14Parser.UnaryoperatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_unaryoperator)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 666
             _la = self._input.LA(1)
-            if not(((((_la - 84)) & ~0x3f) == 0 and ((1 << (_la - 84)) & ((1 << (CPP14Parser.Plus - 84)) | (1 << (CPP14Parser.Minus - 84)) | (1 << (CPP14Parser.Star - 84)) | (1 << (CPP14Parser.And - 84)) | (1 << (CPP14Parser.Or - 84)) | (1 << (CPP14Parser.Tilde - 84)) | (1 << (CPP14Parser.Not - 84)))) != 0)):
+            if not (((((_la - 84)) & ~0x3f) == 0 and ((1 << (_la - 84)) & (
+                                    (1 << (CPP14Parser.Plus - 84)) | (1 << (CPP14Parser.Minus - 84)) | (
+                                1 << (CPP14Parser.Star - 84)) | (1 << (CPP14Parser.And - 84)) | (
+                        1 << (CPP14Parser.Or - 84)) | (1 << (CPP14Parser.Tilde - 84)) | (
+                1 << (CPP14Parser.Not - 84)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3544,7 +3523,7 @@ class CPP14Parser ( Parser ):
 
     class NewexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3552,85 +3531,73 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.New, 0)
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def newplacement(self):
-            return self.getTypedRuleContext(CPP14Parser.NewplacementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NewplacementContext, 0)
 
         def newdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NewdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NewdeclaratorContext, 0)
 
         def newinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.NewinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NewinitializerContext, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_newexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNewexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNewexpression"):
                 listener.enterNewexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNewexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNewexpression"):
                 listener.exitNewexpression(self)
-
-
-
 
     def newexpression(self):
 
         localctx = CPP14Parser.NewexpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_newexpression)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 695
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,40,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 40, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 669
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Doublecolon:
+                if _la == CPP14Parser.Doublecolon:
                     self.state = 668
                     self.match(CPP14Parser.Doublecolon)
-
 
                 self.state = 671
                 self.match(CPP14Parser.New)
                 self.state = 673
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.LeftParen:
+                if _la == CPP14Parser.LeftParen:
                     self.state = 672
                     self.newplacement()
-
 
                 self.state = 675
                 self.typespecifierseq()
                 self.state = 677
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,35,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 35, self._ctx)
                 if la_ == 1:
                     self.state = 676
                     self.newdeclarator()
 
-
                 self.state = 680
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,36,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 36, self._ctx)
                 if la_ == 1:
                     self.state = 679
                     self.newinitializer()
-
 
                 pass
 
@@ -3639,20 +3606,18 @@ class CPP14Parser ( Parser ):
                 self.state = 683
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Doublecolon:
+                if _la == CPP14Parser.Doublecolon:
                     self.state = 682
                     self.match(CPP14Parser.Doublecolon)
-
 
                 self.state = 685
                 self.match(CPP14Parser.New)
                 self.state = 687
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,38,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 38, self._ctx)
                 if la_ == 1:
                     self.state = 686
                     self.newplacement()
-
 
                 self.state = 689
                 self.match(CPP14Parser.LeftParen)
@@ -3662,11 +3627,10 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.RightParen)
                 self.state = 693
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,39,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 39, self._ctx)
                 if la_ == 1:
                     self.state = 692
                     self.newinitializer()
-
 
                 pass
 
@@ -3681,27 +3645,23 @@ class CPP14Parser ( Parser ):
 
     class NewplacementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expressionlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_newplacement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNewplacement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNewplacement"):
                 listener.enterNewplacement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNewplacement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNewplacement"):
                 listener.exitNewplacement(self)
-
-
-
 
     def newplacement(self):
 
@@ -3725,35 +3685,29 @@ class CPP14Parser ( Parser ):
 
     class NewdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def ptroperator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext, 0)
 
         def newdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NewdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NewdeclaratorContext, 0)
 
         def noptrnewdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrnewdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrnewdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_newdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNewdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNewdeclarator"):
                 listener.enterNewdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNewdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNewdeclarator"):
                 listener.exitNewdeclarator(self)
-
-
-
 
     def newdeclarator(self):
 
@@ -3763,17 +3717,17 @@ class CPP14Parser ( Parser ):
             self.state = 706
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
+            if token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd,
+                         CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 701
                 self.ptroperator()
                 self.state = 703
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,41,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 41, self._ctx)
                 if la_ == 1:
                     self.state = 702
                     self.newdeclarator()
-
 
                 pass
             elif token in [CPP14Parser.LeftBracket]:
@@ -3794,40 +3748,34 @@ class CPP14Parser ( Parser ):
 
     class NoptrnewdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def noptrnewdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrnewdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrnewdeclaratorContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_noptrnewdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNoptrnewdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNoptrnewdeclarator"):
                 listener.enterNoptrnewdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNoptrnewdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNoptrnewdeclarator"):
                 listener.exitNoptrnewdeclarator(self)
 
-
-
-    def noptrnewdeclarator(self, _p:int=0):
+    def noptrnewdeclarator(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.NoptrnewdeclaratorContext(self, self._ctx, _parentState)
@@ -3844,18 +3792,17 @@ class CPP14Parser ( Parser ):
             self.match(CPP14Parser.RightBracket)
             self.state = 713
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,43,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 43, self._ctx)
             if la_ == 1:
                 self.state = 712
                 self.attributespecifierseq(0)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 724
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,45,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 45, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -3873,15 +3820,14 @@ class CPP14Parser ( Parser ):
                     self.match(CPP14Parser.RightBracket)
                     self.state = 720
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,44,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 44, self._ctx)
                     if la_ == 1:
                         self.state = 719
                         self.attributespecifierseq(0)
 
-             
                 self.state = 726
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,45,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 45, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -3893,37 +3839,32 @@ class CPP14Parser ( Parser ):
 
     class NewinitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expressionlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_newinitializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNewinitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNewinitializer"):
                 listener.enterNewinitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNewinitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNewinitializer"):
                 listener.exitNewinitializer(self)
-
-
-
 
     def newinitializer(self):
 
         localctx = CPP14Parser.NewinitializerContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_newinitializer)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 733
             self._errHandler.sync(self)
@@ -3935,10 +3876,34 @@ class CPP14Parser ( Parser ):
                 self.state = 729
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (
+                    1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (
+                    1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (
+                    1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (
+                    1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (
+                    1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 728
                     self.expressionlist()
-
 
                 self.state = 731
                 self.match(CPP14Parser.RightParen)
@@ -3961,7 +3926,7 @@ class CPP14Parser ( Parser ):
 
     class DeleteexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -3969,41 +3934,36 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Delete, 0)
 
         def castexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_deleteexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeleteexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeleteexpression"):
                 listener.enterDeleteexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeleteexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeleteexpression"):
                 listener.exitDeleteexpression(self)
-
-
-
 
     def deleteexpression(self):
 
         localctx = CPP14Parser.DeleteexpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_deleteexpression)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 747
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,50,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 50, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 736
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Doublecolon:
+                if _la == CPP14Parser.Doublecolon:
                     self.state = 735
                     self.match(CPP14Parser.Doublecolon)
-
 
                 self.state = 738
                 self.match(CPP14Parser.Delete)
@@ -4016,10 +3976,9 @@ class CPP14Parser ( Parser ):
                 self.state = 741
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Doublecolon:
+                if _la == CPP14Parser.Doublecolon:
                     self.state = 740
                     self.match(CPP14Parser.Doublecolon)
-
 
                 self.state = 743
                 self.match(CPP14Parser.Delete)
@@ -4042,35 +4001,29 @@ class CPP14Parser ( Parser ):
 
     class CastexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def unaryexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.UnaryexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnaryexpressionContext, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def castexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_castexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCastexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCastexpression"):
                 listener.enterCastexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCastexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCastexpression"):
                 listener.exitCastexpression(self)
-
-
-
 
     def castexpression(self):
 
@@ -4079,7 +4032,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 755
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,51,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 51, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 749
@@ -4109,32 +4062,28 @@ class CPP14Parser ( Parser ):
 
     class PmexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def castexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CastexpressionContext, 0)
 
         def pmexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.PmexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PmexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_pmexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPmexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPmexpression"):
                 listener.enterPmexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPmexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPmexpression"):
                 listener.exitPmexpression(self)
 
-
-
-    def pmexpression(self, _p:int=0):
+    def pmexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.PmexpressionContext(self, self._ctx, _parentState)
@@ -4148,15 +4097,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 768
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,53,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 53, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 766
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,52,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 52, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.PmexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_pmexpression)
@@ -4183,10 +4132,9 @@ class CPP14Parser ( Parser ):
                         self.castexpression()
                         pass
 
-             
                 self.state = 770
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,53,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 53, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4198,32 +4146,28 @@ class CPP14Parser ( Parser ):
 
     class MultiplicativeexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def pmexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.PmexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PmexpressionContext, 0)
 
         def multiplicativeexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.MultiplicativeexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MultiplicativeexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_multiplicativeexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMultiplicativeexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMultiplicativeexpression"):
                 listener.enterMultiplicativeexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMultiplicativeexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMultiplicativeexpression"):
                 listener.exitMultiplicativeexpression(self)
 
-
-
-    def multiplicativeexpression(self, _p:int=0):
+    def multiplicativeexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.MultiplicativeexpressionContext(self, self._ctx, _parentState)
@@ -4237,15 +4181,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 785
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,55,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 55, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 783
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,54,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 54, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.MultiplicativeexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_multiplicativeexpression)
@@ -4285,10 +4229,9 @@ class CPP14Parser ( Parser ):
                         self.pmexpression(0)
                         pass
 
-             
                 self.state = 787
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,55,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 55, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4300,32 +4243,28 @@ class CPP14Parser ( Parser ):
 
     class AdditiveexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def multiplicativeexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.MultiplicativeexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MultiplicativeexpressionContext, 0)
 
         def additiveexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AdditiveexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AdditiveexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_additiveexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAdditiveexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAdditiveexpression"):
                 listener.enterAdditiveexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAdditiveexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAdditiveexpression"):
                 listener.exitAdditiveexpression(self)
 
-
-
-    def additiveexpression(self, _p:int=0):
+    def additiveexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.AdditiveexpressionContext(self, self._ctx, _parentState)
@@ -4339,15 +4278,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 799
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,57,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 57, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 797
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,56,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 56, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.AdditiveexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_additiveexpression)
@@ -4374,10 +4313,9 @@ class CPP14Parser ( Parser ):
                         self.multiplicativeexpression(0)
                         pass
 
-             
                 self.state = 801
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,57,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 57, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4389,36 +4327,31 @@ class CPP14Parser ( Parser ):
 
     class ShiftexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def additiveexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AdditiveexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AdditiveexpressionContext, 0)
 
         def shiftexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ShiftexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ShiftexpressionContext, 0)
 
         def rightShift(self):
-            return self.getTypedRuleContext(CPP14Parser.RightShiftContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RightShiftContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_shiftexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterShiftexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterShiftexpression"):
                 listener.enterShiftexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitShiftexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitShiftexpression"):
                 listener.exitShiftexpression(self)
 
-
-
-    def shiftexpression(self, _p:int=0):
+    def shiftexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.ShiftexpressionContext(self, self._ctx, _parentState)
@@ -4432,15 +4365,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 814
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,59,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 59, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 812
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,58,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 58, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.ShiftexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_shiftexpression)
@@ -4467,10 +4400,9 @@ class CPP14Parser ( Parser ):
                         self.additiveexpression(0)
                         pass
 
-             
                 self.state = 816
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,59,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 59, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4482,32 +4414,28 @@ class CPP14Parser ( Parser ):
 
     class RelationalexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def shiftexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ShiftexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ShiftexpressionContext, 0)
 
         def relationalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.RelationalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RelationalexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_relationalexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRelationalexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRelationalexpression"):
                 listener.enterRelationalexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRelationalexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRelationalexpression"):
                 listener.exitRelationalexpression(self)
 
-
-
-    def relationalexpression(self, _p:int=0):
+    def relationalexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.RelationalexpressionContext(self, self._ctx, _parentState)
@@ -4521,15 +4449,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 834
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,61,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 61, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 832
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,60,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 60, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.RelationalexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_relationalexpression)
@@ -4582,10 +4510,9 @@ class CPP14Parser ( Parser ):
                         self.shiftexpression(0)
                         pass
 
-             
                 self.state = 836
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,61,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 61, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4597,32 +4524,28 @@ class CPP14Parser ( Parser ):
 
     class EqualityexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def relationalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.RelationalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RelationalexpressionContext, 0)
 
         def equalityexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.EqualityexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EqualityexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_equalityexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEqualityexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEqualityexpression"):
                 listener.enterEqualityexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEqualityexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEqualityexpression"):
                 listener.exitEqualityexpression(self)
 
-
-
-    def equalityexpression(self, _p:int=0):
+    def equalityexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.EqualityexpressionContext(self, self._ctx, _parentState)
@@ -4636,15 +4559,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 848
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,63,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 63, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 846
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,62,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 62, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.EqualityexpressionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_equalityexpression)
@@ -4671,10 +4594,9 @@ class CPP14Parser ( Parser ):
                         self.relationalexpression(0)
                         pass
 
-             
                 self.state = 850
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,63,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 63, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4686,32 +4608,28 @@ class CPP14Parser ( Parser ):
 
     class AndexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def equalityexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.EqualityexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EqualityexpressionContext, 0)
 
         def andexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AndexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AndexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_andexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAndexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAndexpression"):
                 listener.enterAndexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAndexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAndexpression"):
                 listener.exitAndexpression(self)
 
-
-
-    def andexpression(self, _p:int=0):
+    def andexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.AndexpressionContext(self, self._ctx, _parentState)
@@ -4725,9 +4643,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 859
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,64,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 64, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -4740,10 +4658,10 @@ class CPP14Parser ( Parser ):
                     self.state = 855
                     self.match(CPP14Parser.And)
                     self.state = 856
-                    self.equalityexpression(0) 
+                    self.equalityexpression(0)
                 self.state = 861
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,64,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 64, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4755,32 +4673,28 @@ class CPP14Parser ( Parser ):
 
     class ExclusiveorexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def andexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AndexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AndexpressionContext, 0)
 
         def exclusiveorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExclusiveorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExclusiveorexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_exclusiveorexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExclusiveorexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExclusiveorexpression"):
                 listener.enterExclusiveorexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExclusiveorexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExclusiveorexpression"):
                 listener.exitExclusiveorexpression(self)
 
-
-
-    def exclusiveorexpression(self, _p:int=0):
+    def exclusiveorexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.ExclusiveorexpressionContext(self, self._ctx, _parentState)
@@ -4794,9 +4708,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 870
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,65,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 65, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -4809,10 +4723,10 @@ class CPP14Parser ( Parser ):
                     self.state = 866
                     self.match(CPP14Parser.Caret)
                     self.state = 867
-                    self.andexpression(0) 
+                    self.andexpression(0)
                 self.state = 872
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,65,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 65, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4824,32 +4738,28 @@ class CPP14Parser ( Parser ):
 
     class InclusiveorexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def exclusiveorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExclusiveorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExclusiveorexpressionContext, 0)
 
         def inclusiveorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.InclusiveorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InclusiveorexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_inclusiveorexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInclusiveorexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInclusiveorexpression"):
                 listener.enterInclusiveorexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInclusiveorexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInclusiveorexpression"):
                 listener.exitInclusiveorexpression(self)
 
-
-
-    def inclusiveorexpression(self, _p:int=0):
+    def inclusiveorexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.InclusiveorexpressionContext(self, self._ctx, _parentState)
@@ -4863,9 +4773,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 881
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,66,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 66, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -4878,10 +4788,10 @@ class CPP14Parser ( Parser ):
                     self.state = 877
                     self.match(CPP14Parser.Or)
                     self.state = 878
-                    self.exclusiveorexpression(0) 
+                    self.exclusiveorexpression(0)
                 self.state = 883
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,66,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 66, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4893,32 +4803,28 @@ class CPP14Parser ( Parser ):
 
     class LogicalandexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def inclusiveorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.InclusiveorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InclusiveorexpressionContext, 0)
 
         def logicalandexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalandexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalandexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_logicalandexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLogicalandexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLogicalandexpression"):
                 listener.enterLogicalandexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLogicalandexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLogicalandexpression"):
                 listener.exitLogicalandexpression(self)
 
-
-
-    def logicalandexpression(self, _p:int=0):
+    def logicalandexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.LogicalandexpressionContext(self, self._ctx, _parentState)
@@ -4932,9 +4838,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 892
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,67,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 67, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -4947,10 +4853,10 @@ class CPP14Parser ( Parser ):
                     self.state = 888
                     self.match(CPP14Parser.AndAnd)
                     self.state = 889
-                    self.inclusiveorexpression(0) 
+                    self.inclusiveorexpression(0)
                 self.state = 894
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,67,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 67, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -4962,32 +4868,28 @@ class CPP14Parser ( Parser ):
 
     class LogicalorexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def logicalandexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalandexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalandexpressionContext, 0)
 
         def logicalorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_logicalorexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLogicalorexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLogicalorexpression"):
                 listener.enterLogicalorexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLogicalorexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLogicalorexpression"):
                 listener.exitLogicalorexpression(self)
 
-
-
-    def logicalorexpression(self, _p:int=0):
+    def logicalorexpression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.LogicalorexpressionContext(self, self._ctx, _parentState)
@@ -5001,9 +4903,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 903
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,68,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 68, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -5016,10 +4918,10 @@ class CPP14Parser ( Parser ):
                     self.state = 899
                     self.match(CPP14Parser.OrOr)
                     self.state = 900
-                    self.logicalandexpression(0) 
+                    self.logicalandexpression(0)
                 self.state = 905
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,68,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 68, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -5031,35 +4933,29 @@ class CPP14Parser ( Parser ):
 
     class ConditionalexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def logicalorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext, 0)
 
         def ternaryconditionalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.TernaryconditionalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TernaryconditionalexpressionContext, 0)
 
         def unaryconditionalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.UnaryconditionalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnaryconditionalexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_conditionalexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConditionalexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConditionalexpression"):
                 listener.enterConditionalexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConditionalexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConditionalexpression"):
                 listener.exitConditionalexpression(self)
-
-
-
 
     def conditionalexpression(self):
 
@@ -5068,7 +4964,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 909
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,69,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 69, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 906
@@ -5098,35 +4994,29 @@ class CPP14Parser ( Parser ):
 
     class TernaryconditionalexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def logicalorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def assignmentexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_ternaryconditionalexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTernaryconditionalexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTernaryconditionalexpression"):
                 listener.enterTernaryconditionalexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTernaryconditionalexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTernaryconditionalexpression"):
                 listener.exitTernaryconditionalexpression(self)
-
-
-
 
     def ternaryconditionalexpression(self):
 
@@ -5154,31 +5044,26 @@ class CPP14Parser ( Parser ):
 
     class UnaryconditionalexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def logicalorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext, 0)
 
         def assignmentexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_unaryconditionalexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUnaryconditionalexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUnaryconditionalexpression"):
                 listener.enterUnaryconditionalexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUnaryconditionalexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUnaryconditionalexpression"):
                 listener.exitUnaryconditionalexpression(self)
-
-
-
 
     def unaryconditionalexpression(self):
 
@@ -5204,43 +5089,35 @@ class CPP14Parser ( Parser ):
 
     class AssignmentexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def conditionalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConditionalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConditionalexpressionContext, 0)
 
         def logicalorexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LogicalorexpressionContext, 0)
 
         def assignmentoperator(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentoperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentoperatorContext, 0)
 
         def initializerclause(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext, 0)
 
         def throwexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ThrowexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThrowexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_assignmentexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssignmentexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAssignmentexpression"):
                 listener.enterAssignmentexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssignmentexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAssignmentexpression"):
                 listener.exitAssignmentexpression(self)
-
-
-
 
     def assignmentexpression(self):
 
@@ -5249,7 +5126,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 928
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,70,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 70, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 922
@@ -5283,27 +5160,23 @@ class CPP14Parser ( Parser ):
 
     class AssignmentoperatorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def rightShiftAssign(self):
-            return self.getTypedRuleContext(CPP14Parser.RightShiftAssignContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RightShiftAssignContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_assignmentoperator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssignmentoperator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAssignmentoperator"):
                 listener.enterAssignmentoperator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssignmentoperator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAssignmentoperator"):
                 listener.exitAssignmentoperator(self)
-
-
-
 
     def assignmentoperator(self):
 
@@ -5381,32 +5254,28 @@ class CPP14Parser ( Parser ):
 
     class ExpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def assignmentexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_expression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExpression"):
                 listener.enterExpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExpression"):
                 listener.exitExpression(self)
 
-
-
-    def expression(self, _p:int=0):
+    def expression(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.ExpressionContext(self, self._ctx, _parentState)
@@ -5420,9 +5289,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 951
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,72,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 72, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -5435,10 +5304,10 @@ class CPP14Parser ( Parser ):
                     self.state = 947
                     self.match(CPP14Parser.Comma)
                     self.state = 948
-                    self.assignmentexpression() 
+                    self.assignmentexpression()
                 self.state = 953
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,72,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 72, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -5450,27 +5319,23 @@ class CPP14Parser ( Parser ):
 
     class ConstantexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def conditionalexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConditionalexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConditionalexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_constantexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConstantexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConstantexpression"):
                 listener.enterConstantexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConstantexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConstantexpression"):
                 listener.exitConstantexpression(self)
-
-
-
 
     def constantexpression(self):
 
@@ -5490,7 +5355,7 @@ class CPP14Parser ( Parser ):
 
     class StatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5498,81 +5363,66 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def casestatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CasestatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CasestatementContext, 0)
 
         def defaultstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.DefaultstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DefaultstatementContext, 0)
 
         def expressionstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionstatementContext, 0)
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def selectionstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.SelectionstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SelectionstatementContext, 0)
 
         def iterationstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.IterationstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IterationstatementContext, 0)
 
         def jumpstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.JumpstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.JumpstatementContext, 0)
 
         def blockdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.BlockdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BlockdeclarationContext, 0)
 
         def tryblock(self):
-            return self.getTypedRuleContext(CPP14Parser.TryblockContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TryblockContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_statement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterStatement"):
                 listener.enterStatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitStatement"):
                 listener.exitStatement(self)
-
-
-
 
     def statement(self):
 
         localctx = CPP14Parser.StatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_statement)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 995
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,82,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 82, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 957
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 956
                     self.attributespecifierseq(0)
-
 
                 self.state = 959
                 self.match(CPP14Parser.Identifier)
@@ -5587,10 +5437,9 @@ class CPP14Parser ( Parser ):
                 self.state = 963
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 962
                     self.attributespecifierseq(0)
-
 
                 self.state = 965
                 self.casestatement()
@@ -5601,10 +5450,9 @@ class CPP14Parser ( Parser ):
                 self.state = 967
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 966
                     self.attributespecifierseq(0)
-
 
                 self.state = 969
                 self.defaultstatement()
@@ -5614,11 +5462,10 @@ class CPP14Parser ( Parser ):
                 self.enterOuterAlt(localctx, 4)
                 self.state = 971
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,76,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 76, self._ctx)
                 if la_ == 1:
                     self.state = 970
                     self.attributespecifierseq(0)
-
 
                 self.state = 973
                 self.expressionstatement()
@@ -5629,10 +5476,9 @@ class CPP14Parser ( Parser ):
                 self.state = 975
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 974
                     self.attributespecifierseq(0)
-
 
                 self.state = 977
                 self.compoundstatement()
@@ -5643,10 +5489,9 @@ class CPP14Parser ( Parser ):
                 self.state = 979
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 978
                     self.attributespecifierseq(0)
-
 
                 self.state = 981
                 self.selectionstatement()
@@ -5657,10 +5502,9 @@ class CPP14Parser ( Parser ):
                 self.state = 983
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 982
                     self.attributespecifierseq(0)
-
 
                 self.state = 985
                 self.iterationstatement()
@@ -5671,10 +5515,9 @@ class CPP14Parser ( Parser ):
                 self.state = 987
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 986
                     self.attributespecifierseq(0)
-
 
                 self.state = 989
                 self.jumpstatement()
@@ -5691,10 +5534,9 @@ class CPP14Parser ( Parser ):
                 self.state = 992
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 991
                     self.attributespecifierseq(0)
-
 
                 self.state = 994
                 self.tryblock()
@@ -5711,7 +5553,7 @@ class CPP14Parser ( Parser ):
 
     class CasestatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5719,26 +5561,21 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Case, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_casestatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCasestatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCasestatement"):
                 listener.enterCasestatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCasestatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCasestatement"):
                 listener.exitCasestatement(self)
-
-
-
 
     def casestatement(self):
 
@@ -5764,7 +5601,7 @@ class CPP14Parser ( Parser ):
 
     class DefaultstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5772,22 +5609,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Default, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_defaultstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDefaultstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDefaultstatement"):
                 listener.enterDefaultstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDefaultstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDefaultstatement"):
                 listener.exitDefaultstatement(self)
-
-
-
 
     def defaultstatement(self):
 
@@ -5811,42 +5644,62 @@ class CPP14Parser ( Parser ):
 
     class ExpressionstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_expressionstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpressionstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExpressionstatement"):
                 listener.enterExpressionstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpressionstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExpressionstatement"):
                 listener.exitExpressionstatement(self)
-
-
-
 
     def expressionstatement(self):
 
         localctx = CPP14Parser.ExpressionstatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_expressionstatement)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1007
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and (
+                (1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (
+                1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (
+                1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (
+                1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                    (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                    (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                    1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                1 << (CPP14Parser.Stringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                 self.state = 1006
                 self.expression(0)
-
 
             self.state = 1009
             self.match(CPP14Parser.Semi)
@@ -5860,33 +5713,29 @@ class CPP14Parser ( Parser ):
 
     class CompoundstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def statementseq(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_compoundstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCompoundstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCompoundstatement"):
                 listener.enterCompoundstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCompoundstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCompoundstatement"):
                 listener.exitCompoundstatement(self)
-
-
-
 
     def compoundstatement(self):
 
         localctx = CPP14Parser.CompoundstatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 92, self.RULE_compoundstatement)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1011
@@ -5894,10 +5743,48 @@ class CPP14Parser ( Parser ):
             self.state = 1013
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Asm) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Break) | (1 << CPP14Parser.Case) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Continue) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Default) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Do) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.For) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Goto) | (1 << CPP14Parser.If) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Return) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Switch) | (1 << CPP14Parser.This) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Try - 64)) | (1 << (CPP14Parser.Typedef - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Union - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Using - 64)) | (1 << (CPP14Parser.Virtual - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Volatile - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.While - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.AndAnd - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Semi - 64)) | (1 << (CPP14Parser.Ellipsis - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Alignof) | (
+                1 << CPP14Parser.Asm) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Break) | (
+                1 << CPP14Parser.Case) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Continue) | (
+                1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Default) | (1 << CPP14Parser.Delete) | (
+                1 << CPP14Parser.Do) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (
+                1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.For) | (
+                1 << CPP14Parser.Friend) | (1 << CPP14Parser.Goto) | (1 << CPP14Parser.If) | (
+                1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.New) | (
+                1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (
+                1 << CPP14Parser.Register) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Return) | (
+                1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Static_cast) | (
+                1 << CPP14Parser.Struct) | (1 << CPP14Parser.Switch) | (1 << CPP14Parser.This) | (
+                1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (
+                CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Try - 64)) | (
+                1 << (CPP14Parser.Typedef - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Union - 64)) | (
+                1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Using - 64)) | (
+                1 << (CPP14Parser.Virtual - 64)) | (1 << (CPP14Parser.Void - 64)) | (
+                1 << (CPP14Parser.Volatile - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                1 << (CPP14Parser.While - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (
+                1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (
+                1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (
+                1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.AndAnd - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                1 << (CPP14Parser.Semi - 64)) | (1 << (CPP14Parser.Ellipsis - 64)) | (
+                1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                    (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                    (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                    1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                1 << (CPP14Parser.Stringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                 self.state = 1012
                 self.statementseq(0)
-
 
             self.state = 1015
             self.match(CPP14Parser.RightBrace)
@@ -5911,32 +5798,28 @@ class CPP14Parser ( Parser ):
 
     class StatementseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def statementseq(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_statementseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStatementseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterStatementseq"):
                 listener.enterStatementseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStatementseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitStatementseq"):
                 listener.exitStatementseq(self)
 
-
-
-    def statementseq(self, _p:int=0):
+    def statementseq(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.StatementseqContext(self, self._ctx, _parentState)
@@ -5950,9 +5833,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1024
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,85,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 85, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -5963,10 +5846,10 @@ class CPP14Parser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 1021
-                    self.statement() 
+                    self.statement()
                 self.state = 1026
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,85,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 85, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -5978,7 +5861,7 @@ class CPP14Parser ( Parser ):
 
     class SelectionstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -5986,16 +5869,13 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.If, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(CPP14Parser.ConditionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConditionContext, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def elsestatement(self):
-            return self.getTypedRuleContext(CPP14Parser.ElsestatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ElsestatementContext, 0)
 
         def Switch(self):
             return self.getToken(CPP14Parser.Switch, 0)
@@ -6003,16 +5883,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_selectionstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSelectionstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSelectionstatement"):
                 listener.enterSelectionstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSelectionstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSelectionstatement"):
                 listener.exitSelectionstatement(self)
-
-
-
 
     def selectionstatement(self):
 
@@ -6021,7 +5898,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1046
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,86,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 86, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1027
@@ -6077,7 +5954,7 @@ class CPP14Parser ( Parser ):
 
     class ElsestatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -6085,22 +5962,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Else, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_elsestatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterElsestatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterElsestatement"):
                 listener.enterElsestatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitElsestatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitElsestatement"):
                 listener.exitElsestatement(self)
-
-
-
 
     def elsestatement(self):
 
@@ -6122,57 +5995,48 @@ class CPP14Parser ( Parser ):
 
     class ConditionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def initializerclause(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_condition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCondition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCondition"):
                 listener.enterCondition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCondition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCondition"):
                 listener.exitCondition(self)
-
-
-
 
     def condition(self):
 
         localctx = CPP14Parser.ConditionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 100, self.RULE_condition)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1067
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,89,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 89, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1051
@@ -6184,10 +6048,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1053
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1052
                     self.attributespecifierseq(0)
-
 
                 self.state = 1055
                 self.declspecifierseq()
@@ -6204,10 +6067,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1061
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1060
                     self.attributespecifierseq(0)
-
 
                 self.state = 1063
                 self.declspecifierseq()
@@ -6228,7 +6090,7 @@ class CPP14Parser ( Parser ):
 
     class IterationstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -6236,58 +6098,49 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.While, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(CPP14Parser.ConditionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConditionContext, 0)
 
         def statement(self):
-            return self.getTypedRuleContext(CPP14Parser.StatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.StatementContext, 0)
 
         def Do(self):
             return self.getToken(CPP14Parser.Do, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def For(self):
             return self.getToken(CPP14Parser.For, 0)
 
         def forinitstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.ForinitstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ForinitstatementContext, 0)
 
         def forrangedeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.ForrangedeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ForrangedeclarationContext, 0)
 
         def forrangeinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.ForrangeinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ForrangeinitializerContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_iterationstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIterationstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterIterationstatement"):
                 listener.enterIterationstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIterationstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitIterationstatement"):
                 listener.exitIterationstatement(self)
-
-
-
 
     def iterationstatement(self):
 
         localctx = CPP14Parser.IterationstatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 102, self.RULE_iterationstatement)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1104
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,92,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 92, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1069
@@ -6331,20 +6184,78 @@ class CPP14Parser ( Parser ):
                 self.state = 1087
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typedef - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Union - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Virtual - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Volatile - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Alignof) | (
+                    1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                    1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (
+                    1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Const_cast) | (
+                    1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (
+                    1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (
+                    1 << CPP14Parser.Extern) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (
+                    1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.New) | (
+                    1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (
+                    1 << CPP14Parser.Register) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (
+                    1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This) | (
+                    1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((
+                                                                                                                         1 << (
+                                                                                                                         CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typedef - 64)) | (
+                    1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (
+                    1 << (CPP14Parser.Union - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Virtual - 64)) | (1 << (CPP14Parser.Void - 64)) | (
+                    1 << (CPP14Parser.Volatile - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (
+                    1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                    1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                    1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                    1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                        (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                        (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                        1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                    1 << (CPP14Parser.Stringliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 1086
                     self.condition()
-
 
                 self.state = 1089
                 self.match(CPP14Parser.Semi)
                 self.state = 1091
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (
+                    1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                    1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                    1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                    1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                        (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                        (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                        1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                    1 << (CPP14Parser.Stringliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 1090
                     self.expression(0)
-
 
                 self.state = 1093
                 self.match(CPP14Parser.RightParen)
@@ -6381,31 +6292,26 @@ class CPP14Parser ( Parser ):
 
     class ForinitstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expressionstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionstatementContext, 0)
 
         def simpledeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpledeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpledeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_forinitstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterForinitstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterForinitstatement"):
                 listener.enterForinitstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitForinitstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitForinitstatement"):
                 listener.exitForinitstatement(self)
-
-
-
 
     def forinitstatement(self):
 
@@ -6414,7 +6320,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1108
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,93,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 93, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1106
@@ -6438,50 +6344,43 @@ class CPP14Parser ( Parser ):
 
     class ForrangedeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_forrangedeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterForrangedeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterForrangedeclaration"):
                 listener.enterForrangedeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitForrangedeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitForrangedeclaration"):
                 listener.exitForrangedeclaration(self)
-
-
-
 
     def forrangedeclaration(self):
 
         localctx = CPP14Parser.ForrangedeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 106, self.RULE_forrangedeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1111
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+            if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                 self.state = 1110
                 self.attributespecifierseq(0)
-
 
             self.state = 1113
             self.declspecifierseq()
@@ -6497,31 +6396,26 @@ class CPP14Parser ( Parser ):
 
     class ForrangeinitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_forrangeinitializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterForrangeinitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterForrangeinitializer"):
                 listener.enterForrangeinitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitForrangeinitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitForrangeinitializer"):
                 listener.exitForrangeinitializer(self)
-
-
-
 
     def forrangeinitializer(self):
 
@@ -6531,7 +6425,20 @@ class CPP14Parser ( Parser ):
             self.state = 1118
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Alignof, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32, CPP14Parser.Const_cast, CPP14Parser.Decltype, CPP14Parser.Delete, CPP14Parser.Double, CPP14Parser.Dynamic_cast, CPP14Parser.FalseToken, CPP14Parser.Float, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.New, CPP14Parser.Noexcept, CPP14Parser.Nullptr, CPP14Parser.Operator, CPP14Parser.Reinterpret_cast, CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Sizeof, CPP14Parser.Static_cast, CPP14Parser.This, CPP14Parser.Throw, CPP14Parser.TrueToken, CPP14Parser.Typeid, CPP14Parser.Typename, CPP14Parser.Unsigned, CPP14Parser.Void, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.LeftBracket, CPP14Parser.Plus, CPP14Parser.Minus, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Or, CPP14Parser.Tilde, CPP14Parser.Not, CPP14Parser.PlusPlus, CPP14Parser.MinusMinus, CPP14Parser.Doublecolon, CPP14Parser.Identifier, CPP14Parser.Integerliteral, CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral, CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral, CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
+            if token in [CPP14Parser.Alignof, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16,
+                         CPP14Parser.Char32, CPP14Parser.Const_cast, CPP14Parser.Decltype, CPP14Parser.Delete,
+                         CPP14Parser.Double, CPP14Parser.Dynamic_cast, CPP14Parser.FalseToken, CPP14Parser.Float,
+                         CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.New, CPP14Parser.Noexcept, CPP14Parser.Nullptr,
+                         CPP14Parser.Operator, CPP14Parser.Reinterpret_cast, CPP14Parser.Short, CPP14Parser.Signed,
+                         CPP14Parser.Sizeof, CPP14Parser.Static_cast, CPP14Parser.This, CPP14Parser.Throw,
+                         CPP14Parser.TrueToken, CPP14Parser.Typeid, CPP14Parser.Typename, CPP14Parser.Unsigned,
+                         CPP14Parser.Void, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.LeftBracket,
+                         CPP14Parser.Plus, CPP14Parser.Minus, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Or,
+                         CPP14Parser.Tilde, CPP14Parser.Not, CPP14Parser.PlusPlus, CPP14Parser.MinusMinus,
+                         CPP14Parser.Doublecolon, CPP14Parser.Identifier, CPP14Parser.Integerliteral,
+                         CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral,
+                         CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral,
+                         CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1116
                 self.expression(0)
@@ -6554,7 +6461,7 @@ class CPP14Parser ( Parser ):
 
     class JumpstatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -6568,40 +6475,34 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Return, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def gotostatement(self):
-            return self.getTypedRuleContext(CPP14Parser.GotostatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.GotostatementContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_jumpstatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterJumpstatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterJumpstatement"):
                 listener.enterJumpstatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitJumpstatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitJumpstatement"):
                 listener.exitJumpstatement(self)
-
-
-
 
     def jumpstatement(self):
 
         localctx = CPP14Parser.JumpstatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 110, self.RULE_jumpstatement)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1134
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,97,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 97, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1120
@@ -6625,10 +6526,35 @@ class CPP14Parser ( Parser ):
                 self.state = 1126
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (
+                    1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (
+                    1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (
+                    1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (
+                    1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or (
+                        (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                        (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                        1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                    1 << (CPP14Parser.Stringliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 1125
                     self.expression(0)
-
 
                 self.state = 1128
                 self.match(CPP14Parser.Semi)
@@ -6661,7 +6587,7 @@ class CPP14Parser ( Parser ):
 
     class GotostatementContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -6674,16 +6600,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_gotostatement
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGotostatement" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterGotostatement"):
                 listener.enterGotostatement(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGotostatement" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitGotostatement"):
                 listener.exitGotostatement(self)
-
-
-
 
     def gotostatement(self):
 
@@ -6707,32 +6630,28 @@ class CPP14Parser ( Parser ):
 
     class DeclarationseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declaration(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationContext, 0)
 
         def declarationseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_declarationseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclarationseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclarationseq"):
                 listener.enterDeclarationseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclarationseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclarationseq"):
                 listener.exitDeclarationseq(self)
 
-
-
-    def declarationseq(self, _p:int=0):
+    def declarationseq(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.DeclarationseqContext(self, self._ctx, _parentState)
@@ -6746,9 +6665,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1147
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,98,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 98, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -6759,10 +6678,10 @@ class CPP14Parser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 1144
-                    self.declaration() 
+                    self.declaration()
                 self.state = 1149
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,98,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 98, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -6774,59 +6693,47 @@ class CPP14Parser ( Parser ):
 
     class DeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def blockdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.BlockdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BlockdeclarationContext, 0)
 
         def functiondefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.FunctiondefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.FunctiondefinitionContext, 0)
 
         def templatedeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplatedeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplatedeclarationContext, 0)
 
         def explicitinstantiation(self):
-            return self.getTypedRuleContext(CPP14Parser.ExplicitinstantiationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExplicitinstantiationContext, 0)
 
         def explicitspecialization(self):
-            return self.getTypedRuleContext(CPP14Parser.ExplicitspecializationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExplicitspecializationContext, 0)
 
         def linkagespecification(self):
-            return self.getTypedRuleContext(CPP14Parser.LinkagespecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LinkagespecificationContext, 0)
 
         def namespacedefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacedefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacedefinitionContext, 0)
 
         def emptydeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.EmptydeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EmptydeclarationContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_declaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclaration"):
                 listener.enterDeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclaration"):
                 listener.exitDeclaration(self)
-
-
-
 
     def declaration(self):
 
@@ -6835,7 +6742,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1161
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,99,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 99, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1150
@@ -6903,17 +6810,15 @@ class CPP14Parser ( Parser ):
 
     class BlockdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def simpledeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpledeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpledeclarationContext, 0)
 
         def asmdefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.AsmdefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AsmdefinitionContext, 0)
 
         def Namespace(self):
             return self.getToken(CPP14Parser.Namespace, 0)
@@ -6922,60 +6827,49 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def qualifiednamespacespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.QualifiednamespacespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.QualifiednamespacespecifierContext, 0)
 
         def usingdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.UsingdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UsingdeclarationContext, 0)
 
         def usingdirective(self):
-            return self.getTypedRuleContext(CPP14Parser.UsingdirectiveContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UsingdirectiveContext, 0)
 
         def static_assertdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.Static_assertdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.Static_assertdeclarationContext, 0)
 
         def aliasdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.AliasdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AliasdeclarationContext, 0)
 
         def enumkey(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumkeyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumkeyContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def enumbase(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumbaseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumbaseContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_blockdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBlockdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBlockdeclaration"):
                 listener.enterBlockdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBlockdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBlockdeclaration"):
                 listener.exitBlockdeclaration(self)
-
-
-
 
     def blockdeclaration(self):
 
         localctx = CPP14Parser.BlockdeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 118, self.RULE_blockdeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1185
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,102,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 102, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1163
@@ -7033,20 +6927,18 @@ class CPP14Parser ( Parser ):
                 self.state = 1177
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1176
                     self.attributespecifierseq(0)
-
 
                 self.state = 1179
                 self.match(CPP14Parser.Identifier)
                 self.state = 1181
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1180
                     self.enumbase()
-
 
                 self.state = 1183
                 self.match(CPP14Parser.Semi)
@@ -7063,7 +6955,7 @@ class CPP14Parser ( Parser ):
 
     class AliasdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -7074,32 +6966,27 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_aliasdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAliasdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAliasdeclaration"):
                 listener.enterAliasdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAliasdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAliasdeclaration"):
                 listener.exitAliasdeclaration(self)
-
-
-
 
     def aliasdeclaration(self):
 
         localctx = CPP14Parser.AliasdeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 120, self.RULE_aliasdeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1187
@@ -7109,10 +6996,9 @@ class CPP14Parser ( Parser ):
             self.state = 1190
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+            if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                 self.state = 1189
                 self.attributespecifierseq(0)
-
 
             self.state = 1192
             self.match(CPP14Parser.Assign)
@@ -7130,62 +7016,68 @@ class CPP14Parser ( Parser ):
 
     class SimpledeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def initdeclaratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorlistContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_simpledeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimpledeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSimpledeclaration"):
                 listener.enterSimpledeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimpledeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSimpledeclaration"):
                 listener.exitSimpledeclaration(self)
-
-
-
 
     def simpledeclaration(self):
 
         localctx = CPP14Parser.SimpledeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_simpledeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1210
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32, CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Constexpr, CPP14Parser.Decltype, CPP14Parser.Double, CPP14Parser.Enum, CPP14Parser.Explicit, CPP14Parser.Extern, CPP14Parser.Float, CPP14Parser.Friend, CPP14Parser.Inline, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.Mutable, CPP14Parser.Operator, CPP14Parser.Register, CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Static, CPP14Parser.Struct, CPP14Parser.Thread_local, CPP14Parser.Typedef, CPP14Parser.Typename, CPP14Parser.Union, CPP14Parser.Unsigned, CPP14Parser.Virtual, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Tilde, CPP14Parser.AndAnd, CPP14Parser.Doublecolon, CPP14Parser.Semi, CPP14Parser.Ellipsis, CPP14Parser.Identifier]:
+            if token in [CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32,
+                         CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Constexpr, CPP14Parser.Decltype,
+                         CPP14Parser.Double, CPP14Parser.Enum, CPP14Parser.Explicit, CPP14Parser.Extern,
+                         CPP14Parser.Float, CPP14Parser.Friend, CPP14Parser.Inline, CPP14Parser.Int, CPP14Parser.Long,
+                         CPP14Parser.Mutable, CPP14Parser.Operator, CPP14Parser.Register, CPP14Parser.Short,
+                         CPP14Parser.Signed, CPP14Parser.Static, CPP14Parser.Struct, CPP14Parser.Thread_local,
+                         CPP14Parser.Typedef, CPP14Parser.Typename, CPP14Parser.Union, CPP14Parser.Unsigned,
+                         CPP14Parser.Virtual, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar,
+                         CPP14Parser.LeftParen, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Tilde,
+                         CPP14Parser.AndAnd, CPP14Parser.Doublecolon, CPP14Parser.Semi, CPP14Parser.Ellipsis,
+                         CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1197
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,104,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 104, self._ctx)
                 if la_ == 1:
                     self.state = 1196
                     self.declspecifierseq()
 
-
                 self.state = 1200
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Decltype or _la==CPP14Parser.Operator or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & ((1 << (CPP14Parser.LeftParen - 78)) | (1 << (CPP14Parser.Star - 78)) | (1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.Tilde - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
+                if _la == CPP14Parser.Decltype or _la == CPP14Parser.Operator or ((((_la - 78)) & ~0x3f) == 0 and (
+                    (1 << (_la - 78)) & ((1 << (CPP14Parser.LeftParen - 78)) | (1 << (CPP14Parser.Star - 78)) | (
+                    1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.Tilde - 78)) | (
+                    1 << (CPP14Parser.AndAnd - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (
+                    1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
                     self.state = 1199
                     self.initdeclaratorlist(0)
-
 
                 self.state = 1202
                 self.match(CPP14Parser.Semi)
@@ -7196,11 +7088,10 @@ class CPP14Parser ( Parser ):
                 self.attributespecifierseq(0)
                 self.state = 1205
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,106,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 106, self._ctx)
                 if la_ == 1:
                     self.state = 1204
                     self.declspecifierseq()
-
 
                 self.state = 1207
                 self.initdeclaratorlist(0)
@@ -7220,7 +7111,7 @@ class CPP14Parser ( Parser ):
 
     class Static_assertdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -7228,8 +7119,7 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Static_assert, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def Stringliteral(self):
             return self.getToken(CPP14Parser.Stringliteral, 0)
@@ -7237,16 +7127,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_static_assertdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStatic_assertdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterStatic_assertdeclaration"):
                 listener.enterStatic_assertdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStatic_assertdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitStatic_assertdeclaration"):
                 listener.exitStatic_assertdeclaration(self)
-
-
-
 
     def static_assertdeclaration(self):
 
@@ -7278,24 +7165,20 @@ class CPP14Parser ( Parser ):
 
     class EmptydeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_emptydeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEmptydeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEmptydeclaration"):
                 listener.enterEmptydeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEmptydeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEmptydeclaration"):
                 listener.exitEmptydeclaration(self)
-
-
-
 
     def emptydeclaration(self):
 
@@ -7315,7 +7198,7 @@ class CPP14Parser ( Parser ):
 
     class DeclspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -7335,8 +7218,7 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Mutable, 0)
 
         def typespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierContext, 0)
 
         def Inline(self):
             return self.getToken(CPP14Parser.Inline, 0)
@@ -7359,16 +7241,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_declspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclspecifier"):
                 listener.enterDeclspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclspecifier"):
                 listener.exitDeclspecifier(self)
-
-
-
 
     def declspecifier(self):
 
@@ -7403,7 +7282,12 @@ class CPP14Parser ( Parser ):
                 self.state = 1226
                 self.match(CPP14Parser.Mutable)
                 pass
-            elif token in [CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32, CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Decltype, CPP14Parser.Double, CPP14Parser.Enum, CPP14Parser.Float, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Struct, CPP14Parser.Typename, CPP14Parser.Union, CPP14Parser.Unsigned, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
+            elif token in [CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32,
+                           CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Decltype, CPP14Parser.Double,
+                           CPP14Parser.Enum, CPP14Parser.Float, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.Short,
+                           CPP14Parser.Signed, CPP14Parser.Struct, CPP14Parser.Typename, CPP14Parser.Union,
+                           CPP14Parser.Unsigned, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar,
+                           CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 1227
                 self.typespecifier()
@@ -7451,35 +7335,29 @@ class CPP14Parser ( Parser ):
 
     class DeclspecifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_declspecifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclspecifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclspecifierseq"):
                 listener.enterDeclspecifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclspecifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclspecifierseq"):
                 listener.exitDeclspecifierseq(self)
-
-
-
 
     def declspecifierseq(self):
 
@@ -7488,18 +7366,17 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1243
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,110,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 110, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1236
                 self.declspecifier()
                 self.state = 1238
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,109,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 109, self._ctx)
                 if la_ == 1:
                     self.state = 1237
                     self.attributespecifierseq(0)
-
 
                 pass
 
@@ -7522,49 +7399,42 @@ class CPP14Parser ( Parser ):
 
     class TypespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def trailingtypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierContext, 0)
 
         def classspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassspecifierContext, 0)
 
         def enumhead(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumheadContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumheadContext, 0)
 
         def enumeratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumeratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumeratorlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_typespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypespecifier"):
                 listener.enterTypespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypespecifier"):
                 listener.exitTypespecifier(self)
-
-
-
 
     def typespecifier(self):
 
         localctx = CPP14Parser.TypespecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 132, self.RULE_typespecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1260
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,112,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 112, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1245
@@ -7586,10 +7456,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1250
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 1249
                     self.enumeratorlist(0)
-
 
                 self.state = 1252
                 self.match(CPP14Parser.RightBrace)
@@ -7620,32 +7489,27 @@ class CPP14Parser ( Parser ):
 
     class TrailingtypespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def simpletypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletypespecifierContext, 0)
 
         def classkey(self):
-            return self.getTypedRuleContext(CPP14Parser.ClasskeyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClasskeyContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
@@ -7654,36 +7518,31 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Enum, 0)
 
         def typenamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TypenamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypenamespecifierContext, 0)
 
         def cvqualifier(self):
-            return self.getTypedRuleContext(CPP14Parser.CvqualifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CvqualifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_trailingtypespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTrailingtypespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTrailingtypespecifier"):
                 listener.enterTrailingtypespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTrailingtypespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTrailingtypespecifier"):
                 listener.exitTrailingtypespecifier(self)
-
-
-
 
     def trailingtypespecifier(self):
 
         localctx = CPP14Parser.TrailingtypespecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 134, self.RULE_trailingtypespecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1289
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,117,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 117, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1262
@@ -7697,18 +7556,16 @@ class CPP14Parser ( Parser ):
                 self.state = 1265
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1264
                     self.attributespecifierseq(0)
 
-
                 self.state = 1268
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,114,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 114, self._ctx)
                 if la_ == 1:
                     self.state = 1267
                     self.nestednamespecifier(0)
-
 
                 self.state = 1270
                 self.match(CPP14Parser.Identifier)
@@ -7731,10 +7588,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1278
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Template:
+                if _la == CPP14Parser.Template:
                     self.state = 1277
                     self.match(CPP14Parser.Template)
-
 
                 self.state = 1280
                 self.simpletemplateid()
@@ -7746,11 +7602,10 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Enum)
                 self.state = 1284
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,116,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 116, self._ctx)
                 if la_ == 1:
                     self.state = 1283
                     self.nestednamespecifier(0)
-
 
                 self.state = 1286
                 self.match(CPP14Parser.Identifier)
@@ -7779,35 +7634,29 @@ class CPP14Parser ( Parser ):
 
     class TypespecifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_typespecifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypespecifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypespecifierseq"):
                 listener.enterTypespecifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypespecifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypespecifierseq"):
                 listener.exitTypespecifierseq(self)
-
-
-
 
     def typespecifierseq(self):
 
@@ -7816,18 +7665,17 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1298
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,119,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 119, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1291
                 self.typespecifier()
                 self.state = 1293
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,118,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 118, self._ctx)
                 if la_ == 1:
                     self.state = 1292
                     self.attributespecifierseq(0)
-
 
                 pass
 
@@ -7850,35 +7698,29 @@ class CPP14Parser ( Parser ):
 
     class TrailingtypespecifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def trailingtypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def trailingtypespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_trailingtypespecifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTrailingtypespecifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTrailingtypespecifierseq"):
                 listener.enterTrailingtypespecifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTrailingtypespecifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTrailingtypespecifierseq"):
                 listener.exitTrailingtypespecifierseq(self)
-
-
-
 
     def trailingtypespecifierseq(self):
 
@@ -7887,18 +7729,17 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1307
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,121,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 121, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1300
                 self.trailingtypespecifier()
                 self.state = 1302
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,120,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 120, self._ctx)
                 if la_ == 1:
                     self.state = 1301
                     self.attributespecifierseq(0)
-
 
                 pass
 
@@ -7921,24 +7762,21 @@ class CPP14Parser ( Parser ):
 
     class SimpletypespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def thetypename(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypenameContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def Char(self):
             return self.getToken(CPP14Parser.Char, 0)
@@ -7983,22 +7821,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Auto, 0)
 
         def decltypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_simpletypespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimpletypespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSimpletypespecifier"):
                 listener.enterSimpletypespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimpletypespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSimpletypespecifier"):
                 listener.exitSimpletypespecifier(self)
-
-
-
 
     def simpletypespecifier(self):
 
@@ -8007,16 +7841,15 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1332
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,123,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 123, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1310
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,122,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 122, self._ctx)
                 if la_ == 1:
                     self.state = 1309
                     self.nestednamespecifier(0)
-
 
                 self.state = 1312
                 self.thetypename()
@@ -8133,34 +7966,29 @@ class CPP14Parser ( Parser ):
 
     class ThetypenameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classname(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassnameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassnameContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_thetypename
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterThetypename" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterThetypename"):
                 listener.enterThetypename(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitThetypename" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitThetypename"):
                 listener.exitThetypename(self)
-
-
-
 
     def thetypename(self):
 
@@ -8169,7 +7997,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1337
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,124,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 124, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1334
@@ -8199,7 +8027,7 @@ class CPP14Parser ( Parser ):
 
     class DecltypespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8207,8 +8035,7 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Decltype, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionContext, 0)
 
         def Auto(self):
             return self.getToken(CPP14Parser.Auto, 0)
@@ -8216,16 +8043,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_decltypespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecltypespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDecltypespecifier"):
                 listener.enterDecltypespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecltypespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDecltypespecifier"):
                 listener.exitDecltypespecifier(self)
-
-
-
 
     def decltypespecifier(self):
 
@@ -8234,7 +8058,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1348
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,125,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 125, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1339
@@ -8270,52 +8094,45 @@ class CPP14Parser ( Parser ):
 
     class EnumheadContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def enumkey(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumkeyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumkeyContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def enumbase(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumbaseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumbaseContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumhead
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumhead" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumhead"):
                 listener.enterEnumhead(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumhead" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumhead"):
                 listener.exitEnumhead(self)
-
-
-
 
     def enumhead(self):
 
         localctx = CPP14Parser.EnumheadContext(self, self._ctx, self.state)
         self.enterRule(localctx, 146, self.RULE_enumhead)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1369
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,131,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 131, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1350
@@ -8323,26 +8140,23 @@ class CPP14Parser ( Parser ):
                 self.state = 1352
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1351
                     self.attributespecifierseq(0)
-
 
                 self.state = 1355
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 1354
                     self.match(CPP14Parser.Identifier)
-
 
                 self.state = 1358
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1357
                     self.enumbase()
-
 
                 pass
 
@@ -8353,10 +8167,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1362
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1361
                     self.attributespecifierseq(0)
-
 
                 self.state = 1364
                 self.nestednamespecifier(0)
@@ -8365,10 +8178,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1367
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1366
                     self.enumbase()
-
 
                 pass
 
@@ -8383,7 +8195,7 @@ class CPP14Parser ( Parser ):
 
     class EnumkeyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8399,16 +8211,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumkey
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumkey" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumkey"):
                 listener.enterEnumkey(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumkey" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumkey"):
                 listener.exitEnumkey(self)
-
-
-
 
     def enumkey(self):
 
@@ -8417,7 +8226,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1376
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,132,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 132, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1371
@@ -8451,27 +8260,23 @@ class CPP14Parser ( Parser ):
 
     class EnumbaseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumbase
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumbase" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumbase"):
                 listener.enterEnumbase(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumbase" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumbase"):
                 listener.exitEnumbase(self)
-
-
-
 
     def enumbase(self):
 
@@ -8493,32 +8298,28 @@ class CPP14Parser ( Parser ):
 
     class EnumeratorlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def enumeratordefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumeratordefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumeratordefinitionContext, 0)
 
         def enumeratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumeratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumeratorlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumeratorlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumeratorlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumeratorlist"):
                 listener.enterEnumeratorlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumeratorlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumeratorlist"):
                 listener.exitEnumeratorlist(self)
 
-
-
-    def enumeratorlist(self, _p:int=0):
+    def enumeratorlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.EnumeratorlistContext(self, self._ctx, _parentState)
@@ -8532,9 +8333,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1389
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,133,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 133, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -8547,10 +8348,10 @@ class CPP14Parser ( Parser ):
                     self.state = 1385
                     self.match(CPP14Parser.Comma)
                     self.state = 1386
-                    self.enumeratordefinition() 
+                    self.enumeratordefinition()
                 self.state = 1391
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,133,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 133, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -8562,31 +8363,26 @@ class CPP14Parser ( Parser ):
 
     class EnumeratordefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def enumerator(self):
-            return self.getTypedRuleContext(CPP14Parser.EnumeratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EnumeratorContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumeratordefinition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumeratordefinition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumeratordefinition"):
                 listener.enterEnumeratordefinition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumeratordefinition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumeratordefinition"):
                 listener.exitEnumeratordefinition(self)
-
-
-
 
     def enumeratordefinition(self):
 
@@ -8595,7 +8391,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1397
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,134,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 134, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1392
@@ -8623,7 +8419,7 @@ class CPP14Parser ( Parser ):
 
     class EnumeratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8633,16 +8429,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_enumerator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEnumerator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterEnumerator"):
                 listener.enterEnumerator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEnumerator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitEnumerator"):
                 listener.exitEnumerator(self)
-
-
-
 
     def enumerator(self):
 
@@ -8662,31 +8455,26 @@ class CPP14Parser ( Parser ):
 
     class NamespacenameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def originalnamespacename(self):
-            return self.getTypedRuleContext(CPP14Parser.OriginalnamespacenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.OriginalnamespacenameContext, 0)
 
         def namespacealias(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacealiasContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacealiasContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_namespacename
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNamespacename" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNamespacename"):
                 listener.enterNamespacename(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNamespacename" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNamespacename"):
                 listener.exitNamespacename(self)
-
-
-
 
     def namespacename(self):
 
@@ -8695,7 +8483,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1403
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,135,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 135, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1401
@@ -8719,7 +8507,7 @@ class CPP14Parser ( Parser ):
 
     class OriginalnamespacenameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8729,16 +8517,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_originalnamespacename
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOriginalnamespacename" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterOriginalnamespacename"):
                 listener.enterOriginalnamespacename(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOriginalnamespacename" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitOriginalnamespacename"):
                 listener.exitOriginalnamespacename(self)
-
-
-
 
     def originalnamespacename(self):
 
@@ -8758,20 +8543,18 @@ class CPP14Parser ( Parser ):
 
     class NamespacedefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def namednamespacedefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.NamednamespacedefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamednamespacedefinitionContext, 0)
 
         def Namespace(self):
             return self.getToken(CPP14Parser.Namespace, 0)
 
         def namespacebody(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacebodyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacebodyContext, 0)
 
         def Inline(self):
             return self.getToken(CPP14Parser.Inline, 0)
@@ -8779,26 +8562,23 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_namespacedefinition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNamespacedefinition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNamespacedefinition"):
                 listener.enterNamespacedefinition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNamespacedefinition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNamespacedefinition"):
                 listener.exitNamespacedefinition(self)
-
-
-
 
     def namespacedefinition(self):
 
         localctx = CPP14Parser.NamespacedefinitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 162, self.RULE_namespacedefinition)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1416
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,137,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 137, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1407
@@ -8810,10 +8590,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1409
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Inline:
+                if _la == CPP14Parser.Inline:
                     self.state = 1408
                     self.match(CPP14Parser.Inline)
-
 
                 self.state = 1411
                 self.match(CPP14Parser.Namespace)
@@ -8836,7 +8615,7 @@ class CPP14Parser ( Parser ):
 
     class NamednamespacedefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8847,48 +8626,42 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def namespacebody(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacebodyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacebodyContext, 0)
 
         def Inline(self):
             return self.getToken(CPP14Parser.Inline, 0)
 
         def originalnamespacename(self):
-            return self.getTypedRuleContext(CPP14Parser.OriginalnamespacenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.OriginalnamespacenameContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_namednamespacedefinition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNamednamespacedefinition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNamednamespacedefinition"):
                 listener.enterNamednamespacedefinition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNamednamespacedefinition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNamednamespacedefinition"):
                 listener.exitNamednamespacedefinition(self)
-
-
-
 
     def namednamespacedefinition(self):
 
         localctx = CPP14Parser.NamednamespacedefinitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 164, self.RULE_namednamespacedefinition)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1436
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,140,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 140, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1419
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Inline:
+                if _la == CPP14Parser.Inline:
                     self.state = 1418
                     self.match(CPP14Parser.Inline)
-
 
                 self.state = 1421
                 self.match(CPP14Parser.Namespace)
@@ -8907,10 +8680,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1428
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Inline:
+                if _la == CPP14Parser.Inline:
                     self.state = 1427
                     self.match(CPP14Parser.Inline)
-
 
                 self.state = 1430
                 self.match(CPP14Parser.Namespace)
@@ -8935,39 +8707,55 @@ class CPP14Parser ( Parser ):
 
     class NamespacebodyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declarationseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_namespacebody
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNamespacebody" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNamespacebody"):
                 listener.enterNamespacebody(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNamespacebody" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNamespacebody"):
                 listener.exitNamespacebody(self)
-
-
-
 
     def namespacebody(self):
 
         localctx = CPP14Parser.NamespacebodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 166, self.RULE_namespacebody)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1439
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (
+                1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (
+                1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (
+                1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (
+                1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (
+                1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (
+                1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (
+                1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (
+                1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or (
+                    (((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (
+                1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (
+                1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (
+                1 << (CPP14Parser.Identifier - 67)))) != 0):
                 self.state = 1438
                 self.declarationseq(0)
 
@@ -8982,7 +8770,7 @@ class CPP14Parser ( Parser ):
 
     class NamespacealiasContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -8992,16 +8780,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_namespacealias
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNamespacealias" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNamespacealias"):
                 listener.enterNamespacealias(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNamespacealias" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNamespacealias"):
                 listener.exitNamespacealias(self)
-
-
-
 
     def namespacealias(self):
 
@@ -9021,31 +8806,26 @@ class CPP14Parser ( Parser ):
 
     class QualifiednamespacespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def namespacename(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_qualifiednamespacespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterQualifiednamespacespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterQualifiednamespacespecifier"):
                 listener.enterQualifiednamespacespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitQualifiednamespacespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitQualifiednamespacespecifier"):
                 listener.exitQualifiednamespacespecifier(self)
-
-
-
 
     def qualifiednamespacespecifier(self):
 
@@ -9055,11 +8835,10 @@ class CPP14Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 1444
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,142,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 142, self._ctx)
             if la_ == 1:
                 self.state = 1443
                 self.nestednamespecifier(0)
-
 
             self.state = 1446
             self.namespacename()
@@ -9073,7 +8852,7 @@ class CPP14Parser ( Parser ):
 
     class UsingdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9081,12 +8860,10 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Using, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def unqualifiedid(self):
-            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UnqualifiedidContext, 0)
 
         def Typename(self):
             return self.getToken(CPP14Parser.Typename, 0)
@@ -9094,26 +8871,23 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_usingdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUsingdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUsingdeclaration"):
                 listener.enterUsingdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUsingdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUsingdeclaration"):
                 listener.exitUsingdeclaration(self)
-
-
-
 
     def usingdeclaration(self):
 
         localctx = CPP14Parser.UsingdeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 172, self.RULE_usingdeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1461
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,144,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 144, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1448
@@ -9121,10 +8895,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1450
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Typename:
+                if _la == CPP14Parser.Typename:
                     self.state = 1449
                     self.match(CPP14Parser.Typename)
-
 
                 self.state = 1452
                 self.nestednamespecifier(0)
@@ -9157,7 +8930,7 @@ class CPP14Parser ( Parser ):
 
     class UsingdirectiveContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9168,45 +8941,38 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Namespace, 0)
 
         def namespacename(self):
-            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NamespacenameContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_usingdirective
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUsingdirective" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUsingdirective"):
                 listener.enterUsingdirective(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUsingdirective" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUsingdirective"):
                 listener.exitUsingdirective(self)
-
-
-
 
     def usingdirective(self):
 
         localctx = CPP14Parser.UsingdirectiveContext(self, self._ctx, self.state)
         self.enterRule(localctx, 174, self.RULE_usingdirective)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1464
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+            if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                 self.state = 1463
                 self.attributespecifierseq(0)
-
 
             self.state = 1466
             self.match(CPP14Parser.Using)
@@ -9214,11 +8980,10 @@ class CPP14Parser ( Parser ):
             self.match(CPP14Parser.Namespace)
             self.state = 1469
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,146,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 146, self._ctx)
             if la_ == 1:
                 self.state = 1468
                 self.nestednamespecifier(0)
-
 
             self.state = 1471
             self.namespacename()
@@ -9234,7 +8999,7 @@ class CPP14Parser ( Parser ):
 
     class AsmdefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9247,16 +9012,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_asmdefinition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAsmdefinition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAsmdefinition"):
                 listener.enterAsmdefinition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAsmdefinition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAsmdefinition"):
                 listener.exitAsmdefinition(self)
-
-
-
 
     def asmdefinition(self):
 
@@ -9284,7 +9046,7 @@ class CPP14Parser ( Parser ):
 
     class LinkagespecificationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9295,36 +9057,31 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Stringliteral, 0)
 
         def declarationseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationseqContext, 0)
 
         def declaration(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_linkagespecification
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLinkagespecification" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLinkagespecification"):
                 listener.enterLinkagespecification(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLinkagespecification" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLinkagespecification"):
                 listener.exitLinkagespecification(self)
-
-
-
 
     def linkagespecification(self):
 
         localctx = CPP14Parser.LinkagespecificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 178, self.RULE_linkagespecification)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1490
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,148,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 148, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1480
@@ -9336,10 +9093,29 @@ class CPP14Parser ( Parser ):
                 self.state = 1484
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Asm) | (
+                    1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                    1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (
+                    1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (
+                    1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (
+                    1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                    1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Namespace) | (1 << CPP14Parser.Operator) | (
+                    1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (
+                    1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (
+                    1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or (
+                        (((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (
+                    1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                    1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                    1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                    1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                    1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                    1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                    1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (
+                    1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (
+                    1 << (CPP14Parser.Identifier - 67)))) != 0):
                     self.state = 1483
                     self.declarationseq(0)
-
 
                 self.state = 1486
                 self.match(CPP14Parser.RightBrace)
@@ -9366,32 +9142,28 @@ class CPP14Parser ( Parser ):
 
     class AttributespecifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributespecifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributespecifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributespecifierseq"):
                 listener.enterAttributespecifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributespecifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributespecifierseq"):
                 listener.exitAttributespecifierseq(self)
 
-
-
-    def attributespecifierseq(self, _p:int=0):
+    def attributespecifierseq(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.AttributespecifierseqContext(self, self._ctx, _parentState)
@@ -9405,9 +9177,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1499
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,149,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 149, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -9418,10 +9190,10 @@ class CPP14Parser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 1496
-                    self.attributespecifier() 
+                    self.attributespecifier()
                 self.state = 1501
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,149,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 149, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -9433,31 +9205,26 @@ class CPP14Parser ( Parser ):
 
     class AttributespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributelist(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributelistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributelistContext, 0)
 
         def alignmentspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.AlignmentspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AlignmentspecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributespecifier"):
                 listener.enterAttributespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributespecifier"):
                 listener.exitAttributespecifier(self)
-
-
-
 
     def attributespecifier(self):
 
@@ -9498,7 +9265,7 @@ class CPP14Parser ( Parser ):
 
     class AlignmentspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9506,36 +9273,31 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Alignas, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_alignmentspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAlignmentspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAlignmentspecifier"):
                 listener.enterAlignmentspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAlignmentspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAlignmentspecifier"):
                 listener.exitAlignmentspecifier(self)
-
-
-
 
     def alignmentspecifier(self):
 
         localctx = CPP14Parser.AlignmentspecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 184, self.RULE_alignmentspecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1527
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,153,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 153, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1511
@@ -9547,10 +9309,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1515
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Ellipsis:
+                if _la == CPP14Parser.Ellipsis:
                     self.state = 1514
                     self.match(CPP14Parser.Ellipsis)
-
 
                 self.state = 1517
                 self.match(CPP14Parser.RightParen)
@@ -9567,10 +9328,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1523
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Ellipsis:
+                if _la == CPP14Parser.Ellipsis:
                     self.state = 1522
                     self.match(CPP14Parser.Ellipsis)
-
 
                 self.state = 1525
                 self.match(CPP14Parser.RightParen)
@@ -9587,32 +9347,28 @@ class CPP14Parser ( Parser ):
 
     class AttributelistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attribute(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributeContext, 0)
 
         def attributelist(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributelistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributelistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributelist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributelist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributelist"):
                 listener.enterAttributelist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributelist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributelist"):
                 listener.exitAttributelist(self)
 
-
-
-    def attributelist(self, _p:int=0):
+    def attributelist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.AttributelistContext(self, self._ctx, _parentState)
@@ -9623,15 +9379,14 @@ class CPP14Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 1536
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,155,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 155, self._ctx)
             if la_ == 1:
                 self.state = 1531
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,154,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 154, self._ctx)
                 if la_ == 1:
                     self.state = 1530
                     self.attribute()
-
 
                 pass
 
@@ -9642,19 +9397,18 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Ellipsis)
                 pass
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 1550
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,158,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 158, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 1548
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,157,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 157, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.AttributelistContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_attributelist)
@@ -9666,11 +9420,10 @@ class CPP14Parser ( Parser ):
                         self.match(CPP14Parser.Comma)
                         self.state = 1541
                         self._errHandler.sync(self)
-                        la_ = self._interp.adaptivePredict(self._input,156,self._ctx)
+                        la_ = self._interp.adaptivePredict(self._input, 156, self._ctx)
                         if la_ == 1:
                             self.state = 1540
                             self.attribute()
-
 
                         pass
 
@@ -9689,10 +9442,9 @@ class CPP14Parser ( Parser ):
                         self.match(CPP14Parser.Ellipsis)
                         pass
 
-             
                 self.state = 1552
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,158,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 158, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -9704,31 +9456,26 @@ class CPP14Parser ( Parser ):
 
     class AttributeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributetoken(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributetokenContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributetokenContext, 0)
 
         def attributeargumentclause(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributeargumentclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributeargumentclauseContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attribute
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttribute" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttribute"):
                 listener.enterAttribute(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttribute" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttribute"):
                 listener.exitAttribute(self)
-
-
-
 
     def attribute(self):
 
@@ -9740,7 +9487,7 @@ class CPP14Parser ( Parser ):
             self.attributetoken()
             self.state = 1555
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,159,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 159, self._ctx)
             if la_ == 1:
                 self.state = 1554
                 self.attributeargumentclause()
@@ -9756,7 +9503,7 @@ class CPP14Parser ( Parser ):
 
     class AttributetokenContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9764,22 +9511,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def attributescopedtoken(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributescopedtokenContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributescopedtokenContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributetoken
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributetoken" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributetoken"):
                 listener.enterAttributetoken(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributetoken" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributetoken"):
                 listener.exitAttributetoken(self)
-
-
-
 
     def attributetoken(self):
 
@@ -9788,7 +9531,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1559
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,160,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 160, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1557
@@ -9812,13 +9555,12 @@ class CPP14Parser ( Parser ):
 
     class AttributescopedtokenContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributenamespace(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributenamespaceContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributenamespaceContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
@@ -9826,16 +9568,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributescopedtoken
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributescopedtoken" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributescopedtoken"):
                 listener.enterAttributescopedtoken(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributescopedtoken" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributescopedtoken"):
                 listener.exitAttributescopedtoken(self)
-
-
-
 
     def attributescopedtoken(self):
 
@@ -9859,7 +9598,7 @@ class CPP14Parser ( Parser ):
 
     class AttributenamespaceContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -9869,16 +9608,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributenamespace
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributenamespace" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributenamespace"):
                 listener.enterAttributenamespace(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributenamespace" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributenamespace"):
                 listener.exitAttributenamespace(self)
-
-
-
 
     def attributenamespace(self):
 
@@ -9898,27 +9634,23 @@ class CPP14Parser ( Parser ):
 
     class AttributeargumentclauseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def balancedtokenseq(self):
-            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_attributeargumentclause
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAttributeargumentclause" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAttributeargumentclause"):
                 listener.enterAttributeargumentclause(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAttributeargumentclause" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAttributeargumentclause"):
                 listener.exitAttributeargumentclause(self)
-
-
-
 
     def attributeargumentclause(self):
 
@@ -9942,32 +9674,28 @@ class CPP14Parser ( Parser ):
 
     class BalancedtokenseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def balancedtoken(self):
-            return self.getTypedRuleContext(CPP14Parser.BalancedtokenContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BalancedtokenContext, 0)
 
         def balancedtokenseq(self):
-            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_balancedtokenseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBalancedtokenseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBalancedtokenseq"):
                 listener.enterBalancedtokenseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBalancedtokenseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBalancedtokenseq"):
                 listener.exitBalancedtokenseq(self)
 
-
-
-    def balancedtokenseq(self, _p:int=0):
+    def balancedtokenseq(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.BalancedtokenseqContext(self, self._ctx, _parentState)
@@ -9978,18 +9706,17 @@ class CPP14Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 1573
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,161,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 161, self._ctx)
             if la_ == 1:
                 self.state = 1572
                 self.balancedtoken()
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 1579
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,162,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 162, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -10000,10 +9727,10 @@ class CPP14Parser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 1576
-                    self.balancedtoken() 
+                    self.balancedtoken()
                 self.state = 1581
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,162,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 162, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -10015,27 +9742,23 @@ class CPP14Parser ( Parser ):
 
     class BalancedtokenContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def balancedtokenseq(self):
-            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BalancedtokenseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_balancedtoken
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBalancedtoken" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBalancedtoken"):
                 listener.enterBalancedtoken(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBalancedtoken" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBalancedtoken"):
                 listener.exitBalancedtoken(self)
-
-
-
 
     def balancedtoken(self):
 
@@ -10085,32 +9808,28 @@ class CPP14Parser ( Parser ):
 
     class InitdeclaratorlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def initdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorContext, 0)
 
         def initdeclaratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitdeclaratorlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_initdeclaratorlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitdeclaratorlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitdeclaratorlist"):
                 listener.enterInitdeclaratorlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitdeclaratorlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitdeclaratorlist"):
                 listener.exitInitdeclaratorlist(self)
 
-
-
-    def initdeclaratorlist(self, _p:int=0):
+    def initdeclaratorlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.InitdeclaratorlistContext(self, self._ctx, _parentState)
@@ -10124,9 +9843,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1604
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,164,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 164, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -10139,10 +9858,10 @@ class CPP14Parser ( Parser ):
                     self.state = 1600
                     self.match(CPP14Parser.Comma)
                     self.state = 1601
-                    self.initdeclarator() 
+                    self.initdeclarator()
                 self.state = 1606
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,164,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 164, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -10154,31 +9873,26 @@ class CPP14Parser ( Parser ):
 
     class InitdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def initializer(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_initdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitdeclarator"):
                 listener.enterInitdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitdeclarator"):
                 listener.exitInitdeclarator(self)
-
-
-
 
     def initdeclarator(self):
 
@@ -10190,7 +9904,7 @@ class CPP14Parser ( Parser ):
             self.declarator()
             self.state = 1609
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,165,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 165, self._ctx)
             if la_ == 1:
                 self.state = 1608
                 self.initializer()
@@ -10206,39 +9920,32 @@ class CPP14Parser ( Parser ):
 
     class DeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def ptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext, 0)
 
         def noptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext, 0)
 
         def parametersandqualifiers(self):
-            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext, 0)
 
         def trailingreturntype(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_declarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclarator"):
                 listener.enterDeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclarator"):
                 listener.exitDeclarator(self)
-
-
-
 
     def declarator(self):
 
@@ -10247,7 +9954,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1616
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,166,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 166, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1611
@@ -10275,35 +9982,29 @@ class CPP14Parser ( Parser ):
 
     class PtrdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def noptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext, 0)
 
         def ptroperator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext, 0)
 
         def ptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_ptrdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPtrdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPtrdeclarator"):
                 listener.enterPtrdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPtrdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPtrdeclarator"):
                 listener.exitPtrdeclarator(self)
-
-
-
 
     def ptrdeclarator(self):
 
@@ -10312,7 +10013,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1622
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,167,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 167, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1618
@@ -10338,70 +10039,62 @@ class CPP14Parser ( Parser ):
 
     class NoptrdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declaratorid(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratoridContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratoridContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def ptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrdeclaratorContext, 0)
 
         def noptrdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrdeclaratorContext, 0)
 
         def parametersandqualifiers(self):
-            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_noptrdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNoptrdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNoptrdeclarator"):
                 listener.enterNoptrdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNoptrdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNoptrdeclarator"):
                 listener.exitNoptrdeclarator(self)
 
-
-
-    def noptrdeclarator(self, _p:int=0):
+    def noptrdeclarator(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.NoptrdeclaratorContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 210
         self.enterRecursionRule(localctx, 210, self.RULE_noptrdeclarator, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1633
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Decltype, CPP14Parser.Operator, CPP14Parser.Tilde, CPP14Parser.Doublecolon, CPP14Parser.Ellipsis, CPP14Parser.Identifier]:
+            if token in [CPP14Parser.Decltype, CPP14Parser.Operator, CPP14Parser.Tilde, CPP14Parser.Doublecolon,
+                         CPP14Parser.Ellipsis, CPP14Parser.Identifier]:
                 self.state = 1625
                 self.declaratorid()
                 self.state = 1627
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,168,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 168, self._ctx)
                 if la_ == 1:
                     self.state = 1626
                     self.attributespecifierseq(0)
-
 
                 pass
             elif token in [CPP14Parser.LeftParen]:
@@ -10418,15 +10111,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1648
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,173,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 173, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 1646
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,172,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 172, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.NoptrdeclaratorContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_noptrdeclarator)
@@ -10450,27 +10143,52 @@ class CPP14Parser ( Parser ):
                         self.state = 1640
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (
+                            1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                            1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (
+                            1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (
+                            1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (
+                            1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                            1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (
+                            1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                            1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                            1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                                (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (
+                            CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (
+                            1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (
+                            1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (
+                            1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (
+                            1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (
+                            1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                            1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (
+                            1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (
+                            1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (
+                            1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or (
+                                (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                                (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                                1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                            1 << (CPP14Parser.Stringliteral - 132)) | (
+                                        1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                             self.state = 1639
                             self.constantexpression()
-
 
                         self.state = 1642
                         self.match(CPP14Parser.RightBracket)
                         self.state = 1644
                         self._errHandler.sync(self)
-                        la_ = self._interp.adaptivePredict(self._input,171,self._ctx)
+                        la_ = self._interp.adaptivePredict(self._input, 171, self._ctx)
                         if la_ == 1:
                             self.state = 1643
                             self.attributespecifierseq(0)
 
-
                         pass
 
-             
                 self.state = 1650
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,173,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 173, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -10482,43 +10200,35 @@ class CPP14Parser ( Parser ):
 
     class ParametersandqualifiersContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def parameterdeclarationclause(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationclauseContext, 0)
 
         def cvqualifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext, 0)
 
         def refqualifier(self):
-            return self.getTypedRuleContext(CPP14Parser.RefqualifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RefqualifierContext, 0)
 
         def exceptionspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.ExceptionspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExceptionspecificationContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_parametersandqualifiers
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParametersandqualifiers" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterParametersandqualifiers"):
                 listener.enterParametersandqualifiers(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParametersandqualifiers" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitParametersandqualifiers"):
                 listener.exitParametersandqualifiers(self)
-
-
-
 
     def parametersandqualifiers(self):
 
@@ -10534,31 +10244,28 @@ class CPP14Parser ( Parser ):
             self.match(CPP14Parser.RightParen)
             self.state = 1655
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,174,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 174, self._ctx)
             if la_ == 1:
                 self.state = 1654
                 self.cvqualifierseq()
 
-
             self.state = 1658
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,175,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 175, self._ctx)
             if la_ == 1:
                 self.state = 1657
                 self.refqualifier()
 
-
             self.state = 1661
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,176,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 176, self._ctx)
             if la_ == 1:
                 self.state = 1660
                 self.exceptionspecification()
 
-
             self.state = 1664
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,177,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 177, self._ctx)
             if la_ == 1:
                 self.state = 1663
                 self.attributespecifierseq(0)
@@ -10574,31 +10281,26 @@ class CPP14Parser ( Parser ):
 
     class TrailingreturntypeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def trailingtypespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingtypespecifierseqContext, 0)
 
         def abstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_trailingreturntype
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTrailingreturntype" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTrailingreturntype"):
                 listener.enterTrailingreturntype(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTrailingreturntype" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTrailingreturntype"):
                 listener.exitTrailingreturntype(self)
-
-
-
 
     def trailingreturntype(self):
 
@@ -10612,7 +10314,7 @@ class CPP14Parser ( Parser ):
             self.trailingtypespecifierseq()
             self.state = 1669
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,178,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 178, self._ctx)
             if la_ == 1:
                 self.state = 1668
                 self.abstractdeclarator()
@@ -10628,35 +10330,29 @@ class CPP14Parser ( Parser ):
 
     class PtroperatorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def cvqualifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_ptroperator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPtroperator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPtroperator"):
                 listener.enterPtroperator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPtroperator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPtroperator"):
                 listener.exitPtroperator(self)
-
-
-
 
     def ptroperator(self):
 
@@ -10672,19 +10368,17 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Star)
                 self.state = 1673
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,179,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 179, self._ctx)
                 if la_ == 1:
                     self.state = 1672
                     self.attributespecifierseq(0)
 
-
                 self.state = 1676
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,180,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 180, self._ctx)
                 if la_ == 1:
                     self.state = 1675
                     self.cvqualifierseq()
-
 
                 pass
             elif token in [CPP14Parser.And]:
@@ -10693,11 +10387,10 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.And)
                 self.state = 1680
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,181,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 181, self._ctx)
                 if la_ == 1:
                     self.state = 1679
                     self.attributespecifierseq(0)
-
 
                 pass
             elif token in [CPP14Parser.AndAnd]:
@@ -10706,11 +10399,10 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.AndAnd)
                 self.state = 1684
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,182,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 182, self._ctx)
                 if la_ == 1:
                     self.state = 1683
                     self.attributespecifierseq(0)
-
 
                 pass
             elif token in [CPP14Parser.Decltype, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
@@ -10721,19 +10413,17 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Star)
                 self.state = 1689
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,183,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 183, self._ctx)
                 if la_ == 1:
                     self.state = 1688
                     self.attributespecifierseq(0)
 
-
                 self.state = 1692
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,184,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 184, self._ctx)
                 if la_ == 1:
                     self.state = 1691
                     self.cvqualifierseq()
-
 
                 pass
             else:
@@ -10749,31 +10439,26 @@ class CPP14Parser ( Parser ):
 
     class CvqualifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def cvqualifier(self):
-            return self.getTypedRuleContext(CPP14Parser.CvqualifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CvqualifierContext, 0)
 
         def cvqualifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CvqualifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_cvqualifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCvqualifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCvqualifierseq"):
                 listener.enterCvqualifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCvqualifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCvqualifierseq"):
                 listener.exitCvqualifierseq(self)
-
-
-
 
     def cvqualifierseq(self):
 
@@ -10785,7 +10470,7 @@ class CPP14Parser ( Parser ):
             self.cvqualifier()
             self.state = 1698
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,186,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 186, self._ctx)
             if la_ == 1:
                 self.state = 1697
                 self.cvqualifierseq()
@@ -10801,7 +10486,7 @@ class CPP14Parser ( Parser ):
 
     class CvqualifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -10814,27 +10499,24 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_cvqualifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCvqualifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCvqualifier"):
                 listener.enterCvqualifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCvqualifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCvqualifier"):
                 listener.exitCvqualifier(self)
-
-
-
 
     def cvqualifier(self):
 
         localctx = CPP14Parser.CvqualifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 220, self.RULE_cvqualifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1700
             _la = self._input.LA(1)
-            if not(_la==CPP14Parser.Const or _la==CPP14Parser.Volatile):
+            if not (_la == CPP14Parser.Const or _la == CPP14Parser.Volatile):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -10849,35 +10531,31 @@ class CPP14Parser ( Parser ):
 
     class RefqualifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_refqualifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRefqualifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRefqualifier"):
                 listener.enterRefqualifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRefqualifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRefqualifier"):
                 listener.exitRefqualifier(self)
-
-
-
 
     def refqualifier(self):
 
         localctx = CPP14Parser.RefqualifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 222, self.RULE_refqualifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1702
             _la = self._input.LA(1)
-            if not(_la==CPP14Parser.And or _la==CPP14Parser.AndAnd):
+            if not (_la == CPP14Parser.And or _la == CPP14Parser.AndAnd):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -10892,42 +10570,37 @@ class CPP14Parser ( Parser ):
 
     class DeclaratoridContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def idexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_declaratorid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDeclaratorid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDeclaratorid"):
                 listener.enterDeclaratorid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDeclaratorid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDeclaratorid"):
                 listener.exitDeclaratorid(self)
-
-
-
 
     def declaratorid(self):
 
         localctx = CPP14Parser.DeclaratoridContext(self, self._ctx, self.state)
         self.enterRule(localctx, 224, self.RULE_declaratorid)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1705
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Ellipsis:
+            if _la == CPP14Parser.Ellipsis:
                 self.state = 1704
                 self.match(CPP14Parser.Ellipsis)
-
 
             self.state = 1707
             self.idexpression()
@@ -10941,31 +10614,26 @@ class CPP14Parser ( Parser ):
 
     class ThetypeidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def abstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_thetypeid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterThetypeid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterThetypeid"):
                 listener.enterThetypeid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitThetypeid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitThetypeid"):
                 listener.exitThetypeid(self)
-
-
-
 
     def thetypeid(self):
 
@@ -10977,7 +10645,7 @@ class CPP14Parser ( Parser ):
             self.typespecifierseq()
             self.state = 1711
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,188,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 188, self._ctx)
             if la_ == 1:
                 self.state = 1710
                 self.abstractdeclarator()
@@ -10993,43 +10661,35 @@ class CPP14Parser ( Parser ):
 
     class AbstractdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def ptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext, 0)
 
         def parametersandqualifiers(self):
-            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext, 0)
 
         def trailingreturntype(self):
-            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TrailingreturntypeContext, 0)
 
         def noptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext, 0)
 
         def abstractpackdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractpackdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractpackdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_abstractdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAbstractdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAbstractdeclarator"):
                 listener.enterAbstractdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAbstractdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAbstractdeclarator"):
                 listener.exitAbstractdeclarator(self)
-
-
-
 
     def abstractdeclarator(self):
 
@@ -11038,7 +10698,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1721
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,190,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 190, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1713
@@ -11049,11 +10709,10 @@ class CPP14Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1715
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,189,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 189, self._ctx)
                 if la_ == 1:
                     self.state = 1714
                     self.noptrabstractdeclarator(0)
-
 
                 self.state = 1717
                 self.parametersandqualifiers()
@@ -11078,35 +10737,29 @@ class CPP14Parser ( Parser ):
 
     class PtrabstractdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def noptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext, 0)
 
         def ptroperator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext, 0)
 
         def ptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_ptrabstractdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPtrabstractdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPtrabstractdeclarator"):
                 listener.enterPtrabstractdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPtrabstractdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPtrabstractdeclarator"):
                 listener.exitPtrabstractdeclarator(self)
-
-
-
 
     def ptrabstractdeclarator(self):
 
@@ -11121,17 +10774,17 @@ class CPP14Parser ( Parser ):
                 self.state = 1723
                 self.noptrabstractdeclarator(0)
                 pass
-            elif token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
+            elif token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd,
+                           CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1724
                 self.ptroperator()
                 self.state = 1726
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,191,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 191, self._ctx)
                 if la_ == 1:
                     self.state = 1725
                     self.ptrabstractdeclarator()
-
 
                 pass
             else:
@@ -11147,56 +10800,49 @@ class CPP14Parser ( Parser ):
 
     class NoptrabstractdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def parametersandqualifiers(self):
-            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def ptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtrabstractdeclaratorContext, 0)
 
         def noptrabstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrabstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_noptrabstractdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNoptrabstractdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNoptrabstractdeclarator"):
                 listener.enterNoptrabstractdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNoptrabstractdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNoptrabstractdeclarator"):
                 listener.exitNoptrabstractdeclarator(self)
 
-
-
-    def noptrabstractdeclarator(self, _p:int=0):
+    def noptrabstractdeclarator(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.NoptrabstractdeclaratorContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 232
         self.enterRecursionRule(localctx, 232, self.RULE_noptrabstractdeclarator, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1744
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,195,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 195, self._ctx)
             if la_ == 1:
                 self.state = 1731
                 self.parametersandqualifiers()
@@ -11208,20 +10854,42 @@ class CPP14Parser ( Parser ):
                 self.state = 1734
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (
+                    1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (
+                    1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (
+                    1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (
+                    1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (
+                    1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                    1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (
+                    1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (
+                    1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (
+                    1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 1733
                     self.constantexpression()
-
 
                 self.state = 1736
                 self.match(CPP14Parser.RightBracket)
                 self.state = 1738
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,194,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 194, self._ctx)
                 if la_ == 1:
                     self.state = 1737
                     self.attributespecifierseq(0)
-
 
                 pass
 
@@ -11234,19 +10902,18 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.RightParen)
                 pass
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 1759
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,199,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 199, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 1757
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,198,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 198, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.NoptrabstractdeclaratorContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_noptrabstractdeclarator)
@@ -11270,27 +10937,52 @@ class CPP14Parser ( Parser ):
                         self.state = 1751
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (
+                            1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                            1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (
+                            1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (
+                            1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (
+                            1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                            1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (
+                            1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                            1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                            1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                                (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (
+                            CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (
+                            1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (
+                            1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (
+                            1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (
+                            1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (
+                            1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                            1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (
+                            1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (
+                            1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (
+                            1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or (
+                                (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                                (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                                1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                            1 << (CPP14Parser.Stringliteral - 132)) | (
+                                        1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                             self.state = 1750
                             self.constantexpression()
-
 
                         self.state = 1753
                         self.match(CPP14Parser.RightBracket)
                         self.state = 1755
                         self._errHandler.sync(self)
-                        la_ = self._interp.adaptivePredict(self._input,197,self._ctx)
+                        la_ = self._interp.adaptivePredict(self._input, 197, self._ctx)
                         if la_ == 1:
                             self.state = 1754
                             self.attributespecifierseq(0)
 
-
                         pass
 
-             
                 self.state = 1761
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,199,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 199, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -11302,35 +10994,29 @@ class CPP14Parser ( Parser ):
 
     class AbstractpackdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def noptrabstractpackdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrabstractpackdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrabstractpackdeclaratorContext, 0)
 
         def ptroperator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext, 0)
 
         def abstractpackdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractpackdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractpackdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_abstractpackdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAbstractpackdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAbstractpackdeclarator"):
                 listener.enterAbstractpackdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAbstractpackdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAbstractpackdeclarator"):
                 listener.exitAbstractpackdeclarator(self)
-
-
-
 
     def abstractpackdeclarator(self):
 
@@ -11345,7 +11031,8 @@ class CPP14Parser ( Parser ):
                 self.state = 1762
                 self.noptrabstractpackdeclarator(0)
                 pass
-            elif token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd, CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
+            elif token in [CPP14Parser.Decltype, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.AndAnd,
+                           CPP14Parser.Doublecolon, CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1763
                 self.ptroperator()
@@ -11365,47 +11052,41 @@ class CPP14Parser ( Parser ):
 
     class NoptrabstractpackdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def noptrabstractpackdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.NoptrabstractpackdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoptrabstractpackdeclaratorContext, 0)
 
         def parametersandqualifiers(self):
-            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParametersandqualifiersContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_noptrabstractpackdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNoptrabstractpackdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNoptrabstractpackdeclarator"):
                 listener.enterNoptrabstractpackdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNoptrabstractpackdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNoptrabstractpackdeclarator"):
                 listener.exitNoptrabstractpackdeclarator(self)
 
-
-
-    def noptrabstractpackdeclarator(self, _p:int=0):
+    def noptrabstractpackdeclarator(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.NoptrabstractpackdeclaratorContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 236
         self.enterRecursionRule(localctx, 236, self.RULE_noptrabstractpackdeclarator, _p)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1769
@@ -11413,15 +11094,15 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1784
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,204,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 204, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
                     self.state = 1782
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,203,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 203, self._ctx)
                     if la_ == 1:
                         localctx = CPP14Parser.NoptrabstractpackdeclaratorContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_noptrabstractpackdeclarator)
@@ -11445,27 +11126,52 @@ class CPP14Parser ( Parser ):
                         self.state = 1776
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (
+                            1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (
+                            1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (
+                            1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (
+                            1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (
+                            1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (
+                            1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (
+                            1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                            1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                            1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                                (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (
+                            CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (
+                            1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (
+                            1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (
+                            1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (
+                            1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (
+                            1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                            1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (
+                            1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (
+                            1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (
+                            1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or (
+                                (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                                (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                                1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                            1 << (CPP14Parser.Stringliteral - 132)) | (
+                                        1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                                1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                             self.state = 1775
                             self.constantexpression()
-
 
                         self.state = 1778
                         self.match(CPP14Parser.RightBracket)
                         self.state = 1780
                         self._errHandler.sync(self)
-                        la_ = self._interp.adaptivePredict(self._input,202,self._ctx)
+                        la_ = self._interp.adaptivePredict(self._input, 202, self._ctx)
                         if la_ == 1:
                             self.state = 1779
                             self.attributespecifierseq(0)
 
-
                         pass
 
-             
                 self.state = 1786
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,204,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 204, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -11477,54 +11183,62 @@ class CPP14Parser ( Parser ):
 
     class ParameterdeclarationclauseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def parameterdeclarationlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_parameterdeclarationclause
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameterdeclarationclause" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterParameterdeclarationclause"):
                 listener.enterParameterdeclarationclause(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameterdeclarationclause" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitParameterdeclarationclause"):
                 listener.exitParameterdeclarationclause(self)
-
-
-
 
     def parameterdeclarationclause(self):
 
         localctx = CPP14Parser.ParameterdeclarationclauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 238, self.RULE_parameterdeclarationclause)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1797
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,207,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 207, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1788
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                    1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (
+                    1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (
+                    1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (
+                    1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (
+                    1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (
+                    1 << CPP14Parser.Static) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Thread_local))) != 0) or (
+                        (((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (
+                    1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                    1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (
+                    1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (
+                    1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                    1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
                     self.state = 1787
                     self.parameterdeclarationlist(0)
-
 
                 self.state = 1791
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Ellipsis:
+                if _la == CPP14Parser.Ellipsis:
                     self.state = 1790
                     self.match(CPP14Parser.Ellipsis)
-
 
                 pass
 
@@ -11549,32 +11263,28 @@ class CPP14Parser ( Parser ):
 
     class ParameterdeclarationlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def parameterdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationContext, 0)
 
         def parameterdeclarationlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_parameterdeclarationlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameterdeclarationlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterParameterdeclarationlist"):
                 listener.enterParameterdeclarationlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameterdeclarationlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitParameterdeclarationlist"):
                 listener.exitParameterdeclarationlist(self)
 
-
-
-    def parameterdeclarationlist(self, _p:int=0):
+    def parameterdeclarationlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.ParameterdeclarationlistContext(self, self._ctx, _parentState)
@@ -11588,9 +11298,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1807
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,208,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 208, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -11603,10 +11313,10 @@ class CPP14Parser ( Parser ):
                     self.state = 1803
                     self.match(CPP14Parser.Comma)
                     self.state = 1804
-                    self.parameterdeclaration() 
+                    self.parameterdeclaration()
                 self.state = 1809
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,208,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 208, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -11618,62 +11328,53 @@ class CPP14Parser ( Parser ):
 
     class ParameterdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def initializerclause(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext, 0)
 
         def abstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_parameterdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameterdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterParameterdeclaration"):
                 listener.enterParameterdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameterdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitParameterdeclaration"):
                 listener.exitParameterdeclaration(self)
-
-
-
 
     def parameterdeclaration(self):
 
         localctx = CPP14Parser.ParameterdeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 242, self.RULE_parameterdeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1841
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,215,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 215, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1811
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1810
                     self.attributespecifierseq(0)
-
 
                 self.state = 1813
                 self.declspecifierseq()
@@ -11686,10 +11387,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1817
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1816
                     self.attributespecifierseq(0)
-
 
                 self.state = 1819
                 self.declspecifierseq()
@@ -11706,20 +11406,18 @@ class CPP14Parser ( Parser ):
                 self.state = 1825
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1824
                     self.attributespecifierseq(0)
-
 
                 self.state = 1827
                 self.declspecifierseq()
                 self.state = 1829
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,212,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 212, self._ctx)
                 if la_ == 1:
                     self.state = 1828
                     self.abstractdeclarator()
-
 
                 pass
 
@@ -11728,20 +11426,23 @@ class CPP14Parser ( Parser ):
                 self.state = 1832
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1831
                     self.attributespecifierseq(0)
-
 
                 self.state = 1834
                 self.declspecifierseq()
                 self.state = 1836
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Decltype or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & ((1 << (CPP14Parser.LeftParen - 78)) | (1 << (CPP14Parser.LeftBracket - 78)) | (1 << (CPP14Parser.Star - 78)) | (1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
+                if _la == CPP14Parser.Decltype or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & (
+                                            (1 << (CPP14Parser.LeftParen - 78)) | (
+                                            1 << (CPP14Parser.LeftBracket - 78)) | (1 << (CPP14Parser.Star - 78)) | (
+                                    1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (
+                            1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (
+                    1 << (CPP14Parser.Identifier - 78)))) != 0):
                     self.state = 1835
                     self.abstractdeclarator()
-
 
                 self.state = 1838
                 self.match(CPP14Parser.Assign)
@@ -11760,76 +11461,65 @@ class CPP14Parser ( Parser ):
 
     class FunctiondefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def functionbody(self):
-            return self.getTypedRuleContext(CPP14Parser.FunctionbodyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.FunctionbodyContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def virtspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_functiondefinition
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctiondefinition" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctiondefinition"):
                 listener.enterFunctiondefinition(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctiondefinition" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctiondefinition"):
                 listener.exitFunctiondefinition(self)
-
-
-
 
     def functiondefinition(self):
 
         localctx = CPP14Parser.FunctiondefinitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 244, self.RULE_functiondefinition)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1844
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+            if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                 self.state = 1843
                 self.attributespecifierseq(0)
 
-
             self.state = 1847
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,217,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 217, self._ctx)
             if la_ == 1:
                 self.state = 1846
                 self.declspecifierseq()
-
 
             self.state = 1849
             self.declarator()
             self.state = 1851
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Final or _la==CPP14Parser.Override:
+            if _la == CPP14Parser.Final or _la == CPP14Parser.Override:
                 self.state = 1850
                 self.virtspecifierseq(0)
-
 
             self.state = 1853
             self.functionbody()
@@ -11843,21 +11533,18 @@ class CPP14Parser ( Parser ):
 
     class FunctionbodyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def ctorinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.CtorinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CtorinitializerContext, 0)
 
         def functiontryblock(self):
-            return self.getTypedRuleContext(CPP14Parser.FunctiontryblockContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.FunctiontryblockContext, 0)
 
         def Default(self):
             return self.getToken(CPP14Parser.Default, 0)
@@ -11868,35 +11555,31 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_functionbody
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctionbody" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctionbody"):
                 listener.enterFunctionbody(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctionbody" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctionbody"):
                 listener.exitFunctionbody(self)
-
-
-
 
     def functionbody(self):
 
         localctx = CPP14Parser.FunctionbodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 246, self.RULE_functionbody)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1866
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,220,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 220, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1856
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1855
                     self.ctorinitializer()
-
 
                 self.state = 1858
                 self.compoundstatement()
@@ -11939,31 +11622,26 @@ class CPP14Parser ( Parser ):
 
     class InitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def braceorequalinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.BraceorequalinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BraceorequalinitializerContext, 0)
 
         def expressionlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_initializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitializer"):
                 listener.enterInitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitializer"):
                 listener.exitInitializer(self)
-
-
-
 
     def initializer(self):
 
@@ -12000,31 +11678,26 @@ class CPP14Parser ( Parser ):
 
     class BraceorequalinitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def initializerclause(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_braceorequalinitializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBraceorequalinitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBraceorequalinitializer"):
                 listener.enterBraceorequalinitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBraceorequalinitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBraceorequalinitializer"):
                 listener.exitBraceorequalinitializer(self)
-
-
-
 
     def braceorequalinitializer(self):
 
@@ -12059,31 +11732,26 @@ class CPP14Parser ( Parser ):
 
     class InitializerclauseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def assignmentexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_initializerclause
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitializerclause" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitializerclause"):
                 listener.enterInitializerclause(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitializerclause" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitializerclause"):
                 listener.exitInitializerclause(self)
-
-
-
 
     def initializerclause(self):
 
@@ -12093,7 +11761,20 @@ class CPP14Parser ( Parser ):
             self.state = 1882
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Alignof, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32, CPP14Parser.Const_cast, CPP14Parser.Decltype, CPP14Parser.Delete, CPP14Parser.Double, CPP14Parser.Dynamic_cast, CPP14Parser.FalseToken, CPP14Parser.Float, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.New, CPP14Parser.Noexcept, CPP14Parser.Nullptr, CPP14Parser.Operator, CPP14Parser.Reinterpret_cast, CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Sizeof, CPP14Parser.Static_cast, CPP14Parser.This, CPP14Parser.Throw, CPP14Parser.TrueToken, CPP14Parser.Typeid, CPP14Parser.Typename, CPP14Parser.Unsigned, CPP14Parser.Void, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.LeftBracket, CPP14Parser.Plus, CPP14Parser.Minus, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Or, CPP14Parser.Tilde, CPP14Parser.Not, CPP14Parser.PlusPlus, CPP14Parser.MinusMinus, CPP14Parser.Doublecolon, CPP14Parser.Identifier, CPP14Parser.Integerliteral, CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral, CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral, CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
+            if token in [CPP14Parser.Alignof, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16,
+                         CPP14Parser.Char32, CPP14Parser.Const_cast, CPP14Parser.Decltype, CPP14Parser.Delete,
+                         CPP14Parser.Double, CPP14Parser.Dynamic_cast, CPP14Parser.FalseToken, CPP14Parser.Float,
+                         CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.New, CPP14Parser.Noexcept, CPP14Parser.Nullptr,
+                         CPP14Parser.Operator, CPP14Parser.Reinterpret_cast, CPP14Parser.Short, CPP14Parser.Signed,
+                         CPP14Parser.Sizeof, CPP14Parser.Static_cast, CPP14Parser.This, CPP14Parser.Throw,
+                         CPP14Parser.TrueToken, CPP14Parser.Typeid, CPP14Parser.Typename, CPP14Parser.Unsigned,
+                         CPP14Parser.Void, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.LeftBracket,
+                         CPP14Parser.Plus, CPP14Parser.Minus, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Or,
+                         CPP14Parser.Tilde, CPP14Parser.Not, CPP14Parser.PlusPlus, CPP14Parser.MinusMinus,
+                         CPP14Parser.Doublecolon, CPP14Parser.Identifier, CPP14Parser.Integerliteral,
+                         CPP14Parser.Characterliteral, CPP14Parser.Floatingliteral, CPP14Parser.Stringliteral,
+                         CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral,
+                         CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1880
                 self.assignmentexpression()
@@ -12116,32 +11797,28 @@ class CPP14Parser ( Parser ):
 
     class InitializerlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def initializerclause(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerclauseContext, 0)
 
         def initializerlist(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_initializerlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterInitializerlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterInitializerlist"):
                 listener.enterInitializerlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitInitializerlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitInitializerlist"):
                 listener.exitInitializerlist(self)
 
-
-
-    def initializerlist(self, _p:int=0):
+    def initializerlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.InitializerlistContext(self, self._ctx, _parentState)
@@ -12154,18 +11831,17 @@ class CPP14Parser ( Parser ):
             self.initializerclause()
             self.state = 1887
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,224,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 224, self._ctx)
             if la_ == 1:
                 self.state = 1886
                 self.match(CPP14Parser.Ellipsis)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 1897
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,226,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 226, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -12181,15 +11857,14 @@ class CPP14Parser ( Parser ):
                     self.initializerclause()
                     self.state = 1893
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,225,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 225, self._ctx)
                     if la_ == 1:
                         self.state = 1892
                         self.match(CPP14Parser.Ellipsis)
 
-             
                 self.state = 1899
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,226,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 226, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -12201,37 +11876,33 @@ class CPP14Parser ( Parser ):
 
     class BracedinitlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def initializerlist(self):
-            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.InitializerlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_bracedinitlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBracedinitlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBracedinitlist"):
                 listener.enterBracedinitlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBracedinitlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBracedinitlist"):
                 listener.exitBracedinitlist(self)
-
-
-
 
     def bracedinitlist(self):
 
         localctx = CPP14Parser.BracedinitlistContext(self, self._ctx, self.state)
         self.enterRule(localctx, 256, self.RULE_bracedinitlist)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1909
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,228,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 228, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1900
@@ -12241,10 +11912,9 @@ class CPP14Parser ( Parser ):
                 self.state = 1903
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Comma:
+                if _la == CPP14Parser.Comma:
                     self.state = 1902
                     self.match(CPP14Parser.Comma)
-
 
                 self.state = 1905
                 self.match(CPP14Parser.RightBrace)
@@ -12269,7 +11939,7 @@ class CPP14Parser ( Parser ):
 
     class ClassnameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -12277,22 +11947,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_classname
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassname" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClassname"):
                 listener.enterClassname(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassname" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClassname"):
                 listener.exitClassname(self)
-
-
-
 
     def classname(self):
 
@@ -12301,7 +11967,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 1913
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,229,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 229, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1911
@@ -12325,37 +11991,32 @@ class CPP14Parser ( Parser ):
 
     class ClassspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classhead(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassheadContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassheadContext, 0)
 
         def memberspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberspecificationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_classspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClassspecifier"):
                 listener.enterClassspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClassspecifier"):
                 listener.exitClassspecifier(self)
-
-
-
 
     def classspecifier(self):
 
         localctx = CPP14Parser.ClassspecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 260, self.RULE_classspecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1915
@@ -12365,10 +12026,29 @@ class CPP14Parser ( Parser ):
             self.state = 1918
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (
+                1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (
+                1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (
+                1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (
+                1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (
+                1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (
+                1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (
+                1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (
+                1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or (
+                    (((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (
+                1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (
+                1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (
+                1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
                 self.state = 1917
                 self.memberspecification()
-
 
             self.state = 1920
             self.match(CPP14Parser.RightBrace)
@@ -12382,53 +12062,45 @@ class CPP14Parser ( Parser ):
 
     class ClassheadContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classkey(self):
-            return self.getTypedRuleContext(CPP14Parser.ClasskeyContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClasskeyContext, 0)
 
         def classheadname(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassheadnameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassheadnameContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def classvirtspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassvirtspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassvirtspecifierContext, 0)
 
         def baseclause(self):
-            return self.getTypedRuleContext(CPP14Parser.BaseclauseContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BaseclauseContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_classhead
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClasshead" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClasshead"):
                 listener.enterClasshead(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClasshead" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClasshead"):
                 listener.exitClasshead(self)
-
-
-
 
     def classhead(self):
 
         localctx = CPP14Parser.ClassheadContext(self, self._ctx, self.state)
         self.enterRule(localctx, 262, self.RULE_classhead)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1940
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,236,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 236, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1922
@@ -12436,28 +12108,25 @@ class CPP14Parser ( Parser ):
                 self.state = 1924
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1923
                     self.attributespecifierseq(0)
-
 
                 self.state = 1926
                 self.classheadname()
                 self.state = 1928
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Final:
+                if _la == CPP14Parser.Final:
                     self.state = 1927
                     self.classvirtspecifier()
-
 
                 self.state = 1931
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1930
                     self.baseclause()
-
 
                 pass
 
@@ -12468,18 +12137,16 @@ class CPP14Parser ( Parser ):
                 self.state = 1935
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 1934
                     self.attributespecifierseq(0)
-
 
                 self.state = 1938
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Colon:
+                if _la == CPP14Parser.Colon:
                     self.state = 1937
                     self.baseclause()
-
 
                 pass
 
@@ -12494,31 +12161,26 @@ class CPP14Parser ( Parser ):
 
     class ClassheadnameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classname(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassnameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassnameContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_classheadname
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassheadname" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClassheadname"):
                 listener.enterClassheadname(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassheadname" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClassheadname"):
                 listener.exitClassheadname(self)
-
-
-
 
     def classheadname(self):
 
@@ -12528,11 +12190,10 @@ class CPP14Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 1943
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,237,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 237, self._ctx)
             if la_ == 1:
                 self.state = 1942
                 self.nestednamespecifier(0)
-
 
             self.state = 1945
             self.classname()
@@ -12546,7 +12207,7 @@ class CPP14Parser ( Parser ):
 
     class ClassvirtspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -12556,16 +12217,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_classvirtspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassvirtspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClassvirtspecifier"):
                 listener.enterClassvirtspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassvirtspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClassvirtspecifier"):
                 listener.exitClassvirtspecifier(self)
-
-
-
 
     def classvirtspecifier(self):
 
@@ -12585,7 +12243,7 @@ class CPP14Parser ( Parser ):
 
     class ClasskeyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -12601,27 +12259,26 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_classkey
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClasskey" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClasskey"):
                 listener.enterClasskey(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClasskey" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClasskey"):
                 listener.exitClasskey(self)
-
-
-
 
     def classkey(self):
 
         localctx = CPP14Parser.ClasskeyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 268, self.RULE_classkey)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1949
             _la = self._input.LA(1)
-            if not(((((_la - 14)) & ~0x3f) == 0 and ((1 << (_la - 14)) & ((1 << (CPP14Parser.Class - 14)) | (1 << (CPP14Parser.Struct - 14)) | (1 << (CPP14Parser.Union - 14)))) != 0)):
+            if not (((((_la - 14)) & ~0x3f) == 0 and ((1 << (_la - 14)) & (
+                    (1 << (CPP14Parser.Class - 14)) | (1 << (CPP14Parser.Struct - 14)) | (
+                1 << (CPP14Parser.Union - 14)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -12636,56 +12293,82 @@ class CPP14Parser ( Parser ):
 
     class MemberspecificationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def memberdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberdeclarationContext, 0)
 
         def memberspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberspecificationContext, 0)
 
         def accessspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.AccessspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AccessspecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_memberspecification
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMemberspecification" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMemberspecification"):
                 listener.enterMemberspecification(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMemberspecification" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMemberspecification"):
                 listener.exitMemberspecification(self)
-
-
-
 
     def memberspecification(self):
 
         localctx = CPP14Parser.MemberspecificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 270, self.RULE_memberspecification)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1960
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [CPP14Parser.Alignas, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16, CPP14Parser.Char32, CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Constexpr, CPP14Parser.Decltype, CPP14Parser.Double, CPP14Parser.Enum, CPP14Parser.Explicit, CPP14Parser.Extern, CPP14Parser.Float, CPP14Parser.Friend, CPP14Parser.Inline, CPP14Parser.Int, CPP14Parser.Long, CPP14Parser.Mutable, CPP14Parser.Operator, CPP14Parser.Register, CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Static, CPP14Parser.Static_assert, CPP14Parser.Struct, CPP14Parser.Template, CPP14Parser.Thread_local, CPP14Parser.Typedef, CPP14Parser.Typename, CPP14Parser.Union, CPP14Parser.Unsigned, CPP14Parser.Using, CPP14Parser.Virtual, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar, CPP14Parser.LeftParen, CPP14Parser.LeftBracket, CPP14Parser.Star, CPP14Parser.And, CPP14Parser.Tilde, CPP14Parser.AndAnd, CPP14Parser.Colon, CPP14Parser.Doublecolon, CPP14Parser.Semi, CPP14Parser.Ellipsis, CPP14Parser.Identifier]:
+            if token in [CPP14Parser.Alignas, CPP14Parser.Auto, CPP14Parser.Bool, CPP14Parser.Char, CPP14Parser.Char16,
+                         CPP14Parser.Char32, CPP14Parser.Class, CPP14Parser.Const, CPP14Parser.Constexpr,
+                         CPP14Parser.Decltype, CPP14Parser.Double, CPP14Parser.Enum, CPP14Parser.Explicit,
+                         CPP14Parser.Extern, CPP14Parser.Float, CPP14Parser.Friend, CPP14Parser.Inline, CPP14Parser.Int,
+                         CPP14Parser.Long, CPP14Parser.Mutable, CPP14Parser.Operator, CPP14Parser.Register,
+                         CPP14Parser.Short, CPP14Parser.Signed, CPP14Parser.Static, CPP14Parser.Static_assert,
+                         CPP14Parser.Struct, CPP14Parser.Template, CPP14Parser.Thread_local, CPP14Parser.Typedef,
+                         CPP14Parser.Typename, CPP14Parser.Union, CPP14Parser.Unsigned, CPP14Parser.Using,
+                         CPP14Parser.Virtual, CPP14Parser.Void, CPP14Parser.Volatile, CPP14Parser.Wchar,
+                         CPP14Parser.LeftParen, CPP14Parser.LeftBracket, CPP14Parser.Star, CPP14Parser.And,
+                         CPP14Parser.Tilde, CPP14Parser.AndAnd, CPP14Parser.Colon, CPP14Parser.Doublecolon,
+                         CPP14Parser.Semi, CPP14Parser.Ellipsis, CPP14Parser.Identifier]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1951
                 self.memberdeclaration()
                 self.state = 1953
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                    1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (
+                    1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (
+                    1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (
+                    1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (
+                    1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (
+                    1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (
+                    1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (
+                    1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (
+                    1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((
+                                                                                                                         1 << (
+                                                                                                                         CPP14Parser.Typedef - 67)) | (
+                    1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                    1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                    1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                    1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                    1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                    1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                    1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (
+                    1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (
+                    1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
                     self.state = 1952
                     self.memberspecification()
-
 
                 pass
             elif token in [CPP14Parser.Private, CPP14Parser.Protected, CPP14Parser.Public]:
@@ -12697,10 +12380,31 @@ class CPP14Parser ( Parser ):
                 self.state = 1958
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((1 << (CPP14Parser.Typedef - 67)) | (1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                    1 << CPP14Parser.Constexpr) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (
+                    1 << CPP14Parser.Enum) | (1 << CPP14Parser.Explicit) | (1 << CPP14Parser.Extern) | (
+                    1 << CPP14Parser.Float) | (1 << CPP14Parser.Friend) | (1 << CPP14Parser.Inline) | (
+                    1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Mutable) | (
+                    1 << CPP14Parser.Operator) | (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (
+                    1 << CPP14Parser.Public) | (1 << CPP14Parser.Register) | (1 << CPP14Parser.Short) | (
+                    1 << CPP14Parser.Signed) | (1 << CPP14Parser.Static) | (1 << CPP14Parser.Static_assert) | (
+                    1 << CPP14Parser.Struct) | (1 << CPP14Parser.Template) | (
+                    1 << CPP14Parser.Thread_local))) != 0) or ((((_la - 67)) & ~0x3f) == 0 and ((1 << (_la - 67)) & ((
+                                                                                                                         1 << (
+                                                                                                                         CPP14Parser.Typedef - 67)) | (
+                    1 << (CPP14Parser.Typename - 67)) | (1 << (CPP14Parser.Union - 67)) | (
+                    1 << (CPP14Parser.Unsigned - 67)) | (1 << (CPP14Parser.Using - 67)) | (
+                    1 << (CPP14Parser.Virtual - 67)) | (1 << (CPP14Parser.Void - 67)) | (
+                    1 << (CPP14Parser.Volatile - 67)) | (1 << (CPP14Parser.Wchar - 67)) | (
+                    1 << (CPP14Parser.LeftParen - 67)) | (1 << (CPP14Parser.LeftBracket - 67)) | (
+                    1 << (CPP14Parser.Star - 67)) | (1 << (CPP14Parser.And - 67)) | (1 << (CPP14Parser.Tilde - 67)) | (
+                    1 << (CPP14Parser.AndAnd - 67)) | (1 << (CPP14Parser.Colon - 67)) | (
+                    1 << (CPP14Parser.Doublecolon - 67)) | (1 << (CPP14Parser.Semi - 67)) | (
+                    1 << (CPP14Parser.Ellipsis - 67)) | (1 << (CPP14Parser.Identifier - 67)))) != 0):
                     self.state = 1957
                     self.memberspecification()
-
 
                 pass
             else:
@@ -12716,94 +12420,86 @@ class CPP14Parser ( Parser ):
 
     class MemberdeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def declspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclspecifierseqContext, 0)
 
         def memberdeclaratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorlistContext, 0)
 
         def functiondefinition(self):
-            return self.getTypedRuleContext(CPP14Parser.FunctiondefinitionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.FunctiondefinitionContext, 0)
 
         def usingdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.UsingdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UsingdeclarationContext, 0)
 
         def static_assertdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.Static_assertdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.Static_assertdeclarationContext, 0)
 
         def templatedeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplatedeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplatedeclarationContext, 0)
 
         def aliasdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.AliasdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AliasdeclarationContext, 0)
 
         def emptydeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.EmptydeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.EmptydeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_memberdeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMemberdeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMemberdeclaration"):
                 listener.enterMemberdeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMemberdeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMemberdeclaration"):
                 listener.exitMemberdeclaration(self)
-
-
-
 
     def memberdeclaration(self):
 
         localctx = CPP14Parser.MemberdeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 272, self.RULE_memberdeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 1978
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,244,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 244, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1963
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,241,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 241, self._ctx)
                 if la_ == 1:
                     self.state = 1962
                     self.attributespecifierseq(0)
 
-
                 self.state = 1966
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,242,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 242, self._ctx)
                 if la_ == 1:
                     self.state = 1965
                     self.declspecifierseq()
 
-
                 self.state = 1969
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Operator))) != 0) or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & ((1 << (CPP14Parser.LeftParen - 78)) | (1 << (CPP14Parser.LeftBracket - 78)) | (1 << (CPP14Parser.Star - 78)) | (1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.Tilde - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (1 << (CPP14Parser.Colon - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignas) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Operator))) != 0) or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & (
+                                                    (1 << (CPP14Parser.LeftParen - 78)) | (
+                                                    1 << (CPP14Parser.LeftBracket - 78)) | (
+                                                1 << (CPP14Parser.Star - 78)) | (1 << (CPP14Parser.And - 78)) | (
+                                        1 << (CPP14Parser.Tilde - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (
+                                1 << (CPP14Parser.Colon - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (
+                        1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
                     self.state = 1968
                     self.memberdeclaratorlist(0)
-
 
                 self.state = 1971
                 self.match(CPP14Parser.Semi)
@@ -12856,32 +12552,28 @@ class CPP14Parser ( Parser ):
 
     class MemberdeclaratorlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def memberdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorContext, 0)
 
         def memberdeclaratorlist(self):
-            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MemberdeclaratorlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_memberdeclaratorlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMemberdeclaratorlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMemberdeclaratorlist"):
                 listener.enterMemberdeclaratorlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMemberdeclaratorlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMemberdeclaratorlist"):
                 listener.exitMemberdeclaratorlist(self)
 
-
-
-    def memberdeclaratorlist(self, _p:int=0):
+    def memberdeclaratorlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.MemberdeclaratorlistContext(self, self._ctx, _parentState)
@@ -12895,9 +12587,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 1988
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,245,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 245, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -12910,10 +12602,10 @@ class CPP14Parser ( Parser ):
                     self.state = 1984
                     self.match(CPP14Parser.Comma)
                     self.state = 1985
-                    self.memberdeclarator() 
+                    self.memberdeclarator()
                 self.state = 1990
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,245,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 245, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -12925,79 +12617,68 @@ class CPP14Parser ( Parser ):
 
     class MemberdeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def virtspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext, 0)
 
         def purespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.PurespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PurespecifierContext, 0)
 
         def braceorequalinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.BraceorequalinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BraceorequalinitializerContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_memberdeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMemberdeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMemberdeclarator"):
                 listener.enterMemberdeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMemberdeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMemberdeclarator"):
                 listener.exitMemberdeclarator(self)
-
-
-
 
     def memberdeclarator(self):
 
         localctx = CPP14Parser.MemberdeclaratorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 276, self.RULE_memberdeclarator)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2010
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,251,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 251, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1991
                 self.declarator()
                 self.state = 1993
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,246,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 246, self._ctx)
                 if la_ == 1:
                     self.state = 1992
                     self.virtspecifierseq(0)
 
-
                 self.state = 1996
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,247,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 247, self._ctx)
                 if la_ == 1:
                     self.state = 1995
                     self.purespecifier()
-
 
                 pass
 
@@ -13007,11 +12688,10 @@ class CPP14Parser ( Parser ):
                 self.declarator()
                 self.state = 2000
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,248,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 248, self._ctx)
                 if la_ == 1:
                     self.state = 1999
                     self.braceorequalinitializer()
-
 
                 pass
 
@@ -13020,18 +12700,16 @@ class CPP14Parser ( Parser ):
                 self.state = 2003
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 2002
                     self.match(CPP14Parser.Identifier)
-
 
                 self.state = 2006
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2005
                     self.attributespecifierseq(0)
-
 
                 self.state = 2008
                 self.match(CPP14Parser.Colon)
@@ -13050,32 +12728,28 @@ class CPP14Parser ( Parser ):
 
     class VirtspecifierseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def virtspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.VirtspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.VirtspecifierContext, 0)
 
         def virtspecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.VirtspecifierseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_virtspecifierseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVirtspecifierseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterVirtspecifierseq"):
                 listener.enterVirtspecifierseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVirtspecifierseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitVirtspecifierseq"):
                 listener.exitVirtspecifierseq(self)
 
-
-
-    def virtspecifierseq(self, _p:int=0):
+    def virtspecifierseq(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.VirtspecifierseqContext(self, self._ctx, _parentState)
@@ -13089,9 +12763,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 2019
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,252,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 252, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -13102,10 +12776,10 @@ class CPP14Parser ( Parser ):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 2016
-                    self.virtspecifier() 
+                    self.virtspecifier()
                 self.state = 2021
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,252,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 252, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -13117,7 +12791,7 @@ class CPP14Parser ( Parser ):
 
     class VirtspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -13130,27 +12804,24 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_virtspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVirtspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterVirtspecifier"):
                 listener.enterVirtspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVirtspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitVirtspecifier"):
                 listener.exitVirtspecifier(self)
-
-
-
 
     def virtspecifier(self):
 
         localctx = CPP14Parser.VirtspecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 280, self.RULE_virtspecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2022
             _la = self._input.LA(1)
-            if not(_la==CPP14Parser.Final or _la==CPP14Parser.Override):
+            if not (_la == CPP14Parser.Final or _la == CPP14Parser.Override):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -13165,10 +12836,10 @@ class CPP14Parser ( Parser ):
 
     class PurespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.val = None # Token
+            self.val = None  # Token
 
         def Assign(self):
             return self.getToken(CPP14Parser.Assign, 0)
@@ -13179,16 +12850,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_purespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPurespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPurespecifier"):
                 listener.enterPurespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPurespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPurespecifier"):
                 listener.exitPurespecifier(self)
-
-
-
 
     def purespecifier(self):
 
@@ -13212,27 +12880,23 @@ class CPP14Parser ( Parser ):
 
     class BaseclauseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def basespecifierlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BasespecifierlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BasespecifierlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_baseclause
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBaseclause" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBaseclause"):
                 listener.enterBaseclause(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBaseclause" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBaseclause"):
                 listener.exitBaseclause(self)
-
-
-
 
     def baseclause(self):
 
@@ -13254,32 +12918,28 @@ class CPP14Parser ( Parser ):
 
     class BasespecifierlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def basespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.BasespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BasespecifierContext, 0)
 
         def basespecifierlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BasespecifierlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BasespecifierlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_basespecifierlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBasespecifierlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBasespecifierlist"):
                 listener.enterBasespecifierlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBasespecifierlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBasespecifierlist"):
                 listener.exitBasespecifierlist(self)
 
-
-
-    def basespecifierlist(self, _p:int=0):
+    def basespecifierlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.BasespecifierlistContext(self, self._ctx, _parentState)
@@ -13292,18 +12952,17 @@ class CPP14Parser ( Parser ):
             self.basespecifier()
             self.state = 2034
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,253,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 253, self._ctx)
             if la_ == 1:
                 self.state = 2033
                 self.match(CPP14Parser.Ellipsis)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 2044
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,255,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 255, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -13319,15 +12978,14 @@ class CPP14Parser ( Parser ):
                     self.basespecifier()
                     self.state = 2040
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,254,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 254, self._ctx)
                     if la_ == 1:
                         self.state = 2039
                         self.match(CPP14Parser.Ellipsis)
 
-             
                 self.state = 2046
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,255,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 255, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -13339,57 +12997,50 @@ class CPP14Parser ( Parser ):
 
     class BasespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def basetypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.BasetypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BasetypespecifierContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def Virtual(self):
             return self.getToken(CPP14Parser.Virtual, 0)
 
         def accessspecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.AccessspecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AccessspecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_basespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBasespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBasespecifier"):
                 listener.enterBasespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBasespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBasespecifier"):
                 listener.exitBasespecifier(self)
-
-
-
 
     def basespecifier(self):
 
         localctx = CPP14Parser.BasespecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 288, self.RULE_basespecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2068
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,261,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 261, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2048
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2047
                     self.attributespecifierseq(0)
-
 
                 self.state = 2050
                 self.basetypespecifier()
@@ -13400,20 +13051,19 @@ class CPP14Parser ( Parser ):
                 self.state = 2052
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2051
                     self.attributespecifierseq(0)
-
 
                 self.state = 2054
                 self.match(CPP14Parser.Virtual)
                 self.state = 2056
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & (
+                        (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public))) != 0):
                     self.state = 2055
                     self.accessspecifier()
-
 
                 self.state = 2058
                 self.basetypespecifier()
@@ -13424,20 +13074,18 @@ class CPP14Parser ( Parser ):
                 self.state = 2060
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2059
                     self.attributespecifierseq(0)
-
 
                 self.state = 2062
                 self.accessspecifier()
                 self.state = 2064
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Virtual:
+                if _la == CPP14Parser.Virtual:
                     self.state = 2063
                     self.match(CPP14Parser.Virtual)
-
 
                 self.state = 2066
                 self.basetypespecifier()
@@ -13454,35 +13102,29 @@ class CPP14Parser ( Parser ):
 
     class ClassordecltypeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classname(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassnameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassnameContext, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def decltypespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DecltypespecifierContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_classordecltype
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassordecltype" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterClassordecltype"):
                 listener.enterClassordecltype(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassordecltype" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitClassordecltype"):
                 listener.exitClassordecltype(self)
-
-
-
 
     def classordecltype(self):
 
@@ -13491,16 +13133,15 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2075
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,263,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 263, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2071
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,262,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 262, self._ctx)
                 if la_ == 1:
                     self.state = 2070
                     self.nestednamespecifier(0)
-
 
                 self.state = 2073
                 self.classname()
@@ -13523,27 +13164,23 @@ class CPP14Parser ( Parser ):
 
     class BasetypespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classordecltype(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassordecltypeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassordecltypeContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_basetypespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBasetypespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBasetypespecifier"):
                 listener.enterBasetypespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBasetypespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBasetypespecifier"):
                 listener.exitBasetypespecifier(self)
-
-
-
 
     def basetypespecifier(self):
 
@@ -13563,7 +13200,7 @@ class CPP14Parser ( Parser ):
 
     class AccessspecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -13579,27 +13216,25 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_accessspecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAccessspecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAccessspecifier"):
                 listener.enterAccessspecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAccessspecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAccessspecifier"):
                 listener.exitAccessspecifier(self)
-
-
-
 
     def accessspecifier(self):
 
         localctx = CPP14Parser.AccessspecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 294, self.RULE_accessspecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2079
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public))) != 0)):
+            if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
+                    (1 << CPP14Parser.Private) | (1 << CPP14Parser.Protected) | (1 << CPP14Parser.Public))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -13614,7 +13249,7 @@ class CPP14Parser ( Parser ):
 
     class ConversionfunctionidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -13622,22 +13257,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Operator, 0)
 
         def conversiontypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ConversiontypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConversiontypeidContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_conversionfunctionid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConversionfunctionid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConversionfunctionid"):
                 listener.enterConversionfunctionid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConversionfunctionid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConversionfunctionid"):
                 listener.exitConversionfunctionid(self)
-
-
-
 
     def conversionfunctionid(self):
 
@@ -13659,31 +13290,26 @@ class CPP14Parser ( Parser ):
 
     class ConversiontypeidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def conversiondeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.ConversiondeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConversiondeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_conversiontypeid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConversiontypeid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConversiontypeid"):
                 listener.enterConversiontypeid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConversiontypeid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConversiontypeid"):
                 listener.exitConversiontypeid(self)
-
-
-
 
     def conversiontypeid(self):
 
@@ -13695,7 +13321,7 @@ class CPP14Parser ( Parser ):
             self.typespecifierseq()
             self.state = 2086
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,264,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 264, self._ctx)
             if la_ == 1:
                 self.state = 2085
                 self.conversiondeclarator()
@@ -13711,31 +13337,26 @@ class CPP14Parser ( Parser ):
 
     class ConversiondeclaratorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def ptroperator(self):
-            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PtroperatorContext, 0)
 
         def conversiondeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.ConversiondeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConversiondeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_conversiondeclarator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterConversiondeclarator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterConversiondeclarator"):
                 listener.enterConversiondeclarator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitConversiondeclarator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitConversiondeclarator"):
                 listener.exitConversiondeclarator(self)
-
-
-
 
     def conversiondeclarator(self):
 
@@ -13747,7 +13368,7 @@ class CPP14Parser ( Parser ):
             self.ptroperator()
             self.state = 2090
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,265,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 265, self._ctx)
             if la_ == 1:
                 self.state = 2089
                 self.conversiondeclarator()
@@ -13763,27 +13384,23 @@ class CPP14Parser ( Parser ):
 
     class CtorinitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def meminitializerlist(self):
-            return self.getTypedRuleContext(CPP14Parser.MeminitializerlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MeminitializerlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_ctorinitializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCtorinitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterCtorinitializer"):
                 listener.enterCtorinitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCtorinitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitCtorinitializer"):
                 listener.exitCtorinitializer(self)
-
-
-
 
     def ctorinitializer(self):
 
@@ -13805,41 +13422,36 @@ class CPP14Parser ( Parser ):
 
     class MeminitializerlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def meminitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.MeminitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MeminitializerContext, 0)
 
         def meminitializerlist(self):
-            return self.getTypedRuleContext(CPP14Parser.MeminitializerlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MeminitializerlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_meminitializerlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMeminitializerlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMeminitializerlist"):
                 listener.enterMeminitializerlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMeminitializerlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMeminitializerlist"):
                 listener.exitMeminitializerlist(self)
-
-
-
 
     def meminitializerlist(self):
 
         localctx = CPP14Parser.MeminitializerlistContext(self, self._ctx, self.state)
         self.enterRule(localctx, 304, self.RULE_meminitializerlist)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2106
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,268,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 268, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2095
@@ -13847,10 +13459,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2097
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Ellipsis:
+                if _la == CPP14Parser.Ellipsis:
                     self.state = 2096
                     self.match(CPP14Parser.Ellipsis)
-
 
                 pass
 
@@ -13861,10 +13472,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2101
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Ellipsis:
+                if _la == CPP14Parser.Ellipsis:
                     self.state = 2100
                     self.match(CPP14Parser.Ellipsis)
-
 
                 self.state = 2103
                 self.match(CPP14Parser.Comma)
@@ -13883,45 +13493,39 @@ class CPP14Parser ( Parser ):
 
     class MeminitializerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def meminitializerid(self):
-            return self.getTypedRuleContext(CPP14Parser.MeminitializeridContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.MeminitializeridContext, 0)
 
         def expressionlist(self):
-            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExpressionlistContext, 0)
 
         def bracedinitlist(self):
-            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BracedinitlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_meminitializer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMeminitializer" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMeminitializer"):
                 listener.enterMeminitializer(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMeminitializer" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMeminitializer"):
                 listener.exitMeminitializer(self)
-
-
-
 
     def meminitializer(self):
 
         localctx = CPP14Parser.MeminitializerContext(self, self._ctx, self.state)
         self.enterRule(localctx, 306, self.RULE_meminitializer)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2118
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,270,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 270, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2108
@@ -13931,10 +13535,34 @@ class CPP14Parser ( Parser ):
                 self.state = 2111
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (
+                    1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (CPP14Parser.Throw - 64)) | (
+                    1 << (CPP14Parser.TrueToken - 64)) | (1 << (CPP14Parser.Typeid - 64)) | (
+                    1 << (CPP14Parser.Typename - 64)) | (1 << (CPP14Parser.Unsigned - 64)) | (
+                    1 << (CPP14Parser.Void - 64)) | (1 << (CPP14Parser.Wchar - 64)) | (
+                    1 << (CPP14Parser.LeftParen - 64)) | (1 << (CPP14Parser.LeftBracket - 64)) | (
+                    1 << (CPP14Parser.LeftBrace - 64)) | (1 << (CPP14Parser.Plus - 64)) | (
+                    1 << (CPP14Parser.Minus - 64)) | (1 << (CPP14Parser.Star - 64)) | (1 << (CPP14Parser.And - 64)) | (
+                    1 << (CPP14Parser.Or - 64)) | (1 << (CPP14Parser.Tilde - 64)) | (1 << (CPP14Parser.Not - 64)) | (
+                    1 << (CPP14Parser.PlusPlus - 64)) | (1 << (CPP14Parser.MinusMinus - 64)) | (
+                    1 << (CPP14Parser.Doublecolon - 64)) | (1 << (CPP14Parser.Identifier - 64)) | (
+                    1 << (CPP14Parser.Integerliteral - 64)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 2110
                     self.expressionlist()
-
 
                 self.state = 2113
                 self.match(CPP14Parser.RightParen)
@@ -13959,13 +13587,12 @@ class CPP14Parser ( Parser ):
 
     class MeminitializeridContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def classordecltype(self):
-            return self.getTypedRuleContext(CPP14Parser.ClassordecltypeContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ClassordecltypeContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
@@ -13973,16 +13600,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_meminitializerid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterMeminitializerid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMeminitializerid"):
                 listener.enterMeminitializerid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitMeminitializerid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMeminitializerid"):
                 listener.exitMeminitializerid(self)
-
-
-
 
     def meminitializerid(self):
 
@@ -13991,7 +13615,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2122
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,271,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 271, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2120
@@ -14015,7 +13639,7 @@ class CPP14Parser ( Parser ):
 
     class OperatorfunctionidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14023,22 +13647,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Operator, 0)
 
         def theoperator(self):
-            return self.getTypedRuleContext(CPP14Parser.TheoperatorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TheoperatorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_operatorfunctionid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperatorfunctionid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterOperatorfunctionid"):
                 listener.enterOperatorfunctionid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperatorfunctionid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitOperatorfunctionid"):
                 listener.exitOperatorfunctionid(self)
-
-
-
 
     def operatorfunctionid(self):
 
@@ -14060,7 +13680,7 @@ class CPP14Parser ( Parser ):
 
     class LiteraloperatoridContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14079,16 +13699,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_literaloperatorid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLiteraloperatorid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLiteraloperatorid"):
                 listener.enterLiteraloperatorid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLiteraloperatorid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLiteraloperatorid"):
                 listener.exitLiteraloperatorid(self)
-
-
-
 
     def literaloperatorid(self):
 
@@ -14097,7 +13714,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2132
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,272,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 272, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2127
@@ -14127,7 +13744,7 @@ class CPP14Parser ( Parser ):
 
     class TemplatedeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14135,26 +13752,21 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Template, 0)
 
         def templateparameterlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext, 0)
 
         def declaration(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templatedeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplatedeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplatedeclaration"):
                 listener.enterTemplatedeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplatedeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplatedeclaration"):
                 listener.exitTemplatedeclaration(self)
-
-
-
 
     def templatedeclaration(self):
 
@@ -14182,32 +13794,28 @@ class CPP14Parser ( Parser ):
 
     class TemplateparameterlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def templateparameter(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateparameterContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateparameterContext, 0)
 
         def templateparameterlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templateparameterlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplateparameterlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplateparameterlist"):
                 listener.enterTemplateparameterlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplateparameterlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplateparameterlist"):
                 listener.exitTemplateparameterlist(self)
 
-
-
-    def templateparameterlist(self, _p:int=0):
+    def templateparameterlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.TemplateparameterlistContext(self, self._ctx, _parentState)
@@ -14221,9 +13829,9 @@ class CPP14Parser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 2148
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,273,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 273, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -14236,10 +13844,10 @@ class CPP14Parser ( Parser ):
                     self.state = 2144
                     self.match(CPP14Parser.Comma)
                     self.state = 2145
-                    self.templateparameter() 
+                    self.templateparameter()
                 self.state = 2150
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,273,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 273, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -14251,7 +13859,7 @@ class CPP14Parser ( Parser ):
 
     class TemplateparameterContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14262,8 +13870,7 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def Typename(self):
             return self.getToken(CPP14Parser.Typename, 0)
@@ -14272,59 +13879,51 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Template, 0)
 
         def templateparameterlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateparameterlistContext, 0)
 
         def idexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext, 0)
 
         def parameterdeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ParameterdeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templateparameter
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplateparameter" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplateparameter"):
                 listener.enterTemplateparameter(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplateparameter" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplateparameter"):
                 listener.exitTemplateparameter(self)
-
-
-
 
     def templateparameter(self):
 
         localctx = CPP14Parser.TemplateparameterContext(self, self._ctx, self.state)
         self.enterRule(localctx, 318, self.RULE_templateparameter)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2200
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,283,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 283, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2151
                 self.match(CPP14Parser.Class)
                 self.state = 2153
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,274,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 274, self._ctx)
                 if la_ == 1:
                     self.state = 2152
                     self.match(CPP14Parser.Ellipsis)
 
-
                 self.state = 2156
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,275,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 275, self._ctx)
                 if la_ == 1:
                     self.state = 2155
                     self.match(CPP14Parser.Identifier)
-
 
                 pass
 
@@ -14335,10 +13934,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2160
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 2159
                     self.match(CPP14Parser.Identifier)
-
 
                 self.state = 2162
                 self.match(CPP14Parser.Assign)
@@ -14352,19 +13950,17 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Typename)
                 self.state = 2166
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,277,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 277, self._ctx)
                 if la_ == 1:
                     self.state = 2165
                     self.match(CPP14Parser.Ellipsis)
 
-
                 self.state = 2169
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,278,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 278, self._ctx)
                 if la_ == 1:
                     self.state = 2168
                     self.match(CPP14Parser.Identifier)
-
 
                 pass
 
@@ -14375,10 +13971,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2173
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 2172
                     self.match(CPP14Parser.Identifier)
-
 
                 self.state = 2175
                 self.match(CPP14Parser.Assign)
@@ -14400,19 +13995,17 @@ class CPP14Parser ( Parser ):
                 self.match(CPP14Parser.Class)
                 self.state = 2183
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,280,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 280, self._ctx)
                 if la_ == 1:
                     self.state = 2182
                     self.match(CPP14Parser.Ellipsis)
 
-
                 self.state = 2186
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,281,self._ctx)
+                la_ = self._interp.adaptivePredict(self._input, 281, self._ctx)
                 if la_ == 1:
                     self.state = 2185
                     self.match(CPP14Parser.Identifier)
-
 
                 pass
 
@@ -14431,10 +14024,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2194
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Identifier:
+                if _la == CPP14Parser.Identifier:
                     self.state = 2193
                     self.match(CPP14Parser.Identifier)
-
 
                 self.state = 2196
                 self.match(CPP14Parser.Assign)
@@ -14459,37 +14051,32 @@ class CPP14Parser ( Parser ):
 
     class SimpletemplateidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def templatename(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplatenameContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplatenameContext, 0)
 
         def templateargumentlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_simpletemplateid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimpletemplateid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSimpletemplateid"):
                 listener.enterSimpletemplateid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimpletemplateid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSimpletemplateid"):
                 listener.exitSimpletemplateid(self)
-
-
-
 
     def simpletemplateid(self):
 
         localctx = CPP14Parser.SimpletemplateidContext(self, self._ctx, self.state)
         self.enterRule(localctx, 320, self.RULE_simpletemplateid)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2202
@@ -14499,10 +14086,36 @@ class CPP14Parser ( Parser ):
             self.state = 2205
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Volatile - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (
+                1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (
+                1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or (
+                    (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (
+                1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (
+                1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (
+                1 << (CPP14Parser.Volatile - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (
+                1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (
+                1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (
+                1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (
+                1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (
+                1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (
+                1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or (
+                    (((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & (
+                                    (1 << (CPP14Parser.Characterliteral - 132)) | (
+                                    1 << (CPP14Parser.Floatingliteral - 132)) | (
+                                1 << (CPP14Parser.Stringliteral - 132)) | (
+                            1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                        1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                 self.state = 2204
                 self.templateargumentlist(0)
-
 
             self.state = 2207
             self.match(CPP14Parser.Greater)
@@ -14516,49 +14129,42 @@ class CPP14Parser ( Parser ):
 
     class TemplateidContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def operatorfunctionid(self):
-            return self.getTypedRuleContext(CPP14Parser.OperatorfunctionidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.OperatorfunctionidContext, 0)
 
         def templateargumentlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext, 0)
 
         def literaloperatorid(self):
-            return self.getTypedRuleContext(CPP14Parser.LiteraloperatoridContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.LiteraloperatoridContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templateid
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplateid" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplateid"):
                 listener.enterTemplateid(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplateid" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplateid"):
                 listener.exitTemplateid(self)
-
-
-
 
     def templateid(self):
 
         localctx = CPP14Parser.TemplateidContext(self, self._ctx, self.state)
         self.enterRule(localctx, 322, self.RULE_templateid)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2224
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,287,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 287, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2209
@@ -14574,10 +14180,35 @@ class CPP14Parser ( Parser ):
                 self.state = 2213
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Volatile - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                    1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (
+                    1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (
+                    1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (
+                    1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (
+                    1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Volatile - 65)) | (
+                    1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (
+                    1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (
+                    1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                    1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (
+                    1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (
+                    1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (
+                    1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 2212
                     self.templateargumentlist(0)
-
 
                 self.state = 2215
                 self.match(CPP14Parser.Greater)
@@ -14592,10 +14223,35 @@ class CPP14Parser ( Parser ):
                 self.state = 2220
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Volatile - 65)) | (1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and ((1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Alignof) | (1 << CPP14Parser.Auto) | (
+                    1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (
+                    1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (
+                    1 << CPP14Parser.Const_cast) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Delete) | (
+                    1 << CPP14Parser.Double) | (1 << CPP14Parser.Dynamic_cast) | (1 << CPP14Parser.Enum) | (
+                    1 << CPP14Parser.FalseToken) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (
+                    1 << CPP14Parser.Long) | (1 << CPP14Parser.New) | (1 << CPP14Parser.Noexcept) | (
+                    1 << CPP14Parser.Nullptr) | (1 << CPP14Parser.Operator) | (1 << CPP14Parser.Reinterpret_cast) | (
+                    1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Sizeof) | (
+                    1 << CPP14Parser.Static_cast) | (1 << CPP14Parser.Struct) | (1 << CPP14Parser.This))) != 0) or (
+                        (((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (CPP14Parser.TrueToken - 65)) | (
+                    1 << (CPP14Parser.Typeid - 65)) | (1 << (CPP14Parser.Typename - 65)) | (
+                    1 << (CPP14Parser.Union - 65)) | (1 << (CPP14Parser.Unsigned - 65)) | (
+                    1 << (CPP14Parser.Void - 65)) | (1 << (CPP14Parser.Volatile - 65)) | (
+                    1 << (CPP14Parser.Wchar - 65)) | (1 << (CPP14Parser.LeftParen - 65)) | (
+                    1 << (CPP14Parser.LeftBracket - 65)) | (1 << (CPP14Parser.Plus - 65)) | (
+                    1 << (CPP14Parser.Minus - 65)) | (1 << (CPP14Parser.Star - 65)) | (1 << (CPP14Parser.And - 65)) | (
+                    1 << (CPP14Parser.Or - 65)) | (1 << (CPP14Parser.Tilde - 65)) | (1 << (CPP14Parser.Not - 65)) | (
+                    1 << (CPP14Parser.PlusPlus - 65)) | (1 << (CPP14Parser.MinusMinus - 65)) | (
+                    1 << (CPP14Parser.Doublecolon - 65)) | (1 << (CPP14Parser.Identifier - 65)) | (
+                    1 << (CPP14Parser.Integerliteral - 65)))) != 0) or ((((_la - 132)) & ~0x3f) == 0 and (
+                    (1 << (_la - 132)) & ((1 << (CPP14Parser.Characterliteral - 132)) | (
+                    1 << (CPP14Parser.Floatingliteral - 132)) | (1 << (CPP14Parser.Stringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedintegerliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedfloatingliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 132)) | (
+                    1 << (CPP14Parser.Userdefinedcharacterliteral - 132)))) != 0):
                     self.state = 2219
                     self.templateargumentlist(0)
-
 
                 self.state = 2222
                 self.match(CPP14Parser.Greater)
@@ -14612,7 +14268,7 @@ class CPP14Parser ( Parser ):
 
     class TemplatenameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14622,16 +14278,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_templatename
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplatename" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplatename"):
                 listener.enterTemplatename(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplatename" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplatename"):
                 listener.exitTemplatename(self)
-
-
-
 
     def templatename(self):
 
@@ -14651,32 +14304,28 @@ class CPP14Parser ( Parser ):
 
     class TemplateargumentlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def templateargument(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateargumentContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateargumentContext, 0)
 
         def templateargumentlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TemplateargumentlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templateargumentlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplateargumentlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplateargumentlist"):
                 listener.enterTemplateargumentlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplateargumentlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplateargumentlist"):
                 listener.exitTemplateargumentlist(self)
 
-
-
-    def templateargumentlist(self, _p:int=0):
+    def templateargumentlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.TemplateargumentlistContext(self, self._ctx, _parentState)
@@ -14689,18 +14338,17 @@ class CPP14Parser ( Parser ):
             self.templateargument()
             self.state = 2231
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,288,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 288, self._ctx)
             if la_ == 1:
                 self.state = 2230
                 self.match(CPP14Parser.Ellipsis)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 2241
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,290,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 290, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -14716,15 +14364,14 @@ class CPP14Parser ( Parser ):
                     self.templateargument()
                     self.state = 2237
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,289,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 289, self._ctx)
                     if la_ == 1:
                         self.state = 2236
                         self.match(CPP14Parser.Ellipsis)
 
-             
                 self.state = 2243
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,290,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 290, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -14736,35 +14383,29 @@ class CPP14Parser ( Parser ):
 
     class TemplateargumentContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def idexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.IdexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_templateargument
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTemplateargument" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTemplateargument"):
                 listener.enterTemplateargument(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTemplateargument" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTemplateargument"):
                 listener.exitTemplateargument(self)
-
-
-
 
     def templateargument(self):
 
@@ -14773,7 +14414,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2247
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,291,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 291, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2244
@@ -14803,7 +14444,7 @@ class CPP14Parser ( Parser ):
 
     class TypenamespecifierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14811,15 +14452,13 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Typename, 0)
 
         def nestednamespecifier(self):
-            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NestednamespecifierContext, 0)
 
         def Identifier(self):
             return self.getToken(CPP14Parser.Identifier, 0)
 
         def simpletemplateid(self):
-            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.SimpletemplateidContext, 0)
 
         def Template(self):
             return self.getToken(CPP14Parser.Template, 0)
@@ -14827,26 +14466,23 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_typenamespecifier
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypenamespecifier" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypenamespecifier"):
                 listener.enterTypenamespecifier(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypenamespecifier" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypenamespecifier"):
                 listener.exitTypenamespecifier(self)
-
-
-
 
     def typenamespecifier(self):
 
         localctx = CPP14Parser.TypenamespecifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 330, self.RULE_typenamespecifier)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2260
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,293,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 293, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2249
@@ -14866,10 +14502,9 @@ class CPP14Parser ( Parser ):
                 self.state = 2256
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Template:
+                if _la == CPP14Parser.Template:
                     self.state = 2255
                     self.match(CPP14Parser.Template)
-
 
                 self.state = 2258
                 self.simpletemplateid()
@@ -14886,7 +14521,7 @@ class CPP14Parser ( Parser ):
 
     class ExplicitinstantiationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14894,8 +14529,7 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Template, 0)
 
         def declaration(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationContext, 0)
 
         def Extern(self):
             return self.getToken(CPP14Parser.Extern, 0)
@@ -14903,31 +14537,27 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_explicitinstantiation
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExplicitinstantiation" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExplicitinstantiation"):
                 listener.enterExplicitinstantiation(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExplicitinstantiation" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExplicitinstantiation"):
                 listener.exitExplicitinstantiation(self)
-
-
-
 
     def explicitinstantiation(self):
 
         localctx = CPP14Parser.ExplicitinstantiationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 332, self.RULE_explicitinstantiation)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2263
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Extern:
+            if _la == CPP14Parser.Extern:
                 self.state = 2262
                 self.match(CPP14Parser.Extern)
-
 
             self.state = 2265
             self.match(CPP14Parser.Template)
@@ -14943,7 +14573,7 @@ class CPP14Parser ( Parser ):
 
     class ExplicitspecializationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -14951,22 +14581,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Template, 0)
 
         def declaration(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclarationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_explicitspecialization
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExplicitspecialization" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExplicitspecialization"):
                 listener.enterExplicitspecialization(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExplicitspecialization" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExplicitspecialization"):
                 listener.exitExplicitspecialization(self)
-
-
-
 
     def explicitspecialization(self):
 
@@ -14992,7 +14618,7 @@ class CPP14Parser ( Parser ):
 
     class TryblockContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15000,26 +14626,21 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Try, 0)
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def handlerseq(self):
-            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_tryblock
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTryblock" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTryblock"):
                 listener.enterTryblock(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTryblock" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTryblock"):
                 listener.exitTryblock(self)
-
-
-
 
     def tryblock(self):
 
@@ -15043,7 +14664,7 @@ class CPP14Parser ( Parser ):
 
     class FunctiontryblockContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15051,36 +14672,30 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Try, 0)
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def handlerseq(self):
-            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext, 0)
 
         def ctorinitializer(self):
-            return self.getTypedRuleContext(CPP14Parser.CtorinitializerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CtorinitializerContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_functiontryblock
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFunctiontryblock" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterFunctiontryblock"):
                 listener.enterFunctiontryblock(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFunctiontryblock" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitFunctiontryblock"):
                 listener.exitFunctiontryblock(self)
-
-
-
 
     def functiontryblock(self):
 
         localctx = CPP14Parser.FunctiontryblockContext(self, self._ctx, self.state)
         self.enterRule(localctx, 338, self.RULE_functiontryblock)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2277
@@ -15088,10 +14703,9 @@ class CPP14Parser ( Parser ):
             self.state = 2279
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==CPP14Parser.Colon:
+            if _la == CPP14Parser.Colon:
                 self.state = 2278
                 self.ctorinitializer()
-
 
             self.state = 2281
             self.compoundstatement()
@@ -15107,31 +14721,26 @@ class CPP14Parser ( Parser ):
 
     class HandlerseqContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def handler(self):
-            return self.getTypedRuleContext(CPP14Parser.HandlerContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.HandlerContext, 0)
 
         def handlerseq(self):
-            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.HandlerseqContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_handlerseq
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterHandlerseq" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterHandlerseq"):
                 listener.enterHandlerseq(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitHandlerseq" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitHandlerseq"):
                 listener.exitHandlerseq(self)
-
-
-
 
     def handlerseq(self):
 
@@ -15143,7 +14752,7 @@ class CPP14Parser ( Parser ):
             self.handler()
             self.state = 2286
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,296,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 296, self._ctx)
             if la_ == 1:
                 self.state = 2285
                 self.handlerseq()
@@ -15159,7 +14768,7 @@ class CPP14Parser ( Parser ):
 
     class HandlerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15167,26 +14776,21 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Catch, 0)
 
         def exceptiondeclaration(self):
-            return self.getTypedRuleContext(CPP14Parser.ExceptiondeclarationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ExceptiondeclarationContext, 0)
 
         def compoundstatement(self):
-            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.CompoundstatementContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_handler
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterHandler" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterHandler"):
                 listener.enterHandler(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitHandler" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitHandler"):
                 listener.exitHandler(self)
-
-
-
 
     def handler(self):
 
@@ -15214,58 +14818,50 @@ class CPP14Parser ( Parser ):
 
     class ExceptiondeclarationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def typespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypespecifierseqContext, 0)
 
         def declarator(self):
-            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DeclaratorContext, 0)
 
         def attributespecifierseq(self):
-            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AttributespecifierseqContext, 0)
 
         def abstractdeclarator(self):
-            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AbstractdeclaratorContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_exceptiondeclaration
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExceptiondeclaration" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExceptiondeclaration"):
                 listener.enterExceptiondeclaration(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExceptiondeclaration" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExceptiondeclaration"):
                 listener.exitExceptiondeclaration(self)
-
-
-
 
     def exceptiondeclaration(self):
 
         localctx = CPP14Parser.ExceptiondeclarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 344, self.RULE_exceptiondeclaration)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.state = 2308
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,300,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 300, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2295
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2294
                     self.attributespecifierseq(0)
-
 
                 self.state = 2297
                 self.typespecifierseq()
@@ -15278,20 +14874,23 @@ class CPP14Parser ( Parser ):
                 self.state = 2301
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Alignas or _la==CPP14Parser.LeftBracket:
+                if _la == CPP14Parser.Alignas or _la == CPP14Parser.LeftBracket:
                     self.state = 2300
                     self.attributespecifierseq(0)
-
 
                 self.state = 2303
                 self.typespecifierseq()
                 self.state = 2305
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==CPP14Parser.Decltype or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & ((1 << (CPP14Parser.LeftParen - 78)) | (1 << (CPP14Parser.LeftBracket - 78)) | (1 << (CPP14Parser.Star - 78)) | (1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (1 << (CPP14Parser.Identifier - 78)))) != 0):
+                if _la == CPP14Parser.Decltype or ((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & (
+                                            (1 << (CPP14Parser.LeftParen - 78)) | (
+                                            1 << (CPP14Parser.LeftBracket - 78)) | (1 << (CPP14Parser.Star - 78)) | (
+                                    1 << (CPP14Parser.And - 78)) | (1 << (CPP14Parser.AndAnd - 78)) | (
+                            1 << (CPP14Parser.Doublecolon - 78)) | (1 << (CPP14Parser.Ellipsis - 78)) | (
+                    1 << (CPP14Parser.Identifier - 78)))) != 0):
                     self.state = 2304
                     self.abstractdeclarator()
-
 
                 pass
 
@@ -15312,7 +14911,7 @@ class CPP14Parser ( Parser ):
 
     class ThrowexpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15320,22 +14919,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Throw, 0)
 
         def assignmentexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.AssignmentexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_throwexpression
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterThrowexpression" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterThrowexpression"):
                 listener.enterThrowexpression(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitThrowexpression" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitThrowexpression"):
                 listener.exitThrowexpression(self)
-
-
-
 
     def throwexpression(self):
 
@@ -15347,7 +14942,7 @@ class CPP14Parser ( Parser ):
             self.match(CPP14Parser.Throw)
             self.state = 2312
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,301,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 301, self._ctx)
             if la_ == 1:
                 self.state = 2311
                 self.assignmentexpression()
@@ -15363,31 +14958,26 @@ class CPP14Parser ( Parser ):
 
     class ExceptionspecificationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def dynamicexceptionspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.DynamicexceptionspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.DynamicexceptionspecificationContext, 0)
 
         def noexceptspecification(self):
-            return self.getTypedRuleContext(CPP14Parser.NoexceptspecificationContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.NoexceptspecificationContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_exceptionspecification
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExceptionspecification" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterExceptionspecification"):
                 listener.enterExceptionspecification(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExceptionspecification" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitExceptionspecification"):
                 listener.exitExceptionspecification(self)
-
-
-
 
     def exceptionspecification(self):
 
@@ -15420,7 +15010,7 @@ class CPP14Parser ( Parser ):
 
     class DynamicexceptionspecificationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15428,28 +15018,24 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Throw, 0)
 
         def typeidlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TypeidlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypeidlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_dynamicexceptionspecification
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDynamicexceptionspecification" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterDynamicexceptionspecification"):
                 listener.enterDynamicexceptionspecification(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDynamicexceptionspecification" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitDynamicexceptionspecification"):
                 listener.exitDynamicexceptionspecification(self)
-
-
-
 
     def dynamicexceptionspecification(self):
 
         localctx = CPP14Parser.DynamicexceptionspecificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 350, self.RULE_dynamicexceptionspecification)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2318
@@ -15459,10 +15045,18 @@ class CPP14Parser ( Parser ):
             self.state = 2321
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Decltype) | (1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Float) | (1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Short) | (1 << CPP14Parser.Signed) | (1 << CPP14Parser.Struct))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & ((1 << (CPP14Parser.Typename - 69)) | (1 << (CPP14Parser.Union - 69)) | (1 << (CPP14Parser.Unsigned - 69)) | (1 << (CPP14Parser.Void - 69)) | (1 << (CPP14Parser.Volatile - 69)) | (1 << (CPP14Parser.Wchar - 69)) | (1 << (CPP14Parser.Doublecolon - 69)) | (1 << (CPP14Parser.Identifier - 69)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << CPP14Parser.Auto) | (1 << CPP14Parser.Bool) | (
+                1 << CPP14Parser.Char) | (1 << CPP14Parser.Char16) | (1 << CPP14Parser.Char32) | (
+                1 << CPP14Parser.Class) | (1 << CPP14Parser.Const) | (1 << CPP14Parser.Decltype) | (
+                1 << CPP14Parser.Double) | (1 << CPP14Parser.Enum) | (1 << CPP14Parser.Float) | (
+                1 << CPP14Parser.Int) | (1 << CPP14Parser.Long) | (1 << CPP14Parser.Short) | (
+                1 << CPP14Parser.Signed) | (1 << CPP14Parser.Struct))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and (
+                (1 << (_la - 69)) & ((1 << (CPP14Parser.Typename - 69)) | (1 << (CPP14Parser.Union - 69)) | (
+                1 << (CPP14Parser.Unsigned - 69)) | (1 << (CPP14Parser.Void - 69)) | (
+                1 << (CPP14Parser.Volatile - 69)) | (1 << (CPP14Parser.Wchar - 69)) | (
+                1 << (CPP14Parser.Doublecolon - 69)) | (1 << (CPP14Parser.Identifier - 69)))) != 0):
                 self.state = 2320
                 self.typeidlist(0)
-
 
             self.state = 2323
             self.match(CPP14Parser.RightParen)
@@ -15476,32 +15070,28 @@ class CPP14Parser ( Parser ):
 
     class TypeidlistContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def thetypeid(self):
-            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ThetypeidContext, 0)
 
         def typeidlist(self):
-            return self.getTypedRuleContext(CPP14Parser.TypeidlistContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.TypeidlistContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_typeidlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypeidlist" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTypeidlist"):
                 listener.enterTypeidlist(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypeidlist" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTypeidlist"):
                 listener.exitTypeidlist(self)
 
-
-
-    def typeidlist(self, _p:int=0):
+    def typeidlist(self, _p: int = 0):
         _parentctx = self._ctx
         _parentState = self.state
         localctx = CPP14Parser.TypeidlistContext(self, self._ctx, _parentState)
@@ -15514,18 +15104,17 @@ class CPP14Parser ( Parser ):
             self.thetypeid()
             self.state = 2328
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,304,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 304, self._ctx)
             if la_ == 1:
                 self.state = 2327
                 self.match(CPP14Parser.Ellipsis)
 
-
             self._ctx.stop = self._input.LT(-1)
             self.state = 2338
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,306,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
+            _alt = self._interp.adaptivePredict(self._input, 306, self._ctx)
+            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
+                if _alt == 1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
@@ -15541,15 +15130,14 @@ class CPP14Parser ( Parser ):
                     self.thetypeid()
                     self.state = 2334
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,305,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input, 305, self._ctx)
                     if la_ == 1:
                         self.state = 2333
                         self.match(CPP14Parser.Ellipsis)
 
-             
                 self.state = 2340
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,306,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input, 306, self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -15561,7 +15149,7 @@ class CPP14Parser ( Parser ):
 
     class NoexceptspecificationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15569,22 +15157,18 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Noexcept, 0)
 
         def constantexpression(self):
-            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.ConstantexpressionContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_noexceptspecification
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNoexceptspecification" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterNoexceptspecification"):
                 listener.enterNoexceptspecification(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNoexceptspecification" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitNoexceptspecification"):
                 listener.exitNoexceptspecification(self)
-
-
-
 
     def noexceptspecification(self):
 
@@ -15593,7 +15177,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2347
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,307,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 307, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2341
@@ -15623,11 +15207,11 @@ class CPP14Parser ( Parser ):
 
     class RightShiftContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Greater(self, i:int=None):
+        def Greater(self, i: int = None):
             if i is None:
                 return self.getTokens(CPP14Parser.Greater)
             else:
@@ -15636,16 +15220,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_rightShift
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRightShift" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRightShift"):
                 listener.enterRightShift(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRightShift" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRightShift"):
                 listener.exitRightShift(self)
-
-
-
 
     def rightShift(self):
 
@@ -15667,11 +15248,11 @@ class CPP14Parser ( Parser ):
 
     class RightShiftAssignContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Greater(self, i:int=None):
+        def Greater(self, i: int = None):
             if i is None:
                 return self.getTokens(CPP14Parser.Greater)
             else:
@@ -15683,16 +15264,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_rightShiftAssign
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRightShiftAssign" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterRightShiftAssign"):
                 listener.enterRightShiftAssign(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRightShiftAssign" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitRightShiftAssign"):
                 listener.exitRightShiftAssign(self)
-
-
-
 
     def rightShiftAssign(self):
 
@@ -15716,7 +15294,7 @@ class CPP14Parser ( Parser ):
 
     class TheoperatorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -15727,26 +15305,21 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Delete, 0)
 
         def rightShift(self):
-            return self.getTypedRuleContext(CPP14Parser.RightShiftContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RightShiftContext, 0)
 
         def rightShiftAssign(self):
-            return self.getTypedRuleContext(CPP14Parser.RightShiftAssignContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.RightShiftAssignContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_theoperator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTheoperator" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterTheoperator"):
                 listener.enterTheoperator(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTheoperator" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitTheoperator"):
                 listener.exitTheoperator(self)
-
-
-
 
     def theoperator(self):
 
@@ -15755,7 +15328,7 @@ class CPP14Parser ( Parser ):
         try:
             self.state = 2404
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,308,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 308, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2356
@@ -16031,7 +15604,7 @@ class CPP14Parser ( Parser ):
 
     class LiteralContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -16048,30 +15621,24 @@ class CPP14Parser ( Parser ):
             return self.getToken(CPP14Parser.Stringliteral, 0)
 
         def booleanliteral(self):
-            return self.getTypedRuleContext(CPP14Parser.BooleanliteralContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.BooleanliteralContext, 0)
 
         def pointerliteral(self):
-            return self.getTypedRuleContext(CPP14Parser.PointerliteralContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.PointerliteralContext, 0)
 
         def userdefinedliteral(self):
-            return self.getTypedRuleContext(CPP14Parser.UserdefinedliteralContext,0)
-
+            return self.getTypedRuleContext(CPP14Parser.UserdefinedliteralContext, 0)
 
         def getRuleIndex(self):
             return CPP14Parser.RULE_literal
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLiteral" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterLiteral"):
                 listener.enterLiteral(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLiteral" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitLiteral"):
                 listener.exitLiteral(self)
-
-
-
 
     def literal(self):
 
@@ -16111,7 +15678,8 @@ class CPP14Parser ( Parser ):
                 self.state = 2411
                 self.pointerliteral()
                 pass
-            elif token in [CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral, CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
+            elif token in [CPP14Parser.Userdefinedintegerliteral, CPP14Parser.Userdefinedfloatingliteral,
+                           CPP14Parser.Userdefinedstringliteral, CPP14Parser.Userdefinedcharacterliteral]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 2412
                 self.userdefinedliteral()
@@ -16129,7 +15697,7 @@ class CPP14Parser ( Parser ):
 
     class BooleanliteralContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -16142,27 +15710,24 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_booleanliteral
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBooleanliteral" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterBooleanliteral"):
                 listener.enterBooleanliteral(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBooleanliteral" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitBooleanliteral"):
                 listener.exitBooleanliteral(self)
-
-
-
 
     def booleanliteral(self):
 
         localctx = CPP14Parser.BooleanliteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 364, self.RULE_booleanliteral)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2415
             _la = self._input.LA(1)
-            if not(_la==CPP14Parser.FalseToken or _la==CPP14Parser.TrueToken):
+            if not (_la == CPP14Parser.FalseToken or _la == CPP14Parser.TrueToken):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -16177,7 +15742,7 @@ class CPP14Parser ( Parser ):
 
     class PointerliteralContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -16187,16 +15752,13 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_pointerliteral
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPointerliteral" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPointerliteral"):
                 listener.enterPointerliteral(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPointerliteral" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPointerliteral"):
                 listener.exitPointerliteral(self)
-
-
-
 
     def pointerliteral(self):
 
@@ -16216,7 +15778,7 @@ class CPP14Parser ( Parser ):
 
     class UserdefinedliteralContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -16235,27 +15797,28 @@ class CPP14Parser ( Parser ):
         def getRuleIndex(self):
             return CPP14Parser.RULE_userdefinedliteral
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterUserdefinedliteral" ):
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterUserdefinedliteral"):
                 listener.enterUserdefinedliteral(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitUserdefinedliteral" ):
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitUserdefinedliteral"):
                 listener.exitUserdefinedliteral(self)
-
-
-
 
     def userdefinedliteral(self):
 
         localctx = CPP14Parser.UserdefinedliteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 368, self.RULE_userdefinedliteral)
-        self._la = 0 # Token type
+        self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2419
             _la = self._input.LA(1)
-            if not(((((_la - 135)) & ~0x3f) == 0 and ((1 << (_la - 135)) & ((1 << (CPP14Parser.Userdefinedintegerliteral - 135)) | (1 << (CPP14Parser.Userdefinedfloatingliteral - 135)) | (1 << (CPP14Parser.Userdefinedstringliteral - 135)) | (1 << (CPP14Parser.Userdefinedcharacterliteral - 135)))) != 0)):
+            if not (((((_la - 135)) & ~0x3f) == 0 and ((1 << (_la - 135)) & (
+                        (1 << (CPP14Parser.Userdefinedintegerliteral - 135)) | (
+                        1 << (CPP14Parser.Userdefinedfloatingliteral - 135)) | (
+                    1 << (CPP14Parser.Userdefinedstringliteral - 135)) | (
+                1 << (CPP14Parser.Userdefinedcharacterliteral - 135)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -16268,9 +15831,7 @@ class CPP14Parser ( Parser ):
             self.exitRule()
         return localctx
 
-
-
-    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
+    def sempred(self, localctx: RuleContext, ruleIndex: int, predIndex: int):
         if self._predicates == None:
             self._predicates = dict()
         self._predicates[6] = self.nestednamespecifier_sempred
@@ -16313,264 +15874,204 @@ class CPP14Parser ( Parser ):
         else:
             return pred(localctx, predIndex)
 
-    def nestednamespecifier_sempred(self, localctx:NestednamespecifierContext, predIndex:int):
-            if predIndex == 0:
-                return self.precpred(self._ctx, 2)
-         
+    def nestednamespecifier_sempred(self, localctx: NestednamespecifierContext, predIndex: int):
+        if predIndex == 0:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 1:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 1:
+            return self.precpred(self._ctx, 1)
 
-    def capturelist_sempred(self, localctx:CapturelistContext, predIndex:int):
-            if predIndex == 2:
-                return self.precpred(self._ctx, 1)
-         
+    def capturelist_sempred(self, localctx: CapturelistContext, predIndex: int):
+        if predIndex == 2:
+            return self.precpred(self._ctx, 1)
 
-    def postfixexpression_sempred(self, localctx:PostfixexpressionContext, predIndex:int):
-            if predIndex == 3:
-                return self.precpred(self._ctx, 19)
-         
+    def postfixexpression_sempred(self, localctx: PostfixexpressionContext, predIndex: int):
+        if predIndex == 3:
+            return self.precpred(self._ctx, 19)
 
-            if predIndex == 4:
-                return self.precpred(self._ctx, 18)
-         
+        if predIndex == 4:
+            return self.precpred(self._ctx, 18)
 
-            if predIndex == 5:
-                return self.precpred(self._ctx, 17)
-         
+        if predIndex == 5:
+            return self.precpred(self._ctx, 17)
 
-            if predIndex == 6:
-                return self.precpred(self._ctx, 12)
-         
+        if predIndex == 6:
+            return self.precpred(self._ctx, 12)
 
-            if predIndex == 7:
-                return self.precpred(self._ctx, 11)
-         
+        if predIndex == 7:
+            return self.precpred(self._ctx, 11)
 
-            if predIndex == 8:
-                return self.precpred(self._ctx, 10)
-         
+        if predIndex == 8:
+            return self.precpred(self._ctx, 10)
 
-            if predIndex == 9:
-                return self.precpred(self._ctx, 9)
-         
+        if predIndex == 9:
+            return self.precpred(self._ctx, 9)
 
-            if predIndex == 10:
-                return self.precpred(self._ctx, 8)
-         
+        if predIndex == 10:
+            return self.precpred(self._ctx, 8)
 
-            if predIndex == 11:
-                return self.precpred(self._ctx, 7)
-         
+        if predIndex == 11:
+            return self.precpred(self._ctx, 7)
 
-    def noptrnewdeclarator_sempred(self, localctx:NoptrnewdeclaratorContext, predIndex:int):
-            if predIndex == 12:
-                return self.precpred(self._ctx, 1)
-         
+    def noptrnewdeclarator_sempred(self, localctx: NoptrnewdeclaratorContext, predIndex: int):
+        if predIndex == 12:
+            return self.precpred(self._ctx, 1)
 
-    def pmexpression_sempred(self, localctx:PmexpressionContext, predIndex:int):
-            if predIndex == 13:
-                return self.precpred(self._ctx, 2)
-         
+    def pmexpression_sempred(self, localctx: PmexpressionContext, predIndex: int):
+        if predIndex == 13:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 14:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 14:
+            return self.precpred(self._ctx, 1)
 
-    def multiplicativeexpression_sempred(self, localctx:MultiplicativeexpressionContext, predIndex:int):
-            if predIndex == 15:
-                return self.precpred(self._ctx, 3)
-         
+    def multiplicativeexpression_sempred(self, localctx: MultiplicativeexpressionContext, predIndex: int):
+        if predIndex == 15:
+            return self.precpred(self._ctx, 3)
 
-            if predIndex == 16:
-                return self.precpred(self._ctx, 2)
-         
+        if predIndex == 16:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 17:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 17:
+            return self.precpred(self._ctx, 1)
 
-    def additiveexpression_sempred(self, localctx:AdditiveexpressionContext, predIndex:int):
-            if predIndex == 18:
-                return self.precpred(self._ctx, 2)
-         
+    def additiveexpression_sempred(self, localctx: AdditiveexpressionContext, predIndex: int):
+        if predIndex == 18:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 19:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 19:
+            return self.precpred(self._ctx, 1)
 
-    def shiftexpression_sempred(self, localctx:ShiftexpressionContext, predIndex:int):
-            if predIndex == 20:
-                return self.precpred(self._ctx, 2)
-         
+    def shiftexpression_sempred(self, localctx: ShiftexpressionContext, predIndex: int):
+        if predIndex == 20:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 21:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 21:
+            return self.precpred(self._ctx, 1)
 
-    def relationalexpression_sempred(self, localctx:RelationalexpressionContext, predIndex:int):
-            if predIndex == 22:
-                return self.precpred(self._ctx, 4)
-         
+    def relationalexpression_sempred(self, localctx: RelationalexpressionContext, predIndex: int):
+        if predIndex == 22:
+            return self.precpred(self._ctx, 4)
 
-            if predIndex == 23:
-                return self.precpred(self._ctx, 3)
-         
+        if predIndex == 23:
+            return self.precpred(self._ctx, 3)
 
-            if predIndex == 24:
-                return self.precpred(self._ctx, 2)
-         
+        if predIndex == 24:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 25:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 25:
+            return self.precpred(self._ctx, 1)
 
-    def equalityexpression_sempred(self, localctx:EqualityexpressionContext, predIndex:int):
-            if predIndex == 26:
-                return self.precpred(self._ctx, 2)
-         
+    def equalityexpression_sempred(self, localctx: EqualityexpressionContext, predIndex: int):
+        if predIndex == 26:
+            return self.precpred(self._ctx, 2)
 
-            if predIndex == 27:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 27:
+            return self.precpred(self._ctx, 1)
 
-    def andexpression_sempred(self, localctx:AndexpressionContext, predIndex:int):
-            if predIndex == 28:
-                return self.precpred(self._ctx, 1)
-         
+    def andexpression_sempred(self, localctx: AndexpressionContext, predIndex: int):
+        if predIndex == 28:
+            return self.precpred(self._ctx, 1)
 
-    def exclusiveorexpression_sempred(self, localctx:ExclusiveorexpressionContext, predIndex:int):
-            if predIndex == 29:
-                return self.precpred(self._ctx, 1)
-         
+    def exclusiveorexpression_sempred(self, localctx: ExclusiveorexpressionContext, predIndex: int):
+        if predIndex == 29:
+            return self.precpred(self._ctx, 1)
 
-    def inclusiveorexpression_sempred(self, localctx:InclusiveorexpressionContext, predIndex:int):
-            if predIndex == 30:
-                return self.precpred(self._ctx, 1)
-         
+    def inclusiveorexpression_sempred(self, localctx: InclusiveorexpressionContext, predIndex: int):
+        if predIndex == 30:
+            return self.precpred(self._ctx, 1)
 
-    def logicalandexpression_sempred(self, localctx:LogicalandexpressionContext, predIndex:int):
-            if predIndex == 31:
-                return self.precpred(self._ctx, 1)
-         
+    def logicalandexpression_sempred(self, localctx: LogicalandexpressionContext, predIndex: int):
+        if predIndex == 31:
+            return self.precpred(self._ctx, 1)
 
-    def logicalorexpression_sempred(self, localctx:LogicalorexpressionContext, predIndex:int):
-            if predIndex == 32:
-                return self.precpred(self._ctx, 1)
-         
+    def logicalorexpression_sempred(self, localctx: LogicalorexpressionContext, predIndex: int):
+        if predIndex == 32:
+            return self.precpred(self._ctx, 1)
 
-    def expression_sempred(self, localctx:ExpressionContext, predIndex:int):
-            if predIndex == 33:
-                return self.precpred(self._ctx, 1)
-         
+    def expression_sempred(self, localctx: ExpressionContext, predIndex: int):
+        if predIndex == 33:
+            return self.precpred(self._ctx, 1)
 
-    def statementseq_sempred(self, localctx:StatementseqContext, predIndex:int):
-            if predIndex == 34:
-                return self.precpred(self._ctx, 1)
-         
+    def statementseq_sempred(self, localctx: StatementseqContext, predIndex: int):
+        if predIndex == 34:
+            return self.precpred(self._ctx, 1)
 
-    def declarationseq_sempred(self, localctx:DeclarationseqContext, predIndex:int):
-            if predIndex == 35:
-                return self.precpred(self._ctx, 1)
-         
+    def declarationseq_sempred(self, localctx: DeclarationseqContext, predIndex: int):
+        if predIndex == 35:
+            return self.precpred(self._ctx, 1)
 
-    def enumeratorlist_sempred(self, localctx:EnumeratorlistContext, predIndex:int):
-            if predIndex == 36:
-                return self.precpred(self._ctx, 1)
-         
+    def enumeratorlist_sempred(self, localctx: EnumeratorlistContext, predIndex: int):
+        if predIndex == 36:
+            return self.precpred(self._ctx, 1)
 
-    def attributespecifierseq_sempred(self, localctx:AttributespecifierseqContext, predIndex:int):
-            if predIndex == 37:
-                return self.precpred(self._ctx, 1)
-         
+    def attributespecifierseq_sempred(self, localctx: AttributespecifierseqContext, predIndex: int):
+        if predIndex == 37:
+            return self.precpred(self._ctx, 1)
 
-    def attributelist_sempred(self, localctx:AttributelistContext, predIndex:int):
-            if predIndex == 38:
-                return self.precpred(self._ctx, 3)
-         
+    def attributelist_sempred(self, localctx: AttributelistContext, predIndex: int):
+        if predIndex == 38:
+            return self.precpred(self._ctx, 3)
 
-            if predIndex == 39:
-                return self.precpred(self._ctx, 1)
-         
+        if predIndex == 39:
+            return self.precpred(self._ctx, 1)
 
-    def balancedtokenseq_sempred(self, localctx:BalancedtokenseqContext, predIndex:int):
-            if predIndex == 40:
-                return self.precpred(self._ctx, 1)
-         
+    def balancedtokenseq_sempred(self, localctx: BalancedtokenseqContext, predIndex: int):
+        if predIndex == 40:
+            return self.precpred(self._ctx, 1)
 
-    def initdeclaratorlist_sempred(self, localctx:InitdeclaratorlistContext, predIndex:int):
-            if predIndex == 41:
-                return self.precpred(self._ctx, 1)
-         
+    def initdeclaratorlist_sempred(self, localctx: InitdeclaratorlistContext, predIndex: int):
+        if predIndex == 41:
+            return self.precpred(self._ctx, 1)
 
-    def noptrdeclarator_sempred(self, localctx:NoptrdeclaratorContext, predIndex:int):
-            if predIndex == 42:
-                return self.precpred(self._ctx, 3)
-         
+    def noptrdeclarator_sempred(self, localctx: NoptrdeclaratorContext, predIndex: int):
+        if predIndex == 42:
+            return self.precpred(self._ctx, 3)
 
-            if predIndex == 43:
-                return self.precpred(self._ctx, 2)
-         
+        if predIndex == 43:
+            return self.precpred(self._ctx, 2)
 
-    def noptrabstractdeclarator_sempred(self, localctx:NoptrabstractdeclaratorContext, predIndex:int):
-            if predIndex == 44:
-                return self.precpred(self._ctx, 5)
-         
+    def noptrabstractdeclarator_sempred(self, localctx: NoptrabstractdeclaratorContext, predIndex: int):
+        if predIndex == 44:
+            return self.precpred(self._ctx, 5)
 
-            if predIndex == 45:
-                return self.precpred(self._ctx, 3)
-         
+        if predIndex == 45:
+            return self.precpred(self._ctx, 3)
 
-    def noptrabstractpackdeclarator_sempred(self, localctx:NoptrabstractpackdeclaratorContext, predIndex:int):
-            if predIndex == 46:
-                return self.precpred(self._ctx, 3)
-         
+    def noptrabstractpackdeclarator_sempred(self, localctx: NoptrabstractpackdeclaratorContext, predIndex: int):
+        if predIndex == 46:
+            return self.precpred(self._ctx, 3)
 
-            if predIndex == 47:
-                return self.precpred(self._ctx, 2)
-         
+        if predIndex == 47:
+            return self.precpred(self._ctx, 2)
 
-    def parameterdeclarationlist_sempred(self, localctx:ParameterdeclarationlistContext, predIndex:int):
-            if predIndex == 48:
-                return self.precpred(self._ctx, 1)
-         
+    def parameterdeclarationlist_sempred(self, localctx: ParameterdeclarationlistContext, predIndex: int):
+        if predIndex == 48:
+            return self.precpred(self._ctx, 1)
 
-    def initializerlist_sempred(self, localctx:InitializerlistContext, predIndex:int):
-            if predIndex == 49:
-                return self.precpred(self._ctx, 1)
-         
+    def initializerlist_sempred(self, localctx: InitializerlistContext, predIndex: int):
+        if predIndex == 49:
+            return self.precpred(self._ctx, 1)
 
-    def memberdeclaratorlist_sempred(self, localctx:MemberdeclaratorlistContext, predIndex:int):
-            if predIndex == 50:
-                return self.precpred(self._ctx, 1)
-         
+    def memberdeclaratorlist_sempred(self, localctx: MemberdeclaratorlistContext, predIndex: int):
+        if predIndex == 50:
+            return self.precpred(self._ctx, 1)
 
-    def virtspecifierseq_sempred(self, localctx:VirtspecifierseqContext, predIndex:int):
-            if predIndex == 51:
-                return self.precpred(self._ctx, 1)
-         
+    def virtspecifierseq_sempred(self, localctx: VirtspecifierseqContext, predIndex: int):
+        if predIndex == 51:
+            return self.precpred(self._ctx, 1)
 
-    def basespecifierlist_sempred(self, localctx:BasespecifierlistContext, predIndex:int):
-            if predIndex == 52:
-                return self.precpred(self._ctx, 1)
-         
+    def basespecifierlist_sempred(self, localctx: BasespecifierlistContext, predIndex: int):
+        if predIndex == 52:
+            return self.precpred(self._ctx, 1)
 
-    def templateparameterlist_sempred(self, localctx:TemplateparameterlistContext, predIndex:int):
-            if predIndex == 53:
-                return self.precpred(self._ctx, 1)
-         
+    def templateparameterlist_sempred(self, localctx: TemplateparameterlistContext, predIndex: int):
+        if predIndex == 53:
+            return self.precpred(self._ctx, 1)
 
-    def templateargumentlist_sempred(self, localctx:TemplateargumentlistContext, predIndex:int):
-            if predIndex == 54:
-                return self.precpred(self._ctx, 1)
-         
+    def templateargumentlist_sempred(self, localctx: TemplateargumentlistContext, predIndex: int):
+        if predIndex == 54:
+            return self.precpred(self._ctx, 1)
 
-    def typeidlist_sempred(self, localctx:TypeidlistContext, predIndex:int):
-            if predIndex == 55:
-                return self.precpred(self._ctx, 1)
-         
-
-
-
-
+    def typeidlist_sempred(self, localctx: TypeidlistContext, predIndex: int):
+        if predIndex == 55:
+            return self.precpred(self._ctx, 1)

@@ -1,7 +1,6 @@
+import os
 from contextlib import contextmanager
 from datetime import datetime
-
-import os
 
 from abcmeter import CPP, JAVA, PYTHON, calculate_abc_score
 
@@ -29,6 +28,7 @@ def get_language_by_file(file_name):
     _, extension = os.path.splitext(file_name)
 
     return language_by_extension[extension]
+
 
 def main():
     file_name = 'cpp/tests/main.cpp'
