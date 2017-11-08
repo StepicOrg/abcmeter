@@ -3,6 +3,8 @@ import math
 
 from antlr4 import *
 
+from parsers.CPP14Listener import CPP14Listener
+
 if __name__ is not None and "." in __name__:
     from cpp.parsers.CPP14Parser import CPP14Parser
 else:
@@ -15,7 +17,7 @@ ASSIGNMENTS = (
     #       (=, *=, /=, %=, +=, <<=, >>=, &=, !=, ^=).
     CPP14Parser.RULE_assignmentoperator,
     # (prefix or postfix) (++, --)
-
+    CPP14Parser.RULE_unaryincdecexpression,
     # Initialization of a variable or a nonconstant class member.
     CPP14Parser.RULE_initializer)
 
@@ -45,7 +47,7 @@ CONDITIONALS = (
 
 
 # This class defines a complete listener for a parse tree produced by CPP14Parser.
-class CPP14Listener(ParseTreeListener):
+class Listener(CPP14Listener):
     def __init__(self):
         self.a = 0
         self.b = 0

@@ -63,7 +63,14 @@ primaryexpression
 	| This
 	| '(' expression ')'
 	| idexpression
-	| lambdaexpression
+	| '[' lambdacapture? ']' lambdadeclarator? compoundstatement
+;
+
+lambdacapture
+:
+	capturedefault
+	| capturelist
+	| capturedefault ',' capturelist
 ;
 
 idexpression
@@ -98,23 +105,6 @@ nestednamespecifier
 	| nestednamespecifier Template? simpletemplateid '::'
 ;
 
-lambdaexpression
-:
-	lambdaintroducer lambdadeclarator? compoundstatement
-;
-
-lambdaintroducer
-:
-	'[' lambdacapture? ']'
-;
-
-lambdacapture
-:
-	capturedefault
-	| capturelist
-	| capturedefault ',' capturelist
-;
-
 capturedefault
 :
 	'&'
@@ -129,21 +119,11 @@ capturelist
 
 capture
 :
-	simplecapture
-	| initcapture
-;
-
-simplecapture
-:
 	Identifier
-	| '&' Identifier
-	| This
-;
-
-initcapture
-:
-	Identifier initializer
-	| '&' Identifier initializer
+    | '&' Identifier
+    | This
+	| Identifier initializer
+    | '&' Identifier initializer
 ;
 
 lambdadeclarator
@@ -192,16 +172,21 @@ pseudodestructorname
 unaryexpression
 :
 	postfixexpression
-	| '++' castexpression
-	| '--' castexpression
+	| unaryincdecexpression
 	| unaryoperator castexpression
 	| Sizeof unaryexpression
 	| Sizeof '(' thetypeid ')'
 	| Sizeof '...' '(' Identifier ')'
 	| Alignof '(' thetypeid ')'
-	| noexceptexpression
+	| Noexcept '(' expression ')'
 	| newexpression
 	| deleteexpression
+;
+
+unaryincdecexpression
+:
+    '++' castexpression
+	| '--' castexpression
 ;
 
 unaryoperator
@@ -217,18 +202,13 @@ unaryoperator
 
 newexpression
 :
-	'::'? New newplacement? newtypeid newinitializer?
+	'::'? New newplacement? typespecifierseq newdeclarator? newinitializer?
 	| '::'? New newplacement? '(' thetypeid ')' newinitializer?
 ;
 
 newplacement
 :
 	'(' expressionlist ')'
-;
-
-newtypeid
-:
-	typespecifierseq newdeclarator?
 ;
 
 newdeclarator
@@ -253,11 +233,6 @@ deleteexpression
 :
 	'::'? Delete castexpression
 	| '::'? Delete '[' ']' castexpression
-;
-
-noexceptexpression
-:
-	Noexcept '(' expression ')'
 ;
 
 castexpression
@@ -393,21 +368,16 @@ constantexpression
 /*Statements*/
 statement
 :
-	labeledstatement
+	attributespecifierseq? Identifier ':' statement
+    | attributespecifierseq? casestatement
+    | attributespecifierseq? defaultstatement
 	| attributespecifierseq? expressionstatement
 	| attributespecifierseq? compoundstatement
 	| attributespecifierseq? selectionstatement
 	| attributespecifierseq? iterationstatement
 	| attributespecifierseq? jumpstatement
-	| declarationstatement
+	| blockdeclaration
 	| attributespecifierseq? tryblock
-;
-
-labeledstatement
-:
-	attributespecifierseq? Identifier ':' statement
-	| attributespecifierseq? casestatement
-	| attributespecifierseq? defaultstatement
 ;
 
 casestatement
@@ -494,11 +464,6 @@ gotostatement
     Goto Identifier ';'
 ;
 
-declarationstatement
-:
-	blockdeclaration
-;
-
 /*Declarations*/
 declarationseq
 :
@@ -516,19 +481,19 @@ declaration
 	| linkagespecification
 	| namespacedefinition
 	| emptydeclaration
-	| attributedeclaration
+	| attributespecifierseq ';'
 ;
 
 blockdeclaration
 :
 	simpledeclaration
 	| asmdefinition
-	| namespacealiasdefinition
+	| Namespace Identifier '=' qualifiednamespacespecifier ';'
 	| usingdeclaration
 	| usingdirective
 	| static_assertdeclaration
 	| aliasdeclaration
-	| opaqueenumdeclaration
+	| enumkey attributespecifierseq? Identifier enumbase? ';'
 ;
 
 aliasdeclaration
@@ -552,16 +517,17 @@ emptydeclaration
 	';'
 ;
 
-attributedeclaration
-:
-	attributespecifierseq ';'
-;
-
 declspecifier
 :
-	storageclassspecifier
+	Register
+    | Static
+    | Thread_local
+    | Extern
+    | Mutable
 	| typespecifier
-	| functionspecifier
+	| Inline
+    | Virtual
+    | Explicit
 	| Friend
 	| Typedef
 	| Constexpr
@@ -573,38 +539,21 @@ declspecifierseq
 	| declspecifier declspecifierseq
 ;
 
-storageclassspecifier
-:
-	Register
-	| Static
-	| Thread_local
-	| Extern
-	| Mutable
-;
-
-functionspecifier
-:
-	Inline
-	| Virtual
-	| Explicit
-;
-
-typedefname
-:
-	Identifier
-;
-
 typespecifier
 :
 	trailingtypespecifier
 	| classspecifier
-	| enumspecifier
+	| enumhead '{' enumeratorlist? '}'
+    | enumhead '{' enumeratorlist ',' '}'
 ;
 
 trailingtypespecifier
 :
 	simpletypespecifier
-	| elaboratedtypespecifier
+	| classkey attributespecifierseq? nestednamespecifier? Identifier
+    | classkey simpletemplateid
+    | classkey nestednamespecifier Template? simpletemplateid
+    | Enum nestednamespecifier? Identifier
 	| typenamespecifier
 	| cvqualifier
 ;
@@ -645,8 +594,7 @@ simpletypespecifier
 thetypename
 :
 	classname
-	| enumname
-	| typedefname
+	| Identifier
 	| simpletemplateid
 ;
 
@@ -656,34 +604,10 @@ decltypespecifier
 	| Decltype '(' Auto ')'
 ;
 
-elaboratedtypespecifier
-:
-	classkey attributespecifierseq? nestednamespecifier? Identifier
-	| classkey simpletemplateid
-	| classkey nestednamespecifier Template? simpletemplateid
-	| Enum nestednamespecifier? Identifier
-;
-
-enumname
-:
-	Identifier
-;
-
-enumspecifier
-:
-	enumhead '{' enumeratorlist? '}'
-	| enumhead '{' enumeratorlist ',' '}'
-;
-
 enumhead
 :
 	enumkey attributespecifierseq? Identifier? enumbase?
 	| enumkey attributespecifierseq? nestednamespecifier Identifier enumbase?
-;
-
-opaqueenumdeclaration
-:
-	enumkey attributespecifierseq? Identifier enumbase? ';'
 ;
 
 enumkey
@@ -729,28 +653,13 @@ originalnamespacename
 namespacedefinition
 :
 	namednamespacedefinition
-	| unnamednamespacedefinition
+	| Inline? Namespace '{' namespacebody '}'
 ;
 
 namednamespacedefinition
 :
-	originalnamespacedefinition
-	| extensionnamespacedefinition
-;
-
-originalnamespacedefinition
-:
 	Inline? Namespace Identifier '{' namespacebody '}'
-;
-
-extensionnamespacedefinition
-:
-	Inline? Namespace originalnamespacename '{' namespacebody '}'
-;
-
-unnamednamespacedefinition
-:
-	Inline? Namespace '{' namespacebody '}'
+	| Inline? Namespace originalnamespacename '{' namespacebody '}'
 ;
 
 namespacebody
@@ -761,11 +670,6 @@ namespacebody
 namespacealias
 :
 	Identifier
-;
-
-namespacealiasdefinition
-:
-	Namespace Identifier '=' qualifiednamespacespecifier ';'
 ;
 
 qualifiednamespacespecifier
@@ -1231,18 +1135,13 @@ templateparameterlist
 
 templateparameter
 :
-	typeparameter
-	| parameterdeclaration
-;
-
-typeparameter
-:
 	Class '...'? Identifier?
-	| Class Identifier? '=' thetypeid
-	| Typename '...'? Identifier?
-	| Typename Identifier? '=' thetypeid
-	| Template '<' templateparameterlist '>' Class '...'? Identifier?
-	| Template '<' templateparameterlist '>' Class Identifier? '=' idexpression
+    | Class Identifier? '=' thetypeid
+    | Typename '...'? Identifier?
+    | Typename Identifier? '=' thetypeid
+    | Template '<' templateparameterlist '>' Class '...'? Identifier?
+    | Template '<' templateparameterlist '>' Class Identifier? '=' idexpression
+	| parameterdeclaration
 ;
 
 simpletemplateid
