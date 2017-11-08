@@ -17,14 +17,6 @@ class CPP14Listener(ParseTreeListener):
     def exitTranslationunit(self, ctx: CPP14Parser.TranslationunitContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#primaryexpression.
-    def enterPrimaryexpression(self, ctx: CPP14Parser.PrimaryexpressionContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#primaryexpression.
-    def exitPrimaryexpression(self, ctx: CPP14Parser.PrimaryexpressionContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#lambdacapture.
     def enterLambdacapture(self, ctx: CPP14Parser.LambdacaptureContext):
         pass
