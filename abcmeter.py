@@ -29,13 +29,13 @@ def print_process(start_time, process_name):
 
 def get_lexer_parser_listener(language):
     if language == CPP:
-        from cpp.CPP14Listener import Listener
+        from cpp.listener import Listener
         from cpp.parsers.CPP14Lexer import CPP14Lexer
         from cpp.parsers.CPP14Parser import CPP14Parser
         return CPP14Lexer, CPP14Parser, Listener, CPP14Parser.translationunit
 
     if language == JAVA:
-        from java8.Java8Listener import Listener
+        from java8.listener import Listener
         from java8.parsers.Java8Lexer import Java8Lexer
         from java8.parsers.Java8Parser import Java8Parser
         return Java8Lexer, Java8Parser, Listener, Java8Parser.compilationUnit
