@@ -107,5 +107,5 @@ venv.bak/
 
 # idea
 .idea/*
-~.idea/modules.xml
-~.idea/vcs.xml
+!.idea/modules.xml
+!.idea/vcs.xml
