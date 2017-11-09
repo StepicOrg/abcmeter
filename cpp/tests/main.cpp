@@ -2,6 +2,7 @@
 
 main()
 {
-    cout << "Hello World!";
+    char* message = "Hello World!";
+    cout << message;
     return 0;
 }

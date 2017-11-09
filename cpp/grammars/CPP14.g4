@@ -59,9 +59,9 @@ translationunit
 /*Expressions*/
 lambdacapture
 :
-	Capturedefault
+	capturedefault
 	| capturelist
-	| Capturedefault ',' capturelist
+	| capturedefault ',' capturelist
 ;
 
 idexpression
@@ -96,7 +96,7 @@ nestednamespecifier
 	| nestednamespecifier Template? simpletemplateid '::'
 ;
 
-Capturedefault
+capturedefault
 :
 	'&'
 	| '='
