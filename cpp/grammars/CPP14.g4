@@ -59,44 +59,27 @@ translationunit
 /*Expressions*/
 lambdacapture
 :
-	capturedefault
+	('&' | '=') (',' capturelist)?
 	| capturelist
-	| capturedefault ',' capturelist
 ;
 
 idexpression
 :
-	unqualifiedid
-	| nestednamespecifier Template? unqualifiedid
+	(nestednamespecifier Template?)? unqualifiedid
 ;
 
 unqualifiedid
 :
-	Identifier
-	| Operator theoperator
-	| Operator typespecifierseq conversiondeclarator?
-	| literaloperatorid
-	| '~' classname
-	| '~' decltypespecifier
-	| Identifier '<' templateargumentlist? '>'
-    | Operator theoperator '<' templateargumentlist? '>'
-    | literaloperatorid '<' templateargumentlist? '>'
+	Identifier ('<' templateargumentlist? '>')?
+	| Operator (theoperator ('<' templateargumentlist? '>')? | typespecifierseq ptroperator*)
+	| Operator (Stringliteral Identifier | Userdefinedstringliteral) ('<' templateargumentlist? '>')?
+	| '~' (classname | decltypespecifier)
 ;
 
 nestednamespecifier
 :
-	'::'
-	| thetypename '::'
-	| Identifier '::'
-	| decltypespecifier '::'
-	| nestednamespecifier Identifier '::'
-	| nestednamespecifier Template? Identifier '<' templateargumentlist? '>' '::'
-;
-
-capturedefault
-:
-	'&'
-	| '='
+	(thetypename | Identifier | decltypespecifier) '::'
+	| nestednamespecifier (Identifier '::' | Template? Identifier '<' templateargumentlist? '>' '::')
 ;
 
 capturelist
@@ -107,11 +90,8 @@ capturelist
 
 capture
 :
-	Identifier
-    | '&' Identifier
+    '&'? Identifier initializer?
     | This
-	| Identifier initializer
-    | '&' Identifier initializer
 ;
 
 lambdadeclarator
@@ -136,26 +116,17 @@ postfixexpression
     | This
     | '(' expression ')'
     | idexpression
-    | '[' lambdacapture? ']' lambdadeclarator? '{' statementseq? '}'
-	| postfixexpression '[' expression ']'
-	| postfixexpression '[' bracedinitlist ']'
-	| postfixexpression '(' initializerlist? ')'
-	| simpletypespecifier '(' initializerlist? ')'
-	| typenamespecifier '(' initializerlist? ')'
-	| simpletypespecifier bracedinitlist
-	| typenamespecifier bracedinitlist
-	| postfixexpression '.' Template? idexpression
-	| postfixexpression '->' Template? idexpression
-	| postfixexpression '.' pseudodestructorname
-	| postfixexpression '->' pseudodestructorname
-	| postfixexpression '++'
-	| postfixexpression '--'
+    | '[' lambdacapture? ']' lambdadeclarator? '{' statement* '}'
+	| simpletypespecifier ('(' initializerlist? ')' | bracedinitlist)
+	| typenamespecifier ('(' initializerlist? ')' | bracedinitlist)
+	| postfixexpression ('[' (expression | bracedinitlist) ']' | '(' initializerlist? ')')
+	| postfixexpression ('.' | '->') (Template? idexpression | pseudodestructorname)
+	| postfixexpression ('++' | '--')
 	| Dynamic_cast '<' typespecifierseq abstractdeclarator? '>' '(' expression ')'
 	| Static_cast '<' typespecifierseq abstractdeclarator? '>' '(' expression ')'
 	| Reinterpret_cast '<' typespecifierseq abstractdeclarator? '>' '(' expression ')'
 	| Const_cast '<' typespecifierseq abstractdeclarator? '>' '(' expression ')'
-	| Typeid '(' expression ')'
-	| Typeid '(' typespecifierseq abstractdeclarator? ')'
+	| Typeid ('(' expression ')' | '(' typespecifierseq abstractdeclarator? ')')
 ;
 
 pseudodestructorname
@@ -183,8 +154,7 @@ unaryexpression
 // used in ASSIGNMENTS
 unaryincdecexpression
 :
-    '++' castexpression
-	| '--' castexpression
+    ('++' | '--') castexpression
 ;
 
 unaryoperator
@@ -226,8 +196,7 @@ newinitializer
 // used in BRANCHES
 deleteexpression
 :
-	'::'? Delete castexpression
-	| '::'? Delete '[' ']' castexpression
+	'::'? Delete ('[' ']')? castexpression
 ;
 
 castexpression
@@ -239,48 +208,39 @@ castexpression
 pmexpression
 :
 	castexpression
-	| pmexpression '.*' castexpression
-	| pmexpression '->*' castexpression
+	| pmexpression ('.*' | '->*') castexpression
 ;
 
 multiplicativeexpression
 :
 	pmexpression
-	| multiplicativeexpression '*' pmexpression
-	| multiplicativeexpression '/' pmexpression
-	| multiplicativeexpression '%' pmexpression
+	| multiplicativeexpression ('*' | '/' | '%') pmexpression
 ;
 
 additiveexpression
 :
 	multiplicativeexpression
-	| additiveexpression '+' multiplicativeexpression
-	| additiveexpression '-' multiplicativeexpression
+	| additiveexpression ('+' | '-') multiplicativeexpression
 ;
 
 shiftexpression
 :
 	additiveexpression
-	| shiftexpression '<<' additiveexpression
-	| shiftexpression rightShift additiveexpression
+	| shiftexpression ('<<' | rightShift) additiveexpression
 ;
 
 // used in CONDITIONALS
 relationalexpression
 :
 	shiftexpression
-	| relationalexpression '<' shiftexpression
-	| relationalexpression '>' shiftexpression
-	| relationalexpression '<=' shiftexpression
-	| relationalexpression '>=' shiftexpression
+	| relationalexpression ('<' | '>' | '<=' | '>=') shiftexpression
 ;
 
 // used in CONDITIONALS
 equalityexpression
 :
 	relationalexpression
-	| equalityexpression '==' relationalexpression
-	| equalityexpression '!=' relationalexpression
+	| equalityexpression ('==' | '!=') relationalexpression
 ;
 
 andexpression
@@ -327,10 +287,9 @@ unaryconditionalexpression
 
 assignmentexpression
 :
-	logicalorexpression
+	logicalorexpression (assignmentoperator initializerclause)?
     | ternaryconditionalexpression
     | unaryconditionalexpression
-	| logicalorexpression assignmentoperator initializerclause
 	| Throw assignmentexpression?
 ;
 
@@ -369,7 +328,7 @@ statement
     | attributespecifierseq? casestatement
     | attributespecifierseq? defaultstatement
 	| attributespecifierseq? expression? ';'
-	| attributespecifierseq? '{' statementseq? '}'
+	| attributespecifierseq? '{' statement* '}'
 	| attributespecifierseq? selectionstatement
 	| attributespecifierseq? iterationstatement
 	| attributespecifierseq? jumpstatement
@@ -379,8 +338,8 @@ statement
 	| declspecifierseq? initdeclaratorlist? ';'
     | Asm '(' Stringliteral ')' ';'
     | Namespace Identifier '=' nestednamespecifier? Identifier ';'
-    | Using Typename? nestednamespecifier unqualifiedid ';'
     | Using '::' unqualifiedid ';'
+    | Using Typename? nestednamespecifier unqualifiedid ';'
     | Using Identifier attributespecifierseq? '=' typespecifierseq abstractdeclarator? ';'
     | Static_assert '(' constantexpression ',' Stringliteral ')' ';'
     | enumkey attributespecifierseq? Identifier (':' typespecifierseq)? ';'
@@ -398,16 +357,9 @@ defaultstatement
     Default ':' statement
 ;
 
-statementseq
-:
-	statement
-	| statementseq statement
-;
-
 selectionstatement
 :
-	If '(' condition ')' statement
-	| If '(' condition ')' statement elsestatement
+	If '(' condition ')' statement elsestatement?
 	| Switch '(' condition ')' statement
 ;
 
@@ -420,8 +372,7 @@ elsestatement
 condition
 :
 	expression
-	| attributespecifierseq? declspecifierseq declarator '=' initializerclause
-	| attributespecifierseq? declspecifierseq declarator bracedinitlist
+	| attributespecifierseq? declspecifierseq declarator ('=' initializerclause | bracedinitlist)
 ;
 
 iterationstatement
@@ -429,7 +380,7 @@ iterationstatement
 	While '(' condition ')' statement
 	| Do statement While '(' expression ')' ';'
 	| For '(' forinitstatement condition? ';' expression? ')' statement
-	| For '(' attributespecifierseq? declspecifierseq declarator ':' forrangeinitializer ')' statement
+	| For '(' attributespecifierseq? declspecifierseq declarator ':' (expression | bracedinitlist) ')' statement
 ;
 
 forinitstatement
@@ -439,18 +390,10 @@ forinitstatement
     | attributespecifierseq declspecifierseq? initdeclaratorlist ';'
 ;
 
-forrangeinitializer
-:
-	expression
-	| bracedinitlist
-;
-
 jumpstatement
 :
-	Break ';'
-	| Continue ';'
-	| Return expression? ';'
-	| Return bracedinitlist ';'
+	(Break | Continue) ';'
+	| Return (expression? | bracedinitlist) ';'
 	| gotostatement
 ;
 
@@ -470,8 +413,7 @@ declarationseq
 declaration
 :
 	declspecifierseq? initdeclaratorlist? ';'
-	| attributespecifierseq ';'
-    | attributespecifierseq declspecifierseq? initdeclaratorlist ';'
+	| attributespecifierseq (declspecifierseq? initdeclaratorlist)? ';'
     | attributespecifierseq? Using Namespace nestednamespecifier? Identifier ';'
     | Asm '(' Stringliteral ')' ';'
     | Namespace Identifier '=' nestednamespecifier? Identifier ';'
@@ -481,13 +423,10 @@ declaration
     | Static_assert '(' constantexpression ',' Stringliteral ')' ';'
     | enumkey attributespecifierseq? Identifier (':' typespecifierseq)? ';'
 	| functiondefinition
-	| Template '<' templateparameterlist '>' declaration
+	| Template '<' templateparameterlist? '>' declaration
 	| Extern? Template declaration
-	| Template '<' '>' declaration
-	| Extern Stringliteral '{' declarationseq? '}'
-    | Extern Stringliteral declaration
-	| Inline? Namespace Identifier '{' declarationseq? '}'
-    | Inline? Namespace '{' declarationseq? '}'
+	| Extern Stringliteral ('{' declarationseq? '}' | declaration)
+	| Inline? Namespace (Identifier '{' declarationseq? '}' | '{' declarationseq? '}')
 	| ';'
 ;
 
@@ -509,16 +448,14 @@ declspecifier
 
 declspecifierseq
 :
-	declspecifier attributespecifierseq?
-	| declspecifier declspecifierseq
+	declspecifier (attributespecifierseq | declspecifierseq)?
 ;
 
 typespecifier
 :
 	trailingtypespecifier
-	| classhead '{' memberspecification? '}'
-	| enumhead '{' enumeratorlist? '}'
-    | enumhead '{' enumeratorlist ',' '}'
+	| classkey attributespecifierseq? (nestednamespecifier? classname Final?)? (':' basespecifierlist)? '{' (memberdeclaration | accessspecifier ':')? '}'
+	| enumkey attributespecifierseq? (nestednamespecifier? Identifier)? (':' typespecifierseq)? '{' enumeratorlist? ','? '}'
 ;
 
 trailingtypespecifier
@@ -534,14 +471,12 @@ trailingtypespecifier
 
 typespecifierseq
 :
-	typespecifier attributespecifierseq?
-	| typespecifier typespecifierseq
+	typespecifier (attributespecifierseq | typespecifierseq)?
 ;
 
 trailingtypespecifierseq
 :
-	trailingtypespecifier attributespecifierseq?
-	| trailingtypespecifier trailingtypespecifierseq
+	trailingtypespecifier (attributespecifierseq | trailingtypespecifierseq)?
 ;
 
 simpletypespecifier
@@ -568,39 +503,23 @@ simpletypespecifier
 thetypename
 :
 	classname
-	| Identifier
-	| Identifier '<' templateargumentlist? '>'
+	| Identifier ('<' templateargumentlist? '>')?
 ;
 
 decltypespecifier
 :
-	Decltype '(' expression ')'
-	| Decltype '(' Auto ')'
-;
-
-enumhead
-:
-	enumkey attributespecifierseq? Identifier? (':' typespecifierseq)?
-	| enumkey attributespecifierseq? nestednamespecifier Identifier (':' typespecifierseq)?
+	Decltype '(' (expression | Auto) ')'
 ;
 
 enumkey
 :
-	Enum
-	| Enum Class
-	| Enum Struct
+	Enum (Class | Struct)?
 ;
 
 enumeratorlist
 :
-	enumeratordefinition
-	| enumeratorlist ',' enumeratordefinition
-;
-
-enumeratordefinition
-:
-	Identifier
-	| Identifier '=' constantexpression
+	Identifier ('=' constantexpression)?
+	| enumeratorlist ',' Identifier ('=' constantexpression)?
 ;
 
 attributespecifierseq
@@ -618,21 +537,13 @@ attributespecifier
 
 attributelist
 :
-	attribute?
-	| attributelist ',' attribute?
-	| attribute '...'
-	| attributelist ',' attribute '...'
+	(attribute '...'?)?
+	| attributelist ',' (attribute '...'?)?
 ;
 
 attribute
 :
-	attributetoken ('(' balancedtokenseq ')')?
-;
-
-attributetoken
-:
-	Identifier
-	| Identifier '::' Identifier
+	Identifier ('::' Identifier)? ('(' balancedtokenseq ')')?
 ;
 
 balancedtokenseq
@@ -678,33 +589,20 @@ noptrdeclarator
 
 parametersandqualifiers
 :
-	'(' parameterdeclarationclause ')' cvqualifierseq? refqualifier?
+	'(' parameterdeclarationclause ')' cvqualifier* ('&' | '&&')?
 	exceptionspecification? attributespecifierseq?
 ;
 
 ptroperator
 :
-	'*' attributespecifierseq? cvqualifierseq?
-	| '&' attributespecifierseq?
-	| '&&' attributespecifierseq?
-	| nestednamespecifier '*' attributespecifierseq? cvqualifierseq?
-;
-
-cvqualifierseq
-:
-	cvqualifier cvqualifierseq?
+	nestednamespecifier? '*' attributespecifierseq? cvqualifier*
+	| ('&' | '&&') attributespecifierseq?
 ;
 
 cvqualifier
 :
 	Const
 	| Volatile
-;
-
-refqualifier
-:
-	'&'
-	| '&&'
 ;
 
 abstractdeclarator
@@ -757,25 +655,19 @@ parameterdeclarationlist
 
 parameterdeclaration
 :
-	attributespecifierseq? declspecifierseq declarator
-	| attributespecifierseq? declspecifierseq declarator '=' initializerclause
-	| attributespecifierseq? declspecifierseq abstractdeclarator?
-	| attributespecifierseq? declspecifierseq abstractdeclarator? '='
-	initializerclause
+	attributespecifierseq? declspecifierseq (declarator | abstractdeclarator) ('=' initializerclause)?
 ;
 
 functiondefinition
 :
-	attributespecifierseq? declspecifierseq? declarator virtspecifierseq?
-	functionbody
+	attributespecifierseq? declspecifierseq? declarator virtspecifierseq? functionbody
 ;
 
 functionbody
 :
-	(':' meminitializerlist)? '{' statementseq? '}'
-	| Try (':' meminitializerlist)? '{' statementseq? '}' handlerseq
-	| '=' Default ';'
-	| '=' Delete ';'
+	(':' meminitializerlist)? '{' statement* '}'
+	| Try (':' meminitializerlist)? '{' statement* '}' handler+
+	| '=' (Default | Delete) ';'
 ;
 
 // used in ASSIGNMENTS
@@ -812,14 +704,7 @@ bracedinitlist
 /*Classes*/
 classname
 :
-	Identifier
-	| Identifier '<' templateargumentlist? '>'
-;
-
-classhead
-:
-	classkey attributespecifierseq? nestednamespecifier? classname Final? (':' basespecifierlist)?
-	| classkey attributespecifierseq? (':' basespecifierlist)?
+	Identifier ('<' templateargumentlist? '>')?
 ;
 
 classkey
@@ -829,18 +714,11 @@ classkey
 	| Union
 ;
 
-memberspecification
-:
-	memberdeclaration memberspecification?
-	| accessspecifier ':' memberspecification?
-;
-
 memberdeclaration
 :
 	attributespecifierseq? declspecifierseq? memberdeclaratorlist? ';'
 	| functiondefinition
-	| Using Typename? nestednamespecifier unqualifiedid ';'
-    | Using '::' unqualifiedid ';'
+	| Using (Typename? nestednamespecifier | '::') unqualifiedid ';'
 	| Static_assert '(' constantexpression ',' Stringliteral ')' ';'
 	| Template '<' templateparameterlist '>' declaration
 	| Using Identifier attributespecifierseq? '=' typespecifierseq abstractdeclarator? ';'
@@ -855,21 +733,14 @@ memberdeclaratorlist
 
 memberdeclarator
 :
-	declarator virtspecifierseq? purespecifier?
-	| declarator braceorequalinitializer?
+	declarator (virtspecifierseq? purespecifier? | braceorequalinitializer?)
 	| Identifier? attributespecifierseq? ':' constantexpression
 ;
 
 virtspecifierseq
 :
-	virtspecifier
-	| virtspecifierseq virtspecifier
-;
-
-virtspecifier
-:
-	Override
-	| Final
+	(Override | Final)
+	| virtspecifierseq (Override | Final)
 ;
 
 /*
@@ -912,34 +783,9 @@ accessspecifier
 ;
 
 /*Special member functions*/
-conversiondeclarator
-:
-	ptroperator conversiondeclarator?
-;
-
 meminitializerlist
 :
-	meminitializer '...'?
-	| meminitializer '...'? ',' meminitializerlist
-;
-
-meminitializer
-:
-	meminitializerid '(' initializerlist? ')'
-	| meminitializerid bracedinitlist
-;
-
-meminitializerid
-:
-	classordecltype
-	| Identifier
-;
-
-/*Overloading*/
-literaloperatorid
-:
-	Operator Stringliteral Identifier
-	| Operator Userdefinedstringliteral
+	(classordecltype | Identifier) ('(' initializerlist? ')' | bracedinitlist) '...'? (',' meminitializerlist)?
 ;
 
 /*Templates*/
@@ -951,12 +797,9 @@ templateparameterlist
 
 templateparameter
 :
-	Class '...'? Identifier?
-    | Class Identifier? '=' typespecifierseq abstractdeclarator?
-    | Typename '...'? Identifier?
-    | Typename Identifier? '=' typespecifierseq abstractdeclarator?
-    | Template '<' templateparameterlist '>' Class '...'? Identifier?
-    | Template '<' templateparameterlist '>' Class Identifier? '=' idexpression
+    Class ('...'? Identifier? | Identifier? '=' typespecifierseq abstractdeclarator?)
+    | Typename ('...'? Identifier? | Identifier? '=' typespecifierseq abstractdeclarator?)
+    | Template '<' templateparameterlist '>' Class ('...'? Identifier? | Identifier? '=' idexpression)
 	| parameterdeclaration
 ;
 
@@ -983,18 +826,13 @@ typenamespecifier
 // used in CONDITIONALS
 tryblock
 :
-	Try '{' statementseq? '}' handlerseq
-;
-
-handlerseq
-:
-	handler handlerseq?
+	Try '{' statement* '}' handler+
 ;
 
 // used in CONDITIONALS
 handler
 :
-	Catch '(' exceptiondeclaration ')' '{' statementseq? '}'
+	Catch '(' exceptiondeclaration ')' '{' statement* '}'
 ;
 
 exceptiondeclaration
@@ -1007,8 +845,7 @@ exceptiondeclaration
 exceptionspecification
 :
 	Throw '(' typeidlist? ')'
-	| Noexcept '(' constantexpression ')'
-    | Noexcept
+	| Noexcept ('(' constantexpression ')')?
 ;
 
 typeidlist

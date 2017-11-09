@@ -49,14 +49,6 @@ class CPP14Listener(ParseTreeListener):
     def exitNestednamespecifier(self, ctx: CPP14Parser.NestednamespecifierContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#capturedefault.
-    def enterCapturedefault(self, ctx: CPP14Parser.CapturedefaultContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#capturedefault.
-    def exitCapturedefault(self, ctx: CPP14Parser.CapturedefaultContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#capturelist.
     def enterCapturelist(self, ctx: CPP14Parser.CapturelistContext):
         pass
@@ -329,14 +321,6 @@ class CPP14Listener(ParseTreeListener):
     def exitDefaultstatement(self, ctx: CPP14Parser.DefaultstatementContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#statementseq.
-    def enterStatementseq(self, ctx: CPP14Parser.StatementseqContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#statementseq.
-    def exitStatementseq(self, ctx: CPP14Parser.StatementseqContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#selectionstatement.
     def enterSelectionstatement(self, ctx: CPP14Parser.SelectionstatementContext):
         pass
@@ -375,14 +359,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#forinitstatement.
     def exitForinitstatement(self, ctx: CPP14Parser.ForinitstatementContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#forrangeinitializer.
-    def enterForrangeinitializer(self, ctx: CPP14Parser.ForrangeinitializerContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#forrangeinitializer.
-    def exitForrangeinitializer(self, ctx: CPP14Parser.ForrangeinitializerContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#jumpstatement.
@@ -489,14 +465,6 @@ class CPP14Listener(ParseTreeListener):
     def exitDecltypespecifier(self, ctx: CPP14Parser.DecltypespecifierContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#enumhead.
-    def enterEnumhead(self, ctx: CPP14Parser.EnumheadContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#enumhead.
-    def exitEnumhead(self, ctx: CPP14Parser.EnumheadContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#enumkey.
     def enterEnumkey(self, ctx: CPP14Parser.EnumkeyContext):
         pass
@@ -511,14 +479,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#enumeratorlist.
     def exitEnumeratorlist(self, ctx: CPP14Parser.EnumeratorlistContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#enumeratordefinition.
-    def enterEnumeratordefinition(self, ctx: CPP14Parser.EnumeratordefinitionContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#enumeratordefinition.
-    def exitEnumeratordefinition(self, ctx: CPP14Parser.EnumeratordefinitionContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#attributespecifierseq.
@@ -551,14 +511,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#attribute.
     def exitAttribute(self, ctx: CPP14Parser.AttributeContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#attributetoken.
-    def enterAttributetoken(self, ctx: CPP14Parser.AttributetokenContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#attributetoken.
-    def exitAttributetoken(self, ctx: CPP14Parser.AttributetokenContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#balancedtokenseq.
@@ -625,28 +577,12 @@ class CPP14Listener(ParseTreeListener):
     def exitPtroperator(self, ctx: CPP14Parser.PtroperatorContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#cvqualifierseq.
-    def enterCvqualifierseq(self, ctx: CPP14Parser.CvqualifierseqContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#cvqualifierseq.
-    def exitCvqualifierseq(self, ctx: CPP14Parser.CvqualifierseqContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#cvqualifier.
     def enterCvqualifier(self, ctx: CPP14Parser.CvqualifierContext):
         pass
 
     # Exit a parse tree produced by CPP14Parser#cvqualifier.
     def exitCvqualifier(self, ctx: CPP14Parser.CvqualifierContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#refqualifier.
-    def enterRefqualifier(self, ctx: CPP14Parser.RefqualifierContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#refqualifier.
-    def exitRefqualifier(self, ctx: CPP14Parser.RefqualifierContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#abstractdeclarator.
@@ -777,28 +713,12 @@ class CPP14Listener(ParseTreeListener):
     def exitClassname(self, ctx: CPP14Parser.ClassnameContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#classhead.
-    def enterClasshead(self, ctx: CPP14Parser.ClassheadContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#classhead.
-    def exitClasshead(self, ctx: CPP14Parser.ClassheadContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#classkey.
     def enterClasskey(self, ctx: CPP14Parser.ClasskeyContext):
         pass
 
     # Exit a parse tree produced by CPP14Parser#classkey.
     def exitClasskey(self, ctx: CPP14Parser.ClasskeyContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#memberspecification.
-    def enterMemberspecification(self, ctx: CPP14Parser.MemberspecificationContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#memberspecification.
-    def exitMemberspecification(self, ctx: CPP14Parser.MemberspecificationContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#memberdeclaration.
@@ -831,14 +751,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#virtspecifierseq.
     def exitVirtspecifierseq(self, ctx: CPP14Parser.VirtspecifierseqContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#virtspecifier.
-    def enterVirtspecifier(self, ctx: CPP14Parser.VirtspecifierContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#virtspecifier.
-    def exitVirtspecifier(self, ctx: CPP14Parser.VirtspecifierContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#purespecifier.
@@ -881,44 +793,12 @@ class CPP14Listener(ParseTreeListener):
     def exitAccessspecifier(self, ctx: CPP14Parser.AccessspecifierContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#conversiondeclarator.
-    def enterConversiondeclarator(self, ctx: CPP14Parser.ConversiondeclaratorContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#conversiondeclarator.
-    def exitConversiondeclarator(self, ctx: CPP14Parser.ConversiondeclaratorContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#meminitializerlist.
     def enterMeminitializerlist(self, ctx: CPP14Parser.MeminitializerlistContext):
         pass
 
     # Exit a parse tree produced by CPP14Parser#meminitializerlist.
     def exitMeminitializerlist(self, ctx: CPP14Parser.MeminitializerlistContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#meminitializer.
-    def enterMeminitializer(self, ctx: CPP14Parser.MeminitializerContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#meminitializer.
-    def exitMeminitializer(self, ctx: CPP14Parser.MeminitializerContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#meminitializerid.
-    def enterMeminitializerid(self, ctx: CPP14Parser.MeminitializeridContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#meminitializerid.
-    def exitMeminitializerid(self, ctx: CPP14Parser.MeminitializeridContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#literaloperatorid.
-    def enterLiteraloperatorid(self, ctx: CPP14Parser.LiteraloperatoridContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#literaloperatorid.
-    def exitLiteraloperatorid(self, ctx: CPP14Parser.LiteraloperatoridContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#templateparameterlist.
@@ -967,14 +847,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#tryblock.
     def exitTryblock(self, ctx: CPP14Parser.TryblockContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#handlerseq.
-    def enterHandlerseq(self, ctx: CPP14Parser.HandlerseqContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#handlerseq.
-    def exitHandlerseq(self, ctx: CPP14Parser.HandlerseqContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#handler.
