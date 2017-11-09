@@ -59,9 +59,9 @@ translationunit
 /*Expressions*/
 lambdacapture
 :
-	capturedefault
+	Capturedefault
 	| capturelist
-	| capturedefault ',' capturelist
+	| Capturedefault ',' capturelist
 ;
 
 idexpression
@@ -96,7 +96,7 @@ nestednamespecifier
 	| nestednamespecifier Template? simpletemplateid '::'
 ;
 
-capturedefault
+Capturedefault
 :
 	'&'
 	| '='
@@ -1994,8 +1994,9 @@ literal
 	| Characterliteral
 	| Floatingliteral
 	| Stringliteral
-	| booleanliteral
-	| pointerliteral
+	| FalseToken
+    | TrueToken
+	| Nullptr
 	| userdefinedliteral
 ;
 
@@ -2218,17 +2219,6 @@ fragment
 Rawstring /* '"' dcharsequence? '(' rcharsequence? ')' dcharsequence? '"' */
 :
 	'"' .*? '(' .*? ')' .*? '"'
-;
-
-booleanliteral
-:
-	FalseToken
-	| TrueToken
-;
-
-pointerliteral
-:
-	Nullptr
 ;
 
 userdefinedliteral

@@ -57,14 +57,6 @@ class CPP14Listener(ParseTreeListener):
     def exitNestednamespecifier(self, ctx: CPP14Parser.NestednamespecifierContext):
         pass
 
-    # Enter a parse tree produced by CPP14Parser#capturedefault.
-    def enterCapturedefault(self, ctx: CPP14Parser.CapturedefaultContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#capturedefault.
-    def exitCapturedefault(self, ctx: CPP14Parser.CapturedefaultContext):
-        pass
-
     # Enter a parse tree produced by CPP14Parser#capturelist.
     def enterCapturelist(self, ctx: CPP14Parser.CapturelistContext):
         pass
@@ -1455,22 +1447,6 @@ class CPP14Listener(ParseTreeListener):
 
     # Exit a parse tree produced by CPP14Parser#literal.
     def exitLiteral(self, ctx: CPP14Parser.LiteralContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#booleanliteral.
-    def enterBooleanliteral(self, ctx: CPP14Parser.BooleanliteralContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#booleanliteral.
-    def exitBooleanliteral(self, ctx: CPP14Parser.BooleanliteralContext):
-        pass
-
-    # Enter a parse tree produced by CPP14Parser#pointerliteral.
-    def enterPointerliteral(self, ctx: CPP14Parser.PointerliteralContext):
-        pass
-
-    # Exit a parse tree produced by CPP14Parser#pointerliteral.
-    def exitPointerliteral(self, ctx: CPP14Parser.PointerliteralContext):
         pass
 
     # Enter a parse tree produced by CPP14Parser#userdefinedliteral.
