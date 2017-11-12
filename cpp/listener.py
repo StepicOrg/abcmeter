@@ -37,7 +37,6 @@ CONDITIONALS = (
     # Occurrence of the following keywords (‘else’, ‘case’, ‘default’, ‘?’, ‘try’, ‘catch’).
     CPP14Parser.RULE_elsestatement,
     CPP14Parser.RULE_casestatement,
-    CPP14Parser.RULE_defaultstatement,
     CPP14Parser.RULE_ternaryconditionalexpression,
     CPP14Parser.RULE_tryblock,
     CPP14Parser.RULE_handler,
@@ -92,10 +91,6 @@ class Listener(CPP14Listener):
 
     # Enter a parse tree produced by CPP14Parser#casestatement.
     def enterCasestatement(self, ctx: CPP14Parser.CasestatementContext):
-        self.enter(ctx)
-
-    # Enter a parse tree produced by CPP14Parser#defaultstatement.
-    def enterDefaultstatement(self, ctx: CPP14Parser.DefaultstatementContext):
         self.enter(ctx)
 
     # Enter a parse tree produced by CPP14Parser#elsestatement.

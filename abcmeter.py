@@ -1,4 +1,4 @@
-from antlr4 import CommonTokenStream, ParseTreeWalker
+from antlr4 import CommonTokenStream, ParseTreeWalker, PredictionMode
 
 CPP = 'c++'
 JAVA = 'java8'
@@ -23,10 +23,18 @@ def calculate_abc_score(input, language):
     Lexer, Parser, Listener, start_token = get_lexer_parser_listener(language)
 
     lexer = Lexer(input)
-    stream = CommonTokenStream(lexer)
+    tokens = CommonTokenStream(lexer)
 
-    parser = Parser(stream)
-    tree = start_token(parser)
+    parser = Parser(tokens)
+    parser._interp.predictionMode = PredictionMode.SLL
+
+    try:
+        tree = start_token(parser)
+    except:
+        tokens.reset()  # rewind
+        parser.reset()
+        parser._interp.predictionMode = PredictionMode.LL
+        tree = start_token(parser)
 
     listener = Listener()
     walker = ParseTreeWalker()

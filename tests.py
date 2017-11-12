@@ -31,7 +31,9 @@ def profiling():
         listener = calculate_abc_score(input, language)
         delta_time = datetime.now() - start_time
         times.append(delta_time.total_seconds() * 1000)
+        print('.', end='', flush=True)
 
+    print()
     print('a: ' + str(listener.a))
     print('b: ' + str(listener.b))
     print('c: ' + str(listener.c))
