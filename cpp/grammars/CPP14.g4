@@ -75,7 +75,10 @@ nestednamespecifier
 
 lambdadeclarator
 :
-	'(' ((parameterdeclaration (',' parameterdeclaration)*)? '...'? | parameterdeclaration (',' parameterdeclaration)* ',' '...') ')' Mutable? (
+	'(' ((
+            parameterdeclaration (',' parameterdeclaration)*)? '...'?
+            | parameterdeclaration (',' parameterdeclaration)* ',' '...'
+        ) ')' Mutable? (
 	    Throw '(' (typespecifier+ attributespecifier* abstractdeclarator? '...'? (',' typespecifier+ attributespecifier* abstractdeclarator? '...'?)*)? ')'
 	    | Noexcept ('(' constantexpression ')')?
 	)? attributespecifier* ('->' trailingtypespecifier+ attributespecifier* abstractdeclarator?)?
@@ -84,30 +87,51 @@ lambdadeclarator
 
 postfix
 :
-    '[' (assignmentexpression (',' assignmentexpression)* | '{' (initializerlist ','?)? '}') ']'
+    '[' (
+        assignmentexpression (',' assignmentexpression)*
+        | '{' (initializerlist ','?)? '}'
+    ) ']'
     | '(' initializerlist? ')'
-    | ('.' | '->') (Template? (nestednamespecifier Template?)? unqualifiedid | pseudodestructorname)
+    | ('.' | '->') (
+        Template? (nestednamespecifier Template?)? unqualifiedid
+        | pseudodestructorname
+    )
 ;
 
 postfixexpression
 :
-	(Numberliteral
-    | Characterliteral
-    | Stringliteral
-    | TrueFalse
-    | Nullptr
-    | Userdefinedliteral
-    | Userdefinedstringliteral
-    | This
-    | (nestednamespecifier Template?)? unqualifiedid
-    | '[' (
-        ('&' | '=') (',' ('&'? Identifier initializer? | This) '...'?)*
-        | ('&'? Identifier initializer? | This) '...'? (',' ('&'? Identifier initializer? | This) '...'?)*
-    )? ']' lambdadeclarator? '{' statement* '}'
-	| simpletypespecifier ('(' initializerlist? ')' | '{' (initializerlist ','?)? '}')
-	| Typename nestednamespecifier (Identifier | Template? Identifier '<' templateargumentlist? '>') ('(' initializerlist? ')' | '{' (initializerlist ','?)? '}')
-	| (Cast '<' typespecifier+ attributespecifier* abstractdeclarator? '>')? '(' assignmentexpression (',' assignmentexpression)* ')'
-	| Typeid ('(' assignmentexpression (',' assignmentexpression)* ')' | '(' typespecifier+ attributespecifier* abstractdeclarator? ')')
+	(
+        (
+            Numberliteral
+            | Characterliteral
+            | Stringliteral
+            | TrueFalse
+            | Nullptr
+            | Userdefinedliteral
+            | Userdefinedstringliteral
+            | This
+        )
+        | (nestednamespecifier Template?)? unqualifiedid
+        | '[' (
+            ('&' | '=') (',' ('&'? Identifier initializer? | This) '...'?)*
+            | ('&'? Identifier initializer? | This) '...'? (',' ('&'? Identifier initializer? | This) '...'?)*
+        )? ']' lambdadeclarator? '{' statement* '}'
+        | simpletypespecifier (
+            '(' initializerlist? ')'
+            | '{' (initializerlist ','?)? '}'
+        )
+        | Typename nestednamespecifier (
+            Identifier
+            | Template? Identifier '<' templateargumentlist? '>'
+        ) (
+            '(' initializerlist? ')'
+            | '{' (initializerlist ','?)? '}'
+        )
+        | (Cast '<' typespecifier+ attributespecifier* abstractdeclarator? '>')? '(' assignmentexpression (',' assignmentexpression)* ')'
+        | Typeid (
+            '(' assignmentexpression (',' assignmentexpression)* ')'
+            | '(' typespecifier+ attributespecifier* abstractdeclarator? ')'
+        )
 	) postfix*
 ;
 
@@ -209,7 +233,10 @@ unaryconditionalexpression
 
 assignmentexpression
 :
-	equalityexpression (('&' | '&&' | '^' | '|' | '||') equalityexpression)* (assignmentoperator (assignmentexpression | '{' (initializerlist ','?)? '}'))?
+	equalityexpression (('&' | '&&' | '^' | '|' | '||') equalityexpression)* (assignmentoperator (
+	    assignmentexpression
+	    | '{' (initializerlist ','?)? '}'
+	))?
     | ternaryconditionalexpression
     | unaryconditionalexpression
 	| Throw assignmentexpression?
@@ -218,17 +245,19 @@ assignmentexpression
 // used in ASSIGNMENTS
 assignmentoperator
 :
-	'='
-	| '*='
-	| '/='
-	| '%='
-	| '+='
-	| '-='
+	(
+        '='
+        | '*='
+        | '/='
+        | '%='
+        | '+='
+        | '-='
+        | '<<='
+        | '&='
+        | '^='
+        | '|='
+	)
 	| Greater Greater Assign
-	| '<<='
-	| '&='
-	| '^='
-	| '|='
 ;
 
 constantexpression
@@ -247,13 +276,18 @@ statement
         | '{' statement* '}'
         | If '(' condition ')' statement elsestatement?
         | Do statement While '(' assignmentexpression (',' assignmentexpression)* ')' ';'
-        | For (
-            '(' (forinitstatement condition? ';' (assignmentexpression (',' assignmentexpression)*)?
-             | attributespecifier* declspecifierseq declarator ':' (assignmentexpression (',' assignmentexpression)* | '{' (initializerlist ','?)? '}')
-            ) ')' statement
-        )
+        | For ('(' (
+            forinitstatement condition? ';' (assignmentexpression (',' assignmentexpression)*)?
+            | attributespecifier* declspecifierseq declarator ':' (
+                assignmentexpression (',' assignmentexpression)*
+                | '{' (initializerlist ','?)? '}'
+            )
+        ) ')' statement)
         | (Break | Continue) ';'
-        | Return ((assignmentexpression (',' assignmentexpression)*)? | '{' (initializerlist ','?)? '}') ';'
+        | Return (
+            (assignmentexpression (',' assignmentexpression)*)?
+            | '{' (initializerlist ','?)? '}'
+        ) ';'
         | gotostatement
         | Using Namespace nestednamespecifier? Identifier ';'
         | tryblock
@@ -335,12 +369,15 @@ declaration
 
 declspecifierseq
 :
-	(Specifier
-     | Mutable
-     | Extern
-     | typespecifier
-     | Inline
-     | Virtual
+	(
+	    (
+             Specifier
+             | Mutable
+             | Extern
+             | Virtual
+             | Inline
+        )
+        | typespecifier
 	)+ attributespecifier*
 ;
 
@@ -361,7 +398,10 @@ trailingtypespecifier
         | (nestednamespecifier Template?)? Identifier '<' templateargumentlist? '>'
     )
     | Enum nestednamespecifier? Identifier
-	| Typename nestednamespecifier (Identifier | Template? Identifier '<' templateargumentlist? '>')
+	| Typename nestednamespecifier (
+	    Identifier
+	    | Template? Identifier '<' templateargumentlist? '>'
+	)
 	| ConstOrVolatile
 ;
 
@@ -369,16 +409,22 @@ simpletypespecifier
 :
 	nestednamespecifier? Identifier ('<' templateargumentlist? '>')?
 	| nestednamespecifier Template Identifier '<' templateargumentlist? '>'
-	| Types
-	| SignedUnsigned
-	| Auto
+	| (
+        Types
+        | SignedUnsigned
+        | Auto
+	)
 	| Decltype '(' (assignmentexpression (',' assignmentexpression)* | Auto) ')'
 ;
 
 attributespecifier
 :
-	'[' '[' (Identifier ('::' Identifier)? ('(' balancedtoken* ')')? '...'?)? (',' (Identifier ('::' Identifier)? ('(' balancedtoken* ')')? '...'?)?)* ']' ']'
-	| Alignas '(' (typespecifier+ attributespecifier* abstractdeclarator? | constantexpression) '...'? ')'
+	'[' '[' (Identifier ('::' Identifier)? ('(' balancedtoken* ')')? '...'?)?
+	   (',' (Identifier ('::' Identifier)? ('(' balancedtoken* ')')? '...'?)?)* ']' ']'
+	| Alignas '(' (
+	    typespecifier+ attributespecifier* abstractdeclarator?
+	    | constantexpression
+	) '...'? ')'
 ;
 
 balancedtoken
@@ -399,21 +445,23 @@ declarator
 noptrdeclarator
 :
 	'...'? (nestednamespecifier Template?)? unqualifiedid attributespecifier*
-	| noptrdeclarator (parametersandqualifiers | '[' constantexpression? ']' attributespecifier*)
+	| noptrdeclarator (
+	    parametersandqualifiers
+	    | '[' constantexpression? ']' attributespecifier*
+	)
 	| '(' ptroperator* noptrdeclarator ')'
 ;
 
 parametersandqualifiers
 :
-	'(' ((parameterdeclaration (',' parameterdeclaration)*)? '...'? | parameterdeclaration (',' parameterdeclaration)* ',' '...') ')' ConstOrVolatile* ('&' | '&&')? (
-	    Throw '(' (
-	        typespecifier+ attributespecifier* abstractdeclarator? '...'? (
-	            ',' typespecifier+ attributespecifier* abstractdeclarator? '...'?
-	        )*
-	    )? ')'
-	    | Noexcept (
-	        '(' constantexpression ')'
-	    )?
+	'(' (
+	    (parameterdeclaration (',' parameterdeclaration)*)? '...'?
+	    | parameterdeclaration (',' parameterdeclaration)* ',' '...'
+	) ')' ConstOrVolatile* ('&' | '&&')? (
+        Throw '(' (typespecifier+ attributespecifier* abstractdeclarator? '...'? (
+            ',' typespecifier+ attributespecifier* abstractdeclarator? '...'?
+        )*)? ')'
+	    | Noexcept ('(' constantexpression ')')?
 	)? attributespecifier*
 ;
 
@@ -437,7 +485,10 @@ abstractdeclarator
 
 noptrabstractdeclarator
 :
-	noptrabstractdeclarator (parametersandqualifiers | '[' constantexpression? ']' attributespecifier*)
+	noptrabstractdeclarator (
+	    parametersandqualifiers
+	    | '[' constantexpression? ']' attributespecifier*
+	)
 	| parametersandqualifiers
 	| '[' constantexpression? ']' attributespecifier*
 	| '(' ptroperator* noptrabstractdeclarator ')'
@@ -445,7 +496,13 @@ noptrabstractdeclarator
 
 parameterdeclaration
 :
-	attributespecifier* declspecifierseq (declarator | abstractdeclarator) ('=' (assignmentexpression | '{' (initializerlist ','?)? '}'))?
+	attributespecifier* declspecifierseq (
+	    declarator
+	    | abstractdeclarator
+	) ('=' (
+	    assignmentexpression
+	    | '{' (initializerlist ','?)? '}'
+	))?
 ;
 
 // used in ASSIGNMENTS
@@ -458,7 +515,13 @@ initializer
 
 initializerlist
 :
-	(assignmentexpression | '{' (initializerlist ','?)? '}') '...'?	(',' (assignmentexpression | '{' (initializerlist ','?)? '}') '...'?)*
+	(
+	    assignmentexpression
+	    | '{' (initializerlist ','?)? '}'
+	) '...'? (',' (
+	    assignmentexpression
+	    | '{' (initializerlist ','?)? '}'
+	) '...'?)*
 ;
 
 /*Classes*/
@@ -481,7 +544,13 @@ memberdeclaration
 
 memberdeclarator
 :
-	declarator ((Override | Final)* purespecifier? | ('=' (assignmentexpression | '{' (initializerlist ','?)? '}') | '{' (initializerlist ','?)? '}')?)
+	declarator (
+        (Override | Final)* purespecifier?
+        | (
+            '=' assignmentexpression
+            | '='? '{' (initializerlist ','?)? '}'
+        )?
+    )
 	| Identifier? attributespecifier* ':' constantexpression
 ;
 
@@ -518,7 +587,8 @@ meminitializerlist
 	    | Decltype '(' (assignmentexpression (',' assignmentexpression)* | Auto) ')'
 	    | Identifier
 	) (
-	    '(' initializerlist? ')' | '{' (initializerlist ','?)? '}'
+	    '(' initializerlist? ')'
+	    | '{' (initializerlist ','?)? '}'
 	) '...'? (',' meminitializerlist)?
 ;
 
@@ -526,21 +596,40 @@ meminitializerlist
 templateparameterlist
 :
 	(
-	    (Class | Typename) ('...'? Identifier? | Identifier? '=' typespecifier+ attributespecifier* abstractdeclarator?)
-        | Template '<' templateparameterlist '>' Class ('...'? Identifier? | Identifier? '=' (nestednamespecifier Template?)? unqualifiedid)
+	    (Class | Typename) (
+	        '...'? Identifier?
+	        | Identifier? '=' typespecifier+ attributespecifier* abstractdeclarator?
+	    )
+        | Template '<' templateparameterlist '>' Class (
+            '...'? Identifier?
+            | Identifier? '=' (nestednamespecifier Template?)? unqualifiedid
+        )
         | parameterdeclaration
     )
 	(',' (
-	    (Class | Typename) ('...'? Identifier? | Identifier? '=' typespecifier+ attributespecifier* abstractdeclarator?)
-        | Template '<' templateparameterlist '>' Class ('...'? Identifier? | Identifier? '=' (nestednamespecifier Template?)? unqualifiedid)
+	    (Class | Typename) (
+	        '...'? Identifier?
+	        | Identifier? '=' typespecifier+ attributespecifier* abstractdeclarator?
+	    )
+        | Template '<' templateparameterlist '>' Class (
+            '...'? Identifier?
+            | Identifier? '=' (nestednamespecifier Template?)? unqualifiedid
+        )
         | parameterdeclaration
     ))*
 ;
 
 templateargumentlist
 :
-	(typespecifier+ attributespecifier* abstractdeclarator? | constantexpression | (nestednamespecifier Template?)? unqualifiedid) '...'?
-	( ',' (typespecifier+ attributespecifier* abstractdeclarator? | constantexpression | (nestednamespecifier Template?)? unqualifiedid) '...'?)*
+	(
+	    typespecifier+ attributespecifier* abstractdeclarator?
+	    | constantexpression
+	    | (nestednamespecifier Template?)? unqualifiedid
+	) '...'? (',' (
+        typespecifier+ attributespecifier* abstractdeclarator?
+        | constantexpression
+        | (nestednamespecifier Template?)? unqualifiedid
+	) '...'?)*
 ;
 
 /*Exception handling*/
@@ -553,7 +642,13 @@ tryblock
 // used in CONDITIONALS
 handler
 :
-	Catch '(' (attributespecifier* typespecifier+ attributespecifier* (declarator | abstractdeclarator?) | '...') ')' '{' statement* '}'
+	Catch '(' (
+	    attributespecifier* typespecifier+ attributespecifier* (
+	        declarator
+	        | abstractdeclarator?
+	    )
+	    | '...'
+	) ')' '{' statement* '}'
 ;
 
 /*Preprocessing directives*/
@@ -1094,48 +1189,50 @@ Ellipsis
 
 theoperator
 :
-	New
-	| Delete
+	(
+        New
+        | Delete
+        | '+'
+        | '-'
+        | '*'
+        | '/'
+        | '%'
+        | '^'
+        | '&'
+        | '|'
+        | '~'
+        | '!'
+        | '='
+        | '<'
+        | '>'
+        | '+='
+        | '-='
+        | '*='
+        | '/='
+        | '%='
+        | '^='
+        | '&='
+        | '|='
+        | '<<'
+        | '<<='
+        | '=='
+        | '!='
+        | '<='
+        | '>='
+        | '&&'
+        | '||'
+        | '++'
+        | '--'
+        | ','
+        | '->*'
+        | '->'
+        | '?:'
+	)
 	| New '[' ']'
 	| Delete '[' ']'
-	| '+'
-	| '-'
-	| '*'
-	| '/'
-	| '%'
-	| '^'
-	| '&'
-	| '|'
-	| '~'
-	| '!'
-	| '='
-	| '<'
-	| '>'
-	| '+='
-	| '-='
-	| '*='
-	| '/='
-	| '%='
-	| '^='
-	| '&='
-	| '|='
-	| '<<'
 	| Greater Greater Assign?
-	| '<<='
-	| '=='
-	| '!='
-	| '<='
-	| '>='
-	| '&&'
-	| '||'
-	| '++'
-	| '--'
-	| ','
-	| '->*'
-	| '->'
 	| '(' ')'
 	| '[' ']'
-	| '?:'
 ;
 
 /*Lexer*/
